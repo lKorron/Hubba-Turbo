@@ -1,0 +1,126 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ObjectInstantiate : MonoBehaviour
+{
+    [SerializeField] private bool isComputerActive = true; // Activity of computer
+    [SerializeField] private GameObject playerPrefab;
+    [SerializeField] private GameObject computerPrefab;
+    [SerializeField] private Items startItemForInstantiate; //Field for choosing start item
+    [SerializeField] private List<GameObject> computerPrefabList;
+    [SerializeField] private List<Vector3> computerPositionList;
+    private ItemCollision playerItemCollision;
+    private int index = 0; // Index for computer smart instantiate
+
+    public bool isComputerEndInstantiate { get; private set; } = false;
+
+    private void Start()
+    {
+        
+        // Choosing start item
+        switch (startItemForInstantiate)
+        {
+            case Items.blueCube:
+                SetBlueColour();
+                break;
+            case Items.redCube:
+                SetRedColour();
+                break;
+            case Items.sheep:
+                SetSheep();
+                break;
+            case Items.mouse:
+                SetMouse();
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void Update()
+    {
+        // Mouse input
+        if (Input.GetButtonDown("Fire1") && Input.mousePosition.x < Screen.width / 2)
+        {
+            
+            Vector3 mousePosition = Input.mousePosition;
+            mousePosition.z = 2.0f;       
+            Vector3 objectPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            GameObject clone = Instantiate(playerPrefab, objectPosition, Quaternion.identity);
+            clone.tag = "Player";
+
+            // Activity of computer dealing with prefabs
+            playerItemCollision = clone.GetComponent<ItemCollision>();
+            playerItemCollision.SetComputerActive(isComputerActive);
+            
+        }
+
+        
+    }
+    // Change prefab (red)
+    public void SetRedColour()
+    {
+        playerPrefab = (GameObject)Resources.Load("Prefabs/RedCube", typeof(GameObject));
+
+    }
+    // Change prefab (blue)
+    public void SetBlueColour()
+    {
+        playerPrefab = (GameObject)Resources.Load("Prefabs/BlueCube", typeof(GameObject));
+        
+    }
+
+    public void SetSheep()
+    {
+        playerPrefab = (GameObject)Resources.Load("Prefabs/Sheep", typeof(GameObject));
+    }
+
+    public void SetMouse()
+    {
+        playerPrefab = (GameObject)Resources.Load("Prefabs/Mouse", typeof(GameObject));
+    }
+
+    // Computer turn
+    public void OldComputerIntantiate()
+    {
+        GameObject clone = Instantiate(computerPrefab, new Vector3(3, 5, 0), Quaternion.identity);
+        clone.tag = "Computer";
+        
+    }
+
+    // Computer smart isntantiate
+    public void ComputerInstantiate()
+    {
+        if (computerPrefabList.Count != computerPositionList.Count || computerPrefabList.Count <= 0 || computerPositionList.Count <= 0)
+        {
+            print("Error: Add values to both lists");
+            return;
+        }
+        if (index == computerPrefabList.Count)
+        {
+            isComputerEndInstantiate = true;
+            return;
+        }
+        GameObject prefab = computerPrefabList[index];
+        Vector3 position = computerPositionList[index];
+
+        GameObject clone = Instantiate(prefab, position, Quaternion.identity);
+        clone.tag = "Computer";
+
+        
+        index++;
+    }
+
+
+}
+
+// All characters in game
+public enum Items
+{
+    blueCube,
+    redCube,
+    sheep,
+    mouse
+}
+
