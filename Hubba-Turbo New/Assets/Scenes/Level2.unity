@@ -1689,6 +1689,21 @@ PrefabInstance:
       propertyPath: OnPlayerCollisionWithOther.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ComputerInstantiate
       objectReference: {fileID: 0}
+    - target: {fileID: 984294016896108575, guid: 717b927dbd2c5463caae8b50a84d78f8,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.70443064
+      objectReference: {fileID: 0}
+    - target: {fileID: 984294016896108575, guid: 717b927dbd2c5463caae8b50a84d78f8,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.20038268
+      objectReference: {fileID: 0}
+    - target: {fileID: 984294016896108575, guid: 717b927dbd2c5463caae8b50a84d78f8,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.745283
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 717b927dbd2c5463caae8b50a84d78f8, type: 3}
 --- !u!1001 &1035641468112708772
