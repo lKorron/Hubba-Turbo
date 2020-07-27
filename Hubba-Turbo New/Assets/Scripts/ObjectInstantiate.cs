@@ -12,8 +12,10 @@ public class ObjectInstantiate : MonoBehaviour
     [SerializeField] private List<Vector3> computerPositionList;
     private ItemCollision playerItemCollision;
     private int index = 0; // Index for computer smart instantiate
-
-    public bool isComputerEndInstantiate { get; private set; } = false;
+    // Properties 
+    public bool IsComputerEndInstantiate { get; private set; } = false;
+    public bool IsPlayerCanInstantiate { get; set; } = true;
+   
 
     private void Start()
     {
@@ -41,7 +43,7 @@ public class ObjectInstantiate : MonoBehaviour
     private void Update()
     {
         // Mouse input
-        if (Input.GetButtonDown("Fire1") && Input.mousePosition.x < Screen.width / 2)
+        if (IsPlayerCanInstantiate && Input.GetButtonDown("Fire1") && Input.mousePosition.x < Screen.width / 2)
         {
             
             Vector3 mousePosition = Input.mousePosition;
@@ -99,7 +101,7 @@ public class ObjectInstantiate : MonoBehaviour
         }
         if (index == computerPrefabList.Count)
         {
-            isComputerEndInstantiate = true;
+            IsComputerEndInstantiate = true;
             return;
         }
         GameObject prefab = computerPrefabList[index];

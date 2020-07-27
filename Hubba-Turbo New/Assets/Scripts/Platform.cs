@@ -42,7 +42,7 @@ public class Platform : MonoBehaviour
             
         }
         // Comparing
-        if (objectInstantiate.isComputerEndInstantiate)
+        if (objectInstantiate.IsComputerEndInstantiate)
         {
             weightComparing.Compare();
         }
