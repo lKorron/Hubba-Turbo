@@ -74,7 +74,7 @@ public class WeightComparing : MonoBehaviour
         }
     }
 
-    // Checks is mouse and elephant are together on board
+    // Checks are mouse and elephant together on board
     public bool IsMouseAndElephant()
     {
         bool isMouse = false;
