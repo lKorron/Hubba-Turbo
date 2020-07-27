@@ -8,5 +8,6 @@ public class Win : MonoBehaviour
     {
         gameObject.SetActive(true);
         // freezing time
+        Time.timeScale = 0f;
     }
 }
