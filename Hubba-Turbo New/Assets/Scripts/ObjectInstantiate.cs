@@ -97,7 +97,7 @@ public class ObjectInstantiate : MonoBehaviour
         if (computerPrefabList.Count != computerPositionList.Count || computerPrefabList.Count <= 0 || computerPositionList.Count <= 0)
         {
             print("Error: Add values to both lists");
-            return;
+            
         }
         if (index == computerPrefabList.Count)
         {
