@@ -1781,7 +1781,7 @@ PrefabInstance:
     - target: {fileID: 984294016896108570, guid: 717b927dbd2c5463caae8b50a84d78f8,
         type: 3}
       propertyPath: m_TagString
-      value: Computer
+      value: PlayerStart
       objectReference: {fileID: 0}
     - target: {fileID: 984294016896108574, guid: 717b927dbd2c5463caae8b50a84d78f8,
         type: 3}
@@ -1875,12 +1875,12 @@ PrefabInstance:
     - target: {fileID: 1035641467675090138, guid: 4c4684c21cb3d4ed3b77f873b08a768d,
         type: 3}
       propertyPath: computerPositionList.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1035641467675090138, guid: 4c4684c21cb3d4ed3b77f873b08a768d,
         type: 3}
       propertyPath: computerPrefabList.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1035641467675090138, guid: 4c4684c21cb3d4ed3b77f873b08a768d,
         type: 3}
