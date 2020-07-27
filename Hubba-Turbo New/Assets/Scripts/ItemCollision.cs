@@ -51,7 +51,7 @@ public class ItemCollision : MonoBehaviour
                 break;
         }
         // Comparing
-        if (objectInstantiate.isComputerEndInstantiate)
+        if (objectInstantiate.IsComputerEndInstantiate)
         {
             weightComparing.Compare();
         }
