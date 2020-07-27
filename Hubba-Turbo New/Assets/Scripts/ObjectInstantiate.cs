@@ -94,9 +94,10 @@ public class ObjectInstantiate : MonoBehaviour
     // Computer smart isntantiate
     public void ComputerInstantiate()
     {
-        if (computerPrefabList.Count != computerPositionList.Count || computerPrefabList.Count <= 0 || computerPositionList.Count <= 0)
+        if (computerPrefabList.Count != computerPositionList.Count)
         {
             print("Error: Add values to both lists");
+            return;
             
         }
         if (index == computerPrefabList.Count)
