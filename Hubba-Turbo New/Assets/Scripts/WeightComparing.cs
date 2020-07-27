@@ -22,7 +22,7 @@ public class WeightComparing : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            SetBalance();
+            print(IsMouseAndElephant());
         }
     }
 
@@ -72,6 +72,53 @@ public class WeightComparing : MonoBehaviour
             SetBalance();
             playerWin.Invoke();
         }
+    }
+
+    // Checks is mouse and elephant are together on board
+    public bool IsMouseAndElephant()
+    {
+        bool isMouse = false;
+        bool isElephant = false;
+
+        foreach (var item in playerItems)
+        {
+            if (item != null)
+            {
+                switch (item.gameObject.name)
+                {
+                    case "Mouse":
+                        isMouse = true;
+                        break;
+                    case "Elephant":
+                        isElephant = true;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            
+        }
+
+        foreach (var item in computerItems)
+        {
+            if (item != null)
+            {
+                switch (item.gameObject.name)
+                {
+                    case "Mouse":
+                        isMouse = true;
+                        break;
+                    case "Elephant":
+                        isElephant = true;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            
+        }
+
+        return isMouse && isElephant;
     }
 
     // May be 
