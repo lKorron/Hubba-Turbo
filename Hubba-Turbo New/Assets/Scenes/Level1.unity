@@ -1002,21 +1002,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2239413528807572088}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1390252137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1390252136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 221065b6d0f5c495bad4aff4bc975021, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 1
-  animationName: SheepIdle
---- !u!95 &1390252143
+--- !u!95 &1390252138
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -1027,7 +1013,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: ca65fe39cb0b64c968c87480a40fc265, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
