@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 2239413528635541102}
   - component: {fileID: 2239413528635541101}
   - component: {fileID: 2239413528635541103}
+  - component: {fileID: 1390252138}
+  - component: {fileID: 1390252137}
   m_Layer: 0
   m_Name: Sheep
   m_TagString: Computer
@@ -145,21 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsComputerActive: 1
-  OnPlayerCollisionWithOther:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1035641467675090138, guid: 4c4684c21cb3d4ed3b77f873b08a768d,
-          type: 3}
-        m_MethodName: ComputerInstantiate
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   weightComparing: {fileID: 0}
 --- !u!114 &2239413528635541101
 MonoBehaviour:
@@ -190,3 +177,38 @@ CircleCollider2D:
   m_Offset: {x: -0.07, y: 0}
   serializedVersion: 2
   m_Radius: 0.74
+--- !u!95 &1390252138
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2239413528635541096}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ca65fe39cb0b64c968c87480a40fc265, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1390252137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2239413528635541096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 221065b6d0f5c495bad4aff4bc975021, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 7
+  m_animationClip: {fileID: 7400000, guid: 8ca98a8e3c5924fad835c302612c4b15, type: 2}
+  isPlaying: 1
+  isRandomFactorActive: 1
