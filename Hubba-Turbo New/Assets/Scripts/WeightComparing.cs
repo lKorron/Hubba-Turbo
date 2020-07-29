@@ -89,7 +89,13 @@ public class WeightComparing : MonoBehaviour
                     case "Mouse":
                         isMouse = true;
                         break;
+                    case "Mouse(Clone)":
+                        isMouse = true;
+                        break;
                     case "Elephant":
+                        isElephant = true;
+                        break;
+                    case "Elephant(Clone)":
                         isElephant = true;
                         break;
                     default:

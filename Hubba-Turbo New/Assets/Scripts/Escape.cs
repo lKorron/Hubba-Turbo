@@ -7,19 +7,22 @@ public class Escape : MonoBehaviour
     [Range(0.0f, 1.0f)]
     [SerializeField] private float flyingForce;
 
+    private WeightComparing weightComparing;
+
     private Rigidbody2D m_rigidbody;
     private void Start()
     {
         m_rigidbody = GetComponent<Rigidbody2D>();
+        weightComparing = GameObject.FindGameObjectWithTag("Platform").GetComponent<WeightComparing>();
     }
 
-    private void Update()
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (weightComparing.IsMouseAndElephant())
         {
             StartEscape();
         }
-           
     }
 
     private void StartEscape()
