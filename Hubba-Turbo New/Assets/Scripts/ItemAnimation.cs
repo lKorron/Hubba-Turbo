@@ -11,12 +11,14 @@ public class ItemAnimation : MonoBehaviour
     private Animator animator;
     private float animationTime = 2.6f; // Time while animation playing
     private string animationName;
+    private float randomTime = 0f;
     
-    void Start()
+    private void Start()
     {
         animator = GetComponent<Animator>();
         // Getting name from clip
         animationName = m_animationClip.name;
+
         StartCoroutine(DelayAnimation());
     }
 
@@ -25,8 +27,10 @@ public class ItemAnimation : MonoBehaviour
     {
         while (isPlaying)
         {
+            // Random factor
+            randomTime = Random.Range(0, 10);
             // Our delay
-            yield return new WaitForSeconds(delay);
+            yield return new WaitForSeconds(delay + randomTime);
             // Start animation
             animator.Play(animationName);
             // Delay = animationTime
