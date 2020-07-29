@@ -7,6 +7,7 @@ public class ItemAnimation : MonoBehaviour
     [SerializeField] private float delay; // Delay between animations
     [SerializeField] private AnimationClip m_animationClip; // Clip finds name of animation
     [SerializeField] private bool isPlaying = true; // Play or not
+    [SerializeField] private bool isRandomFactorActive = true; // Active or not random factor
 
     private Animator animator;
     private float animationTime = 2.6f; // Time while animation playing
@@ -28,7 +29,10 @@ public class ItemAnimation : MonoBehaviour
         while (isPlaying)
         {
             // Random factor
-            randomTime = Random.Range(0, 10);
+            if (isRandomFactorActive)
+            {
+                randomTime = Random.Range(0, 10);
+            } 
             // Our delay
             yield return new WaitForSeconds(delay + randomTime);
             // Start animation
