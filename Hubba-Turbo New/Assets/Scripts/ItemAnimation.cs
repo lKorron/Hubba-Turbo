@@ -10,7 +10,7 @@ public class ItemAnimation : MonoBehaviour
     [SerializeField] private bool isRandomFactorActive = true; // Active or not random factor
 
     private Animator animator;
-    private float animationTime = 2.6f; // Time while animation playing
+    private float animationTime = 2.4f; // Time while animation playing
     private string animationName;
     private float randomTime = 0f;
     
