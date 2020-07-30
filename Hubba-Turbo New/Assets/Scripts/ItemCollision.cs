@@ -6,8 +6,8 @@ using UnityEngine.Events;
 public class ItemCollision : MonoBehaviour
 {
     [SerializeField] private bool IsComputerActive = true; // Field determines will computer get turn or not
-    //[SerializeField] private UnityEvent OnPlayerCollisionWithOther;
-    [SerializeField] private WeightComparing weightComparing;
+    [SerializeField] private UnityEvent OnCollision; // Event for other actions
+    private WeightComparing weightComparing;
     private ObjectInstantiate objectInstantiate;
 
     private void Start()
@@ -48,8 +48,8 @@ public class ItemCollision : MonoBehaviour
         {
             weightComparing.Compare();
         }
-        
-
+        // Other actions
+        OnCollision.Invoke();
     }
     // Setting computer activity from outside
     public void SetComputerActive(bool isActive)
