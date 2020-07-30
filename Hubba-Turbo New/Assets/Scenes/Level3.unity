@@ -2422,7 +2422,7 @@ PrefabInstance:
     - target: {fileID: 3863049761774508594, guid: 6ad718be78182475b90194e23dd4c39b,
         type: 3}
       propertyPath: OnCollision.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3863049761774508594, guid: 6ad718be78182475b90194e23dd4c39b,
         type: 3}
