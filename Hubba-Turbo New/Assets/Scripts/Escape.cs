@@ -11,7 +11,7 @@ public class Escape : MonoBehaviour
     private Rigidbody2D m_rigidbody;
     private Animator animator;
     private float animationTime = 2f;
-    private float delayAfterAnimation = 2f;
+    private float delayAfterAnimation = 4f;
 
     private void Start()
     {
@@ -24,7 +24,7 @@ public class Escape : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //CheckAndEscape();
+        CheckAndEscape();
     }
 
     public void CheckAndEscape()

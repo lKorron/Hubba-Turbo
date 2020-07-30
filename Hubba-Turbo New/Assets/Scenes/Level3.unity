@@ -2421,6 +2421,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3863049761774508594, guid: 6ad718be78182475b90194e23dd4c39b,
         type: 3}
+      propertyPath: OnCollision.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863049761774508594, guid: 6ad718be78182475b90194e23dd4c39b,
+        type: 3}
       propertyPath: OnCollision.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 519420030}
@@ -2439,5 +2444,30 @@ PrefabInstance:
       propertyPath: objectInstantiate
       value: 
       objectReference: {fileID: 519420030}
+    - target: {fileID: 3863049761774508594, guid: 6ad718be78182475b90194e23dd4c39b,
+        type: 3}
+      propertyPath: OnCollision.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863049761774508594, guid: 6ad718be78182475b90194e23dd4c39b,
+        type: 3}
+      propertyPath: OnCollision.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863049761774508594, guid: 6ad718be78182475b90194e23dd4c39b,
+        type: 3}
+      propertyPath: OnCollision.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1041868883}
+    - target: {fileID: 3863049761774508594, guid: 6ad718be78182475b90194e23dd4c39b,
+        type: 3}
+      propertyPath: OnCollision.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CheckAndEscape
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863049761774508594, guid: 6ad718be78182475b90194e23dd4c39b,
+        type: 3}
+      propertyPath: OnCollision.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ad718be78182475b90194e23dd4c39b, type: 3}
