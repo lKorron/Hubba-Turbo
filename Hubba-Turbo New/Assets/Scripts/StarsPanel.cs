@@ -9,12 +9,31 @@ public class StarsPanel : MonoBehaviour
 
     private void Start()
     {
-        SetOneStar();
+        SetTwoStars();
     }
 
     private void SetOneStar()
     {
-        Star star = stars[0];
+        SetCurrentStar(0);
+    }
+
+    private void SetTwoStars()
+    {
+        SetOneStar();
+        SetCurrentStar(1);
+    }
+
+   
+    private void SetCurrentStar(int index)
+    {
+        Star star = stars[index];
+        foreach (var item in stars)
+        {
+            if (item.GetIndex() == index)
+            {
+                star = item;
+            }
+        }
         star.SetStar();
     }
 }
