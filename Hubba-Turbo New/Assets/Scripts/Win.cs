@@ -9,7 +9,7 @@ public class Win : MonoBehaviour
 
     private void Awake()
     {
-        objectInstantiate = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ObjectInstantiate>();
+        objectInstantiate = FindObjectOfType<ObjectInstantiate>();
     }
 
     public void PlayerWin()
