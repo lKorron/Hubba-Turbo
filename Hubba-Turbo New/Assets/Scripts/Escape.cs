@@ -11,16 +11,23 @@ public class Escape : MonoBehaviour
     private Rigidbody2D m_rigidbody;
     private Animator animator;
     private float animationTime = 2f;
+    private float delayAfterAnimation = 4f;
 
     private void Start()
     {
         m_rigidbody = GetComponent<Rigidbody2D>();
-        weightComparing = GameObject.FindGameObjectWithTag("Platform").GetComponent<WeightComparing>();
+        weightComparing = FindObjectOfType<WeightComparing>();
         animator = GetComponent<Animator>();
+        
     }
 
 
     private void OnCollisionEnter2D(Collision2D collision)
+    {
+        CheckAndEscape();
+    }
+
+    public void CheckAndEscape()
     {
         if (weightComparing.IsMouseAndElephant())
         {
@@ -36,6 +43,7 @@ public class Escape : MonoBehaviour
         yield return new WaitForSeconds(animationTime);
         // Multiple for comfortable
         m_rigidbody.gravityScale = flyingForce * -1;
+        yield return new WaitForSeconds(delayAfterAnimation);
     }
 
     
