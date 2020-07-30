@@ -7,21 +7,21 @@ public class StarsPanel : MonoBehaviour
     
     [SerializeField] private List<Star> stars = new List<Star>();
 
-    private void SetOneStar()
+    public void SetOneStar()
     {
         SetCurrentStar(0, true);
         SetCurrentStar(1, false);
         SetCurrentStar(2, false);
     }
 
-    private void SetTwoStars()
+    public void SetTwoStars()
     {
         SetOneStar();
         SetCurrentStar(1, true);
         SetCurrentStar(2, false);
     }
 
-    private void SetThreeStars()
+    public void SetThreeStars()
     {
         SetTwoStars();
         SetCurrentStar(2, true);

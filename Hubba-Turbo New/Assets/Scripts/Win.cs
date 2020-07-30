@@ -6,10 +6,14 @@ public class Win : MonoBehaviour
 {
     [SerializeField] private float delay = 2f;
     private ObjectInstantiate objectInstantiate;
+    private StarsPanel starsPanel;
+    private Timer timer;
 
     private void Awake()
     {
         objectInstantiate = FindObjectOfType<ObjectInstantiate>();
+        starsPanel = FindObjectOfType<StarsPanel>();
+        timer = FindObjectOfType<Timer>();
     }
 
     public void PlayerWin()
@@ -18,6 +22,14 @@ public class Win : MonoBehaviour
         // Pause
         StartCoroutine(PauseCoroutine());
         objectInstantiate.IsPlayerCanInstantiate = false;
+
+        // Two stars processing
+        if (timer.IsTimerEnd == false)
+        {
+            starsPanel.SetTwoStars();
+        }
+        else starsPanel.SetOneStar();
+
         
     }
 
