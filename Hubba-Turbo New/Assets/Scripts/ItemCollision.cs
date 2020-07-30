@@ -12,8 +12,9 @@ public class ItemCollision : MonoBehaviour
 
     private void Start()
     {
-        weightComparing = GameObject.FindGameObjectWithTag("Platform").GetComponent<WeightComparing>();
-        objectInstantiate = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ObjectInstantiate>();
+        
+        weightComparing = FindObjectOfType<WeightComparing>();
+        objectInstantiate = FindObjectOfType<ObjectInstantiate>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
