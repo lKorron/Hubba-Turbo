@@ -9,12 +9,13 @@ public class Star : MonoBehaviour
     [SerializeField] private int index;
     private Image image;
     private Sprite starFill;
+    private Sprite starEmpty;
 
     private void Awake()
     {
         image = GetComponent<Image>();
         starFill = Resources.Load<Sprite>("Sprites/UI/Star");
-
+        starEmpty = image.sprite;
     }
 
     public int GetIndex()
@@ -27,4 +28,11 @@ public class Star : MonoBehaviour
         
         image.sprite = starFill;
     }
+
+    public void SetEmptyStar()
+    {
+        image.sprite = starEmpty;
+    }
+
+    
 }
