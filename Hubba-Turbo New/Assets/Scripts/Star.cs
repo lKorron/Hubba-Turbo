@@ -6,6 +6,7 @@ public class Star : MonoBehaviour
 {
     // Index for 
     [SerializeField] private int index;
+    private Sprite starFill;
 
     public int GetIndex()
     {
