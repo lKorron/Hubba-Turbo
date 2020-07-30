@@ -838,7 +838,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsComputerActive: 1
-  weightComparing: {fileID: 0}
+  OnCollision:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1196637102
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,7 +1222,7 @@ PrefabInstance:
     - target: {fileID: 1461666099019095641, guid: a5042dbef922b469284c2909999b3729,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1461666099019095646, guid: a5042dbef922b469284c2909999b3729,
         type: 3}
@@ -1285,7 +1287,7 @@ PrefabInstance:
     - target: {fileID: 1461666099019095646, guid: a5042dbef922b469284c2909999b3729,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 429.7
+      value: 393
       objectReference: {fileID: 0}
     - target: {fileID: 1461666099019095646, guid: a5042dbef922b469284c2909999b3729,
         type: 3}
@@ -1295,7 +1297,7 @@ PrefabInstance:
     - target: {fileID: 1461666099019095646, guid: a5042dbef922b469284c2909999b3729,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: -968.6
+      value: -895.1
       objectReference: {fileID: 0}
     - target: {fileID: 1461666099019095646, guid: a5042dbef922b469284c2909999b3729,
         type: 3}
