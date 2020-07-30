@@ -8,12 +8,14 @@ public class Win : MonoBehaviour
     private ObjectInstantiate objectInstantiate;
     private StarsPanel starsPanel;
     private Timer timer;
+    private Floor floor;
 
     private void Awake()
     {
         objectInstantiate = FindObjectOfType<ObjectInstantiate>();
         starsPanel = FindObjectOfType<StarsPanel>();
         timer = FindObjectOfType<Timer>();
+        floor = FindObjectOfType<Floor>();
     }
 
     public void PlayerWin()
@@ -24,9 +26,13 @@ public class Win : MonoBehaviour
         objectInstantiate.IsPlayerCanInstantiate = false;
 
         // Two stars processing
-        if (timer.IsTimerEnd == false)
+        if (timer.IsTimerEnd == false ^ floor.IsWasCollision == false)
         {
             starsPanel.SetTwoStars();
+        }
+        else if (timer.IsTimerEnd == false && floor.IsWasCollision == false)
+        {
+            starsPanel.SetThreeStars();
         }
         else starsPanel.SetOneStar();
 
