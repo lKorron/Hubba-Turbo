@@ -15,6 +15,6 @@ public class StarsPanel : MonoBehaviour
     private void SetOneStar()
     {
         Star star = stars[0];
-        print(star.GetIndex());
+        star.SetStar();
     }
 }
