@@ -18,14 +18,6 @@ public class ItemCollision : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        /*
-        if (collision.gameObject.tag == "Player")
-        {
-            collision.gameObject.tag = "Untagged";
-            OnPlayerCollisionWithOther.Invoke();
-        } */
-        //Item item = collision.gameObject?.GetComponent<Item>();
-
         switch (collision.gameObject.tag)
         {
             case "PlayerStart":
@@ -64,6 +56,7 @@ public class ItemCollision : MonoBehaviour
         IsComputerActive = isActive;
     }
 
+    // Adding item (collision) to instance array
     private void SetItem(Collision2D collision, Side side)
     {
         collision.gameObject.tag = "Untagged";

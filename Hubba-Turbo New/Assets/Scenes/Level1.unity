@@ -350,7 +350,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 3863049762119923306}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1165985587}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dcdbb0d31517647a888d3e4f21f51476, type: 3}
@@ -819,6 +819,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088935683}
   m_CullTransparentMesh: 0
+--- !u!1 &1165985587 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3863049761774508605, guid: 6ad718be78182475b90194e23dd4c39b,
+    type: 3}
+  m_PrefabInstance: {fileID: 3863049762119923306}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1165985588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165985587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b408173ff2db4a9b8741738d1f6e80a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsComputerActive: 1
+  weightComparing: {fileID: 0}
 --- !u!1 &1196637102
 GameObject:
   m_ObjectHideFlags: 0
@@ -1307,6 +1327,29 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1461666100152359236, guid: a5042dbef922b469284c2909999b3729,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461666100152359354, guid: a5042dbef922b469284c2909999b3729,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b95766e9589fd4f3fa6ec5ef0d9b3f4b,
+        type: 3}
+    - target: {fileID: 1461666100152359354, guid: a5042dbef922b469284c2909999b3729,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461666100350427392, guid: a5042dbef922b469284c2909999b3729,
+        type: 3}
+      propertyPath: m_Text
+      value: '
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 1461666100152359237, guid: a5042dbef922b469284c2909999b3729,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1336,29 +1379,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 1461666100152359236, guid: a5042dbef922b469284c2909999b3729,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 1461666100152359354, guid: a5042dbef922b469284c2909999b3729,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: b95766e9589fd4f3fa6ec5ef0d9b3f4b,
-        type: 3}
-    - target: {fileID: 1461666100152359354, guid: a5042dbef922b469284c2909999b3729,
-        type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1461666100350427392, guid: a5042dbef922b469284c2909999b3729,
-        type: 3}
-      propertyPath: m_Text
-      value: '
-
-'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5042dbef922b469284c2909999b3729, type: 3}
@@ -2453,7 +2473,8 @@ PrefabInstance:
       propertyPath: objectInstantiate
       value: 
       objectReference: {fileID: 519420030}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3863049761774508594, guid: 6ad718be78182475b90194e23dd4c39b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6ad718be78182475b90194e23dd4c39b, type: 3}
 --- !u!1001 &6466273333405096970
 PrefabInstance:
