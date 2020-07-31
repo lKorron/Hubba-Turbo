@@ -1,23 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
+using UnityEngine.UI;
 
-public class Level : MonoBehaviour, IComparable
+public class LevelButton : MonoBehaviour, IComparable
 {
-    [SerializeField] public Sprite levelSprite;
-    public int levelNumber;
+    public int levelNumber; // Id for sorting
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(transform.gameObject);
-    }
-    public void SetOneStar()
-    {
-
-    }
-
-    // For array sort
+    // For sorting
     public int CompareTo(object obj)
     {
         if (obj == null)
@@ -25,7 +16,7 @@ public class Level : MonoBehaviour, IComparable
             return 0;
         }
 
-        Level otherLevel = obj as Level;
+        LevelButton otherLevel = obj as LevelButton;
         if (otherLevel.levelNumber > levelNumber)
         {
             return -1;
@@ -36,5 +27,4 @@ public class Level : MonoBehaviour, IComparable
         }
         else return 0;
     }
-
 }

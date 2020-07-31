@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class DontDestroyOnLoad : MonoBehaviour
 {
-    [SerializeField] string _id;
+    [SerializeField] private string _id;
 
     public static DontDestroyOnLoad Get(string id)
     {
@@ -14,7 +14,7 @@ public class DontDestroyOnLoad : MonoBehaviour
         return instances.FirstOrDefault(i => i._id == id);
     }
 
-    void Awake()
+    private void Awake()
     {
         if (string.IsNullOrEmpty(_id))
         {

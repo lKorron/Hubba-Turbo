@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 50417299}
   - component: {fileID: 50417298}
   - component: {fileID: 50417297}
+  - component: {fileID: 50417300}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -255,6 +256,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 50417295}
   m_CullTransparentMesh: 0
+--- !u!114 &50417300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50417295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8de61ce91ae7f4ca4b1a325845c5001c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelNumber: 3
 --- !u!1 &170276747
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,6 +555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels: []
+  menuLevels: []
 --- !u!4 &745423830
 Transform:
   m_ObjectHideFlags: 0
@@ -567,6 +582,7 @@ GameObject:
   - component: {fileID: 993532908}
   - component: {fileID: 993532907}
   - component: {fileID: 993532906}
+  - component: {fileID: 993532909}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -687,6 +703,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993532904}
   m_CullTransparentMesh: 0
+--- !u!114 &993532909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993532904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8de61ce91ae7f4ca4b1a325845c5001c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelNumber: 2
 --- !u!1 &1130693538
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,6 +989,7 @@ GameObject:
   - component: {fileID: 1371713431}
   - component: {fileID: 1371713430}
   - component: {fileID: 1371713429}
+  - component: {fileID: 1371713432}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1080,6 +1110,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371713427}
   m_CullTransparentMesh: 0
+--- !u!114 &1371713432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371713427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8de61ce91ae7f4ca4b1a325845c5001c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelNumber: 1
 --- !u!850595691 &1591027970
 LightingSettings:
   m_ObjectHideFlags: 0
