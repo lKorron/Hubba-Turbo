@@ -1018,6 +1018,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1273904108}
   - component: {fileID: 1273904109}
+  - component: {fileID: 1273904110}
   m_Layer: 0
   m_Name: LevelInfo
   m_TagString: Untagged
@@ -1053,6 +1054,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelSprite: {fileID: 21300000, guid: de38f8ebc9e9241a1bfe8c57cff4f7a3, type: 3}
   levelNumber: 2
+--- !u!114 &1273904110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273904107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6a8e36f4940d4b3a9d26c9bec7d5a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 2
 --- !u!1 &1308929186
 GameObject:
   m_ObjectHideFlags: 0

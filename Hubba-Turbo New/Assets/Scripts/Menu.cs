@@ -21,4 +21,9 @@ public class Menu : MonoBehaviour
             print(item.levelNumber);
         }
     }
+
+    private void RemoveSameObjects()
+    {
+
+    }
 }

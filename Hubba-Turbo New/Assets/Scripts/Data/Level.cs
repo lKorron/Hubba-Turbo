@@ -17,6 +17,7 @@ public class Level : MonoBehaviour, IComparable
 
     }
 
+    // For array sort
     public int CompareTo(object obj)
     {
         if (obj == null)
@@ -35,4 +36,5 @@ public class Level : MonoBehaviour, IComparable
         }
         else return 0;
     }
+
 }
