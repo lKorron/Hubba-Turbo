@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,6 +15,10 @@ public class Menu : MonoBehaviour
 
     private void SetLevelImages()
     {
-        print(levels[0].levelNumber);
+        Array.Sort(levels);
+        foreach (var item in levels)
+        {
+            print(item.levelNumber);
+        }
     }
 }
