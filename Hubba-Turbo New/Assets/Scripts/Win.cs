@@ -7,6 +7,7 @@ public class Win : MonoBehaviour
     [SerializeField] private float delay = 2f;
     private ObjectInstantiate objectInstantiate;
     private StarsPanel starsPanel;
+    private Level levelInfo;
     private Timer timer;
     private Floor floor;
 
@@ -14,6 +15,7 @@ public class Win : MonoBehaviour
     {
         objectInstantiate = FindObjectOfType<ObjectInstantiate>();
         starsPanel = FindObjectOfType<StarsPanel>();
+        levelInfo = FindObjectOfType<Level>();
         timer = FindObjectOfType<Timer>();
         floor = FindObjectOfType<Floor>();
     }
@@ -29,12 +31,18 @@ public class Win : MonoBehaviour
         if (timer.IsTimerEnd == false ^ floor.IsWasCollision == false)
         {
             starsPanel.SetTwoStars();
+            levelInfo.SetTwoStar();
         }
         else if (timer.IsTimerEnd == false && floor.IsWasCollision == false)
         {
             starsPanel.SetThreeStars();
+            levelInfo.SetThreeStar();
         }
-        else starsPanel.SetOneStar();
+        else
+        {
+            starsPanel.SetOneStar();
+            levelInfo.SetOneStar();
+        }
 
         
     }

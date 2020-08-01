@@ -1052,7 +1052,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb6b3a2ce4541818f449c42686ac2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelSprite: {fileID: 21300000, guid: de38f8ebc9e9241a1bfe8c57cff4f7a3, type: 3}
+  oneStarSprite: {fileID: 21300000, guid: c5b6e13174c064d04a1428be7f1b1d29, type: 3}
+  twoStarSprite: {fileID: 21300000, guid: 917c9755b19704196b8f95940789ae74, type: 3}
+  threeStarSprite: {fileID: 21300000, guid: 310d249496f2845ccb74113b6b364bd5, type: 3}
   levelNumber: 2
 --- !u!114 &1273904110
 MonoBehaviour:

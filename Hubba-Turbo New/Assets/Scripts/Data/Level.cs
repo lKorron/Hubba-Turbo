@@ -5,16 +5,33 @@ using System;
 
 public class Level : MonoBehaviour, IComparable
 {
-    [SerializeField] public Sprite levelSprite;
+    // Fields for images
+    [SerializeField] public Sprite oneStarSprite;
+    [SerializeField] public Sprite twoStarSprite;
+    [SerializeField] public Sprite threeStarSprite;
+
     public int levelNumber;
+    // Property for changing sprites in menu
+    public Sprite LevelSprite { get; private set; }
 
     private void Awake()
     {
         DontDestroyOnLoad(transform.gameObject);
     }
+
     public void SetOneStar()
     {
+        LevelSprite = oneStarSprite;
+    }
 
+    public void SetTwoStar()
+    {
+        LevelSprite = twoStarSprite;
+    }
+
+    public void SetThreeStar()
+    {
+        LevelSprite = threeStarSprite;
     }
 
     // For array sort
