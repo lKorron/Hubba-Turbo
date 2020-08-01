@@ -1,15 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class Win : MonoBehaviour
 {
     [SerializeField] private float delay = 2f;
-    [SerializeField] private Level levelInfo;
+    private Level levelInfo;
+    private Level[] levels;
     private ObjectInstantiate objectInstantiate;
     private StarsPanel starsPanel;
     private Timer timer;
     private Floor floor;
+    private int levelNumber;
 
     private void Awake()
     {
@@ -17,6 +21,11 @@ public class Win : MonoBehaviour
         starsPanel = FindObjectOfType<StarsPanel>();
         timer = FindObjectOfType<Timer>();
         floor = FindObjectOfType<Floor>();
+        levelNumber = SceneManager.GetActiveScene().buildIndex;
+
+        levels = FindObjectsOfType<Level>();
+        levelInfo = FindLevelInfo();
+
     }
 
     public void PlayerWin()
@@ -44,6 +53,12 @@ public class Win : MonoBehaviour
         }
 
         
+    }
+
+    private Level FindLevelInfo()
+    {
+        var foundItem = levels.SingleOrDefault(item => item.levelNumber == levelNumber);
+        return foundItem;
     }
 
     private IEnumerator PauseCoroutine()
