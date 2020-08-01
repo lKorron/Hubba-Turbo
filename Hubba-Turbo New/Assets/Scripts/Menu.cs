@@ -32,11 +32,9 @@ public class Menu : MonoBehaviour
             // Find a menu button by number of level
             var menuLevel = menuLevels.SingleOrDefault(item => item.levelNumber == levelNumber);
             // Setting images
-            if (level.LevelSprite != null)
-            {
-                menuLevel.GetComponent<Image>().sprite = level.LevelSprite;
-            }
-            else continue;
+            
+            menuLevel.GetComponent<Image>().sprite = level.LevelSprite;
+            
         }
         
     }
