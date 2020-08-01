@@ -13,7 +13,7 @@ public class Win : MonoBehaviour
     private StarsPanel starsPanel;
     private Timer timer;
     private Floor floor;
-    private int levelNumber;
+    private int levelNumber; // Build index
 
     private void Awake()
     {
@@ -21,8 +21,9 @@ public class Win : MonoBehaviour
         starsPanel = FindObjectOfType<StarsPanel>();
         timer = FindObjectOfType<Timer>();
         floor = FindObjectOfType<Floor>();
-        levelNumber = SceneManager.GetActiveScene().buildIndex;
 
+        // Find current LevelIndo
+        levelNumber = SceneManager.GetActiveScene().buildIndex;
         levels = FindObjectsOfType<Level>();
         levelInfo = FindLevelInfo();
 
