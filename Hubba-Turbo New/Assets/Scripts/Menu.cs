@@ -7,10 +7,9 @@ using System.Linq;
 
 public class Menu : MonoBehaviour
 {
-    [SerializeField] private Level[] levels; // Don't destroy objets array
-    [SerializeField] private LevelButton[] menuLevels; // Menu buttons array
-    
-    
+     [SerializeField] private MenuData menuData;
+     private Level[] levels; // Don't destroy objets array
+     private LevelButton[] menuLevels; // Menu buttons array
 
     private void Start()
     {
@@ -42,6 +41,18 @@ public class Menu : MonoBehaviour
 
         }
         
+    }
+
+    private void LoadFromData()
+    {
+        Array.Sort(menuLevels);
+
+        int[] levelsWithStars = menuData.levels;
+
+        foreach (var menuLevel in menuLevels)
+        {
+
+        }
     }
 
     
