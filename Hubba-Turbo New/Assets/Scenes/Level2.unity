@@ -1495,6 +1495,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1461666099019095647, guid: a5042dbef922b469284c2909999b3729,
+        type: 3}
+      propertyPath: levelInfo
+      value: 
+      objectReference: {fileID: 733548562}
     - target: {fileID: 1461666100152359237, guid: a5042dbef922b469284c2909999b3729,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
