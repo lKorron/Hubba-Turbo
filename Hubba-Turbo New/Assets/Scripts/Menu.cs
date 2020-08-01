@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class Menu : MonoBehaviour
 {
@@ -24,10 +25,17 @@ public class Menu : MonoBehaviour
         Array.Sort(levels);
         Array.Sort(menuLevels);
 
-        for (int i = 0; i < levels.Length; i++)
+        foreach (var level in levels)
         {
-            
-            menuLevels[i].GetComponent<Image>().sprite = levels[i].levelSprite;
+            // Get nunber of level
+            int levelNumber = level.levelNumber;
+            // Find a menu button by number of level
+            var menuLevel = menuLevels.SingleOrDefault(item => item.levelNumber == levelNumber);
+
+            menuLevel.GetComponent<Image>().sprite = level.levelSprite;
+
+
+
         }
         
     }
