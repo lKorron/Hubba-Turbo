@@ -268,6 +268,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de61ce91ae7f4ca4b1a325845c5001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zeroStarSprite: {fileID: 21300000, guid: ae1e6ca26e26c492991563fa3ba065f4, type: 3}
+  oneStarSprite: {fileID: 21300000, guid: 96129d2c902c74341aa0de5d115fadf2, type: 3}
+  twoStarSprite: {fileID: 21300000, guid: ce09d42e8760e43a29cead60dc60342d, type: 3}
+  threeStarSprite: {fileID: 21300000, guid: dd015c761a0a44ef4a70f88b3996cc70, type: 3}
+  blockSprite: {fileID: 21300000, guid: ae1e6ca26e26c492991563fa3ba065f4, type: 3}
   levelNumber: 3
 --- !u!1 &170276747
 GameObject:
@@ -554,8 +559,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fd0b8942bb5f4d9491d256f3a365c32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels: []
-  menuLevels: []
+  menuData:
+    levels: 0200000003000000
+    openLevels: 0
 --- !u!4 &745423830
 Transform:
   m_ObjectHideFlags: 0
@@ -715,6 +721,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de61ce91ae7f4ca4b1a325845c5001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zeroStarSprite: {fileID: 21300000, guid: 6312d32cd670d41a5841f7f06a4a1bba, type: 3}
+  oneStarSprite: {fileID: 21300000, guid: c5b6e13174c064d04a1428be7f1b1d29, type: 3}
+  twoStarSprite: {fileID: 21300000, guid: 917c9755b19704196b8f95940789ae74, type: 3}
+  threeStarSprite: {fileID: 21300000, guid: 310d249496f2845ccb74113b6b364bd5, type: 3}
+  blockSprite: {fileID: 21300000, guid: 6312d32cd670d41a5841f7f06a4a1bba, type: 3}
   levelNumber: 2
 --- !u!1 &1130693538
 GameObject:
@@ -968,7 +979,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Level 3
+  m_Text: 
 --- !u!222 &1321362293
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1122,6 +1133,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de61ce91ae7f4ca4b1a325845c5001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zeroStarSprite: {fileID: 21300000, guid: b25e51a5628564c1893199a889348855, type: 3}
+  oneStarSprite: {fileID: 21300000, guid: 1317185bb444244619104ee922321bbb, type: 3}
+  twoStarSprite: {fileID: 21300000, guid: dcb3d4d9f226349ce834aa443727a1e9, type: 3}
+  threeStarSprite: {fileID: 21300000, guid: caf7bafcb273b458fa36f2944f92e446, type: 3}
+  blockSprite: {fileID: 21300000, guid: b25e51a5628564c1893199a889348855, type: 3}
   levelNumber: 1
 --- !u!850595691 &1591027970
 LightingSettings:
