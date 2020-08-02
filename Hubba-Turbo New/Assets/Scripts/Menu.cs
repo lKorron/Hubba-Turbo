@@ -7,6 +7,7 @@ using System.Linq;
 
 public class Menu : MonoBehaviour
 {
+    [SerializeField] private bool IsClearData;
     [SerializeField] public MenuData menuData;
     private Level level; // Don't destroy objets array
     private LevelButton[] menuLevels; // Menu buttons array
@@ -22,6 +23,8 @@ public class Menu : MonoBehaviour
         saveSystem = FindObjectOfType<SaveSystem>();
 
         
+        saveSystem.Load();
+        
 
         if (level != null)
         {
@@ -29,7 +32,8 @@ public class Menu : MonoBehaviour
         }
 
         saveSystem.Save();
-        saveSystem.Load();
+        
+
         LoadFromData();
     }
     /*
@@ -62,7 +66,7 @@ public class Menu : MonoBehaviour
         levels = menuData.levels.ToList();
         //levels.Insert(level.levelNumber - 1, level.CountOfStars);
         levels[level.levelNumber - 1] = level.CountOfStars;
-        if (level.CountOfStars > 0)
+        if (level.CountOfStars > 0 && levels[levels.Count - 1] != 0) // Last element != 0
         {
             levels.Add(0);
         }

@@ -34,4 +34,9 @@ public class SaveSystem : MonoBehaviour
         file.Close();
 
     }
+
+    public void DeleteFile()
+    {
+        File.Delete(Application.persistentDataPath + "/Levels.dat");
+    }
 }

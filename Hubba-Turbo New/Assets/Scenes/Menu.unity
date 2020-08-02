@@ -559,8 +559,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fd0b8942bb5f4d9491d256f3a365c32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsClearData: 0
   menuData:
-    levels: 0300000000000000
+    levels: 00000000
 --- !u!4 &745423830
 Transform:
   m_ObjectHideFlags: 0
