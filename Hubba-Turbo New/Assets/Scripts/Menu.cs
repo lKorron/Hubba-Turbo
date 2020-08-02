@@ -7,39 +7,76 @@ using System.Linq;
 
 public class Menu : MonoBehaviour
 {
-    [SerializeField] private Level[] levels; // Don't destroy objets array
-    [SerializeField] private LevelButton[] menuLevels; // Menu buttons array
-    
-    
+    [SerializeField] private bool IsClearData;
+    [SerializeField] public MenuData menuData;
+    private Level[] levels; // Don't destroy objets array
+    private LevelButton[] menuLevels; // Menu buttons array
+    private SaveSystem saveSystem;
+
+     
 
     private void Start()
     {
         levels = FindObjectsOfType<Level>();
         menuLevels = FindObjectsOfType<LevelButton>();
-        
-        SetLevelImages();
-    }
+        saveSystem = FindObjectOfType<SaveSystem>();
 
-    private void SetLevelImages()
-    {
-        Array.Sort(levels);
-        Array.Sort(menuLevels);
+        if (IsClearData)
+        {
+            saveSystem.DeleteFile();
+            saveSystem.Save();
+        }
+        else saveSystem.Load();
+        
 
         foreach (var level in levels)
         {
-            // Get nunber of level
-            int levelNumber = level.levelNumber;
-            // Find a menu button by number of level
-            var menuLevel = menuLevels.SingleOrDefault(item => item.levelNumber == levelNumber);
-            // Setting images
-
-            if (level.LevelSprite != null)
+            if (level != null)
             {
-                menuLevel.GetComponent<Image>().sprite = level.LevelSprite;
-
+                DataSetUp(level);
             }
-            else return;
+        }
 
+        if (IsClearData == false)
+        {
+            saveSystem.Save();
+        }
+        
+        
+
+        ShowLevel();
+    }
+    
+    private void DataSetUp(Level level)
+    {
+        List<int> levelsList = menuData.levels.ToList();
+        bool isLevelLast = level.levelNumber == menuLevels.Length;
+        bool canProcess = levelsList.Count < menuLevels.Length;
+        
+        levelsList[level.levelNumber - 1] = level.CountOfStars;
+        if (level.CountOfStars > 0 && levelsList[levelsList.Count - 1] != 0 && canProcess) // Last element != 0
+        {
+            levelsList.Add(0);
+        }
+        menuData.levels = levelsList.ToArray();
+        Destroy(level.gameObject);
+
+        
+    }
+
+    private void ShowLevel()
+    {
+        Array.Sort(menuLevels);
+
+        int[] levelsWithStars = menuData.levels;
+
+        for (int i = 0; i < levelsWithStars.Length; i++)
+        {
+            menuLevels[i].SetStars(levelsWithStars[i]);
+        }
+        for (int i = levelsWithStars.Length; i < menuLevels.Length; i++)
+        {
+            menuLevels[i].BlockLevel();
         }
         
     }

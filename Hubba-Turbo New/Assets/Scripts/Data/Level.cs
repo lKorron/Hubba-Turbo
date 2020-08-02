@@ -10,6 +10,14 @@ public class Level : MonoBehaviour, IComparable
     [SerializeField] public Sprite twoStarSprite;
     [SerializeField] public Sprite threeStarSprite;
 
+    [SerializeField] private int countOfStars;
+
+    public int CountOfStars
+    {
+        get { return countOfStars; }
+        private set { countOfStars = value; }
+    }
+
     public int levelNumber;
     // Property for changing sprites in menu
     public Sprite LevelSprite { get; private set; }
@@ -19,19 +27,23 @@ public class Level : MonoBehaviour, IComparable
         DontDestroyOnLoad(transform.gameObject);
     }
 
+
     public void SetOneStar()
     {
         LevelSprite = oneStarSprite;
+        countOfStars = 1;
     }
 
     public void SetTwoStar()
     {
         LevelSprite = twoStarSprite;
+        countOfStars = 2;
     }
 
     public void SetThreeStar()
     {
         LevelSprite = threeStarSprite;
+        countOfStars = 3;
     }
 
     // For array sort
