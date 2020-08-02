@@ -9,7 +9,7 @@ public class Menu : MonoBehaviour
 {
     [SerializeField] private bool IsClearData;
     [SerializeField] public MenuData menuData;
-    private Level level; // Don't destroy objets array
+    private Level[] levels; // Don't destroy objets array
     private LevelButton[] menuLevels; // Menu buttons array
     private List<int> levelsList;
     private SaveSystem saveSystem;
@@ -18,18 +18,21 @@ public class Menu : MonoBehaviour
 
     private void Start()
     {
-        level = FindObjectOfType<Level>();
+        levels = FindObjectsOfType<Level>();
         menuLevels = FindObjectsOfType<LevelButton>();
         saveSystem = FindObjectOfType<SaveSystem>();
 
         
         saveSystem.Load();
-        
 
-        if (level != null)
+        foreach (var level in levels)
         {
-            DataSetUp();
+            if (level != null)
+            {
+                DataSetUp(level);
+            }
         }
+        
 
         saveSystem.Save();
         
@@ -61,7 +64,7 @@ public class Menu : MonoBehaviour
         
     }
     */
-    private void DataSetUp()
+    private void DataSetUp(Level level)
     {
         levelsList = menuData.levels.ToList();
         //levels.Insert(level.levelNumber - 1, level.CountOfStars);
