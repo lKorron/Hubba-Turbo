@@ -21,16 +21,15 @@ public class Menu : MonoBehaviour
         menuLevels = FindObjectsOfType<LevelButton>();
         saveSystem = FindObjectOfType<SaveSystem>();
 
-        saveSystem.Load();
+        
+
         if (level != null)
         {
             DataSetUp();
-            saveSystem.Save();
-            
         }
-        
 
-        //SetLevelImages();
+        saveSystem.Save();
+        saveSystem.Load();
         LoadFromData();
     }
     /*
@@ -61,7 +60,8 @@ public class Menu : MonoBehaviour
     private void DataSetUp()
     {
         levels = menuData.levels.ToList();
-        levels.Insert(level.levelNumber - 1, level.CountOfStars);
+        //levels.Insert(level.levelNumber - 1, level.CountOfStars);
+        levels[level.levelNumber - 1] = level.CountOfStars;
         if (level.CountOfStars > 0)
         {
             levels.Add(0);
