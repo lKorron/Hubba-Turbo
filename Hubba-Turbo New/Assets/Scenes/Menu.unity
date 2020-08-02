@@ -560,7 +560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuData:
-    levels: 00000000
+    levels: 
 --- !u!4 &745423830
 Transform:
   m_ObjectHideFlags: 0

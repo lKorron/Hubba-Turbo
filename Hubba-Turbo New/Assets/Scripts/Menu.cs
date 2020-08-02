@@ -8,18 +8,28 @@ using System.Linq;
 public class Menu : MonoBehaviour
 {
      [SerializeField] private MenuData menuData;
-     private Level[] levels; // Don't destroy objets array
+     private Level level; // Don't destroy objets array
      private LevelButton[] menuLevels; // Menu buttons array
+
+    private List<int> levels;
 
     private void Start()
     {
-        levels = FindObjectsOfType<Level>();
+        level = FindObjectOfType<Level>();
         menuLevels = FindObjectsOfType<LevelButton>();
+
+
+
+        if (level != null)
+        {
+            DataSetUp();
+        }
+       
 
         //SetLevelImages();
         LoadFromData();
     }
-
+    /*
     private void SetLevelImages()
     {
         Array.Sort(levels);
@@ -41,6 +51,20 @@ public class Menu : MonoBehaviour
             else return;
 
         }
+        
+    }
+    */
+    private void DataSetUp()
+    {
+        levels = menuData.levels.ToList();
+        levels.Insert(level.levelNumber - 1, level.CountOfStars);
+        if (level.CountOfStars > 0)
+        {
+            levels.Add(0);
+        }
+        menuData.levels = levels.ToArray();
+        Destroy(level.gameObject);
+
         
     }
 

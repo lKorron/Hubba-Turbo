@@ -596,6 +596,7 @@ MonoBehaviour:
   oneStarSprite: {fileID: 21300000, guid: c5b6e13174c064d04a1428be7f1b1d29, type: 3}
   twoStarSprite: {fileID: 21300000, guid: 917c9755b19704196b8f95940789ae74, type: 3}
   threeStarSprite: {fileID: 21300000, guid: 310d249496f2845ccb74113b6b364bd5, type: 3}
+  countOfStars: 2
   levelNumber: 2
 --- !u!4 &733548563
 Transform:
