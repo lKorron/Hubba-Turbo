@@ -44,15 +44,17 @@ public class Menu : MonoBehaviour
         
         
 
-        LoadFromData();
+        ShowLevel();
     }
     
     private void DataSetUp(Level level)
     {
         List<int> levelsList = menuData.levels.ToList();
-        //levels.Insert(level.levelNumber - 1, level.CountOfStars);
+        bool isLevelLast = level.levelNumber == menuLevels.Length;
+        bool canProcess = levelsList.Count < menuLevels.Length;
+        
         levelsList[level.levelNumber - 1] = level.CountOfStars;
-        if (level.CountOfStars > 0 && levelsList[levelsList.Count - 1] != 0) // Last element != 0
+        if (level.CountOfStars > 0 && levelsList[levelsList.Count - 1] != 0 && canProcess) // Last element != 0
         {
             levelsList.Add(0);
         }
@@ -62,7 +64,7 @@ public class Menu : MonoBehaviour
         
     }
 
-    private void LoadFromData()
+    private void ShowLevel()
     {
         Array.Sort(menuLevels);
 
