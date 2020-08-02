@@ -39,31 +39,7 @@ public class Menu : MonoBehaviour
 
         LoadFromData();
     }
-    /*
-    private void SetLevelImages()
-    {
-        Array.Sort(levels);
-        Array.Sort(menuLevels);
-
-        foreach (var level in levels)
-        {
-            // Get nunber of level
-            int levelNumber = level.levelNumber;
-            // Find a menu button by number of level
-            var menuLevel = menuLevels.SingleOrDefault(item => item.levelNumber == levelNumber);
-            // Setting images
-
-            if (level.LevelSprite != null)
-            {
-                menuLevel.GetComponent<Image>().sprite = level.LevelSprite;
-
-            }
-            else return;
-
-        }
-        
-    }
-    */
+    
     private void DataSetUp(Level level)
     {
         levelsList = menuData.levels.ToList();
