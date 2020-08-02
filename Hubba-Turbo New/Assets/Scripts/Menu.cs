@@ -7,24 +7,28 @@ using System.Linq;
 
 public class Menu : MonoBehaviour
 {
-     [SerializeField] private MenuData menuData;
-     private Level level; // Don't destroy objets array
-     private LevelButton[] menuLevels; // Menu buttons array
-
+    [SerializeField] public MenuData menuData;
+    private Level level; // Don't destroy objets array
+    private LevelButton[] menuLevels; // Menu buttons array
     private List<int> levels;
+    private SaveSystem saveSystem;
+
+     
 
     private void Start()
     {
         level = FindObjectOfType<Level>();
         menuLevels = FindObjectsOfType<LevelButton>();
+        saveSystem = FindObjectOfType<SaveSystem>();
 
-
-
+        saveSystem.Load();
         if (level != null)
         {
             DataSetUp();
+            saveSystem.Save();
+            
         }
-       
+        
 
         //SetLevelImages();
         LoadFromData();
