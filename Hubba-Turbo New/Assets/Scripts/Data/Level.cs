@@ -31,16 +31,19 @@ public class Level : MonoBehaviour, IComparable
     public void SetOneStar()
     {
         LevelSprite = oneStarSprite;
+        countOfStars = 1;
     }
 
     public void SetTwoStar()
     {
         LevelSprite = twoStarSprite;
+        countOfStars = 2;
     }
 
     public void SetThreeStar()
     {
         LevelSprite = threeStarSprite;
+        countOfStars = 3;
     }
 
     // For array sort
