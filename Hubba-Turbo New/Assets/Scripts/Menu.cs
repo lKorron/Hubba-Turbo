@@ -11,7 +11,7 @@ public class Menu : MonoBehaviour
     [SerializeField] public MenuData menuData;
     private Level level; // Don't destroy objets array
     private LevelButton[] menuLevels; // Menu buttons array
-    private List<int> levels;
+    private List<int> levelsList;
     private SaveSystem saveSystem;
 
      
@@ -63,14 +63,14 @@ public class Menu : MonoBehaviour
     */
     private void DataSetUp()
     {
-        levels = menuData.levels.ToList();
+        levelsList = menuData.levels.ToList();
         //levels.Insert(level.levelNumber - 1, level.CountOfStars);
-        levels[level.levelNumber - 1] = level.CountOfStars;
-        if (level.CountOfStars > 0 && levels[levels.Count - 1] != 0) // Last element != 0
+        levelsList[level.levelNumber - 1] = level.CountOfStars;
+        if (level.CountOfStars > 0 && levelsList[levelsList.Count - 1] != 0) // Last element != 0
         {
-            levels.Add(0);
+            levelsList.Add(0);
         }
-        menuData.levels = levels.ToArray();
+        menuData.levels = levelsList.ToArray();
         Destroy(level.gameObject);
 
         
