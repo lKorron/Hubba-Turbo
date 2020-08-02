@@ -15,8 +15,9 @@ public class Menu : MonoBehaviour
     {
         levels = FindObjectsOfType<Level>();
         menuLevels = FindObjectsOfType<LevelButton>();
-        
-        SetLevelImages();
+
+        //SetLevelImages();
+        LoadFromData();
     }
 
     private void SetLevelImages()
@@ -49,10 +50,15 @@ public class Menu : MonoBehaviour
 
         int[] levelsWithStars = menuData.levels;
 
-        foreach (var menuLevel in menuLevels)
+        for (int i = 0; i < levelsWithStars.Length; i++)
         {
-
+            menuLevels[i].SetStars(levelsWithStars[i]);
         }
+        for (int i = levelsWithStars.Length; i < menuLevels.Length; i++)
+        {
+            menuLevels[i].BlockLevel();
+        }
+        
     }
 
     

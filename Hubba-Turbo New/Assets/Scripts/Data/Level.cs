@@ -19,6 +19,7 @@ public class Level : MonoBehaviour, IComparable
         DontDestroyOnLoad(transform.gameObject);
     }
 
+
     public void SetOneStar()
     {
         LevelSprite = oneStarSprite;
