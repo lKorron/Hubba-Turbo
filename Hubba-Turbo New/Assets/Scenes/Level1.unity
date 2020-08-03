@@ -1939,6 +1939,7 @@ GameObject:
   - component: {fileID: 2005171080}
   - component: {fileID: 2005171079}
   - component: {fileID: 2005171078}
+  - component: {fileID: 2005171081}
   m_Layer: 5
   m_Name: MouseButton
   m_TagString: Untagged
@@ -2060,6 +2061,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2005171076}
   m_CullTransparentMesh: 0
+--- !u!114 &2005171081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005171076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3b5cb581d082429bb3a59ce40e1d4f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSprite: {fileID: 21300000, guid: c2cdffb86d40e48988c50cfe332b4cfc, type: 3}
 --- !u!850595691 &2114648955
 LightingSettings:
   m_ObjectHideFlags: 0
