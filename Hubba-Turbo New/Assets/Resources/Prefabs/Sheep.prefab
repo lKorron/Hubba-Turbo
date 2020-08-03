@@ -15,9 +15,8 @@ GameObject:
   - component: {fileID: 2239413528635541102}
   - component: {fileID: 2239413528635541101}
   - component: {fileID: 2239413528635541103}
-  - component: {fileID: 1390252137}
   - component: {fileID: 1390252138}
-  - component: {fileID: 8328664244356120339}
+  - component: {fileID: 1390252137}
   m_Layer: 0
   m_Name: Sheep
   m_TagString: Computer
@@ -53,6 +52,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -148,7 +149,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsComputerActive: 1
-  weightComparing: {fileID: 0}
+  OnCollision:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2239413528635541101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,22 +181,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.74
---- !u!114 &1390252137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2239413528635541096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 221065b6d0f5c495bad4aff4bc975021, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 7
-  m_animationClip: {fileID: 7400000, guid: 8ca98a8e3c5924fad835c302612c4b15, type: 2}
-  isPlaying: 1
-  isRandomFactorActive: 1
 --- !u!95 &1390252138
 Animator:
   serializedVersion: 3
@@ -213,7 +200,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8328664244356120339
+--- !u!114 &1390252137
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

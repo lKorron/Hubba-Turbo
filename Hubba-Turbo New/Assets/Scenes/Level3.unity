@@ -282,11 +282,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1676736881776497897, guid: c4fac233725a344239738322d6402271,
-        type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1676736881776497899, guid: c4fac233725a344239738322d6402271,
         type: 3}
       propertyPath: m_Name
@@ -776,44 +771,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1041868874 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1676736881776497899, guid: c4fac233725a344239738322d6402271,
+--- !u!114 &1041868883 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1041868883, guid: c4fac233725a344239738322d6402271,
     type: 3}
   m_PrefabInstance: {fileID: 171133489}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1041868875
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1041868874}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e698fc4c3c6eb47c3b8447bfb8ee3d50, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1041868883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1041868874}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 671aaf880bf94439492c808a23609984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flyingForce: 0.247
 --- !u!1 &1060931173
 GameObject:
   m_ObjectHideFlags: 0
