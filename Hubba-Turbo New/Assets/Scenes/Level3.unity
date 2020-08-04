@@ -227,6 +227,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1041868883, guid: c4fac233725a344239738322d6402271, type: 3}
+      propertyPath: flyingForce
+      value: 0.187
+      objectReference: {fileID: 0}
     - target: {fileID: 1676736881776497896, guid: c4fac233725a344239738322d6402271,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1570,9 +1574,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 519420030}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: ObjectInstantiate, Assembly-CSharp
         m_MethodName: SetSheep
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1799,9 +1803,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 519420030}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: ObjectInstantiate, Assembly-CSharp
         m_MethodName: SetMouse
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
