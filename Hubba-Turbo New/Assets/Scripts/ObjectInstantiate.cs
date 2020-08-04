@@ -16,6 +16,10 @@ public class ObjectInstantiate : MonoBehaviour
     // Properties 
     public bool IsComputerEndInstantiate { get; private set; } = false;
     public bool IsPlayerCanInstantiate { get; set; } = true;
+
+    public Items StartItemForInstantiate {
+        get { return startItemForInstantiate; }
+    }
    
 
     private void Start()
@@ -116,6 +120,8 @@ public class ObjectInstantiate : MonoBehaviour
         
         index++;
     }
+
+    
 
 
 }
