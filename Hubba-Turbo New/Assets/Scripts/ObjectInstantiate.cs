@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ObjectInstantiate : MonoBehaviour
 {
@@ -30,10 +31,10 @@ public class ObjectInstantiate : MonoBehaviour
                 SetRedColour();
                 break;
             case Items.sheep:
-                SetSheep();
+                SetSheep(true);
                 break;
             case Items.mouse:
-                SetMouse();
+                SetMouse(true);
                 break;
             default:
                 break;
@@ -60,6 +61,7 @@ public class ObjectInstantiate : MonoBehaviour
 
         
     }
+ 
     // Change prefab (red)
     public void SetRedColour()
     {
@@ -73,12 +75,12 @@ public class ObjectInstantiate : MonoBehaviour
         
     }
 
-    public void SetSheep()
+    public void SetSheep(bool changeValue)
     {
         playerPrefab = (GameObject)Resources.Load("Prefabs/Sheep", typeof(GameObject));
     }
 
-    public void SetMouse()
+    public void SetMouse(bool changeValue)
     {
         playerPrefab = (GameObject)Resources.Load("Prefabs/Mouse", typeof(GameObject));
     }
