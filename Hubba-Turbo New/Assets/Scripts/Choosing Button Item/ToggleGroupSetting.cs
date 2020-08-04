@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ToggleGroupSetting : MonoBehaviour
 {
     private ToggleGroup toggleGroup;
-    private Toggle[] toggles;
+    private ToggleItem[] toggleItems;
     private ObjectInstantiate objectInstantiate;
     
     private void Start()
@@ -21,13 +21,14 @@ public class ToggleGroupSetting : MonoBehaviour
     {
         Items currentItem = objectInstantiate.StartItemForInstantiate;
 
-        toggles = toggleGroup.GetComponentsInChildren<Toggle>();
+        toggleItems = toggleGroup.GetComponentsInChildren<ToggleItem>();
 
-        toggles[1].isOn = true;
-
-        foreach (var toggle in toggles)
+        foreach (var item in toggleItems)
         {
-            print(toggle);
+            if (currentItem == item.Character)
+            {
+                item.SetOn();
+            }
         }
     }
 
