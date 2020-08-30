@@ -5,64 +5,31 @@ using UnityEngine.Events;
 
 public class Platform : MonoBehaviour
 {
-    [SerializeField] private bool IsComputerActive = true; // Field determines will computer get turn or not
-    [SerializeField] private UnityEvent OnCollision; // Event for computer instantiate
-    [SerializeField] private ObjectInstantiate objectInstantiate; // Instance for check computer activity
-    private WeightComparing weightComparing; // Instance for comparing
-    
+    private PhysicsMaterial2D lowFrictionMaterial;
+    private Sprite slipperyPlatformSprite;
+
+    public bool IsPlatformSlippery { get; private set; }
 
     private void Start()
     {
-        weightComparing = GetComponent<WeightComparing>();
+        lowFrictionMaterial = Resources.Load<PhysicsMaterial2D>("Materials/LowFriction");
+        slipperyPlatformSprite = Resources.Load<Sprite>("Sprites/Platforms/PlatformSlippery");
     }
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void SetPlatformSlippery()
     {
-       
-        // Processing collision with tag
-        switch (collision.gameObject.tag)
-        { 
-            case "PlayerStart":
-                SetItem(collision, Side.Player);
-                break;
-            case "Player":
-                SetItem(collision, Side.Player);
-                if (IsComputerActive)
-                {
-                    OnCollision.Invoke(); // Computer turn
-                }
-                else weightComparing.Compare();
-                
-                break;
-            case "Computer":
-                SetItem(collision, Side.Computer);
-                weightComparing.Compare();
-                break;
-            
-        }
-        // Comparing
-        if (objectInstantiate.IsComputerEndInstantiate)
-        {
-            weightComparing.Compare();
-        }
+        IsPlatformSlippery = true;
+
+        // Change friction
+        BoxCollider2D collisionBoxCollider = GetComponent<BoxCollider2D>();
+        collisionBoxCollider.sharedMaterial = lowFrictionMaterial;
+
+        // Change sprite
+        SpriteRenderer collisionSpriteRenderer = GetComponent<SpriteRenderer>();
+        collisionSpriteRenderer.sprite = slipperyPlatformSprite;
     }
 
-    // Adding item (collision) to instance array
-    private void SetItem(Collision2D collision, Side side)
-    {
-        collision.gameObject.tag = "Untagged";
-     
-        Item item = collision.gameObject.GetComponent<Item>();
-        if (item != null)
-        {
-            weightComparing.AddItem(item, side);
-            
-        }
-        else print("item is null");
-    }
 
-    
 
-    
+
 }

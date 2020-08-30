@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1320617239242970303}
   - component: {fileID: 1320617239242970296}
   - component: {fileID: 1320617239242970299}
+  - component: {fileID: 572664923}
   m_Layer: 0
   m_Name: Octapus
   m_TagString: PlayerStart
@@ -49,6 +50,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -144,7 +147,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsComputerActive: 1
-  weightComparing: {fileID: 0}
+  OnCollision:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1320617239242970299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,3 +163,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weight: 0
+--- !u!114 &572664923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320617239242970302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73aa6336671804eb19ed4c8adc0d86a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
