@@ -764,25 +764,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 556891191}
   m_CullTransparentMesh: 0
---- !u!1 &572664922 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1320617239242970302, guid: b07716afb2b494f1e8e2376593f0a479,
-    type: 3}
-  m_PrefabInstance: {fileID: 2002027864}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &572664923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 572664922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73aa6336671804eb19ed4c8adc0d86a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lowFrictionMaterial: {fileID: 6200000, guid: 915122a99dc8a49a884ded00b352f10d, type: 2}
 --- !u!1 &733548561
 GameObject:
   m_ObjectHideFlags: 0
@@ -2310,6 +2291,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Octapus
       objectReference: {fileID: 0}
+    - target: {fileID: 1320617239242970302, guid: b07716afb2b494f1e8e2376593f0a479,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b07716afb2b494f1e8e2376593f0a479, type: 3}
 --- !u!1 &2005171076
@@ -2953,6 +2939,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3863049761774508593, guid: 6ad718be78182475b90194e23dd4c39b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 323cebe042f5c4e07b160fd184674013,
+        type: 3}
     - target: {fileID: 3863049761774508594, guid: 6ad718be78182475b90194e23dd4c39b,
         type: 3}
       propertyPath: OnCollision.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2977,7 +2969,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: c6f43b7d6340c47309a52c249d38cc1d, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 3863049761774508595, guid: 6ad718be78182475b90194e23dd4c39b,
         type: 3}
       propertyPath: m_Simulated
