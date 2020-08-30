@@ -782,6 +782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73aa6336671804eb19ed4c8adc0d86a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lowFrictionMaterial: {fileID: 6200000, guid: 915122a99dc8a49a884ded00b352f10d, type: 2}
 --- !u!1 &733548561
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,6 +1548,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Elephant
       objectReference: {fileID: 0}
+    - target: {fileID: 1676736881776497899, guid: c4fac233725a344239738322d6402271,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4fac233725a344239738322d6402271, type: 3}
 --- !u!1 &1414531692
@@ -2247,7 +2253,7 @@ PrefabInstance:
     - target: {fileID: 1320617239242970301, guid: b07716afb2b494f1e8e2376593f0a479,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.2734466
+      value: 2.71
       objectReference: {fileID: 0}
     - target: {fileID: 1320617239242970301, guid: b07716afb2b494f1e8e2376593f0a479,
         type: 3}
@@ -2972,6 +2978,11 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: c6f43b7d6340c47309a52c249d38cc1d, type: 2}
+    - target: {fileID: 3863049761774508595, guid: 6ad718be78182475b90194e23dd4c39b,
+        type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3863049761774508598, guid: 6ad718be78182475b90194e23dd4c39b,
         type: 3}
       propertyPath: m_LocalPosition.x
