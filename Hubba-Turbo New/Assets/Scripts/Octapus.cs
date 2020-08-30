@@ -11,8 +11,8 @@ public class Octapus : MonoBehaviour
     {
         if (collision.gameObject.tag == "Platform")
         {
-            Rigidbody2D collisionRigidBody = collision.gameObject.GetComponent<Rigidbody2D>();
-            //collisionRigidBody.sharedMaterial = lowFrictionMaterial;
+            BoxCollider2D collisionBoxCollider = collision.gameObject.GetComponent<BoxCollider2D>();
+            collisionBoxCollider.sharedMaterial = lowFrictionMaterial;
         }
     }
 
