@@ -319,6 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitingTime: 6
+  MainMenuIndex: 1
 --- !u!1 &1137847253
 GameObject:
   m_ObjectHideFlags: 0
