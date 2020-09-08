@@ -485,7 +485,7 @@ GameObject:
   - component: {fileID: 1681710739}
   - component: {fileID: 1681710738}
   m_Layer: 5
-  m_Name: Button
+  m_Name: PlayButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -500,16 +500,16 @@ RectTransform:
   m_GameObject: {fileID: 1681710736}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.32, y: 1, z: 1}
   m_Children:
   - {fileID: 1689989243}
   m_Father: {fileID: 2078925566}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.411, y: 0.29000002}
-  m_AnchorMax: {x: 0.59000003, y: 0.58129966}
-  m_AnchoredPosition: {x: -12, y: 2}
-  m_SizeDelta: {x: 60.19568, y: 14.480774}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -2.7751007, y: -0.10500336}
+  m_SizeDelta: {x: 208.62473, y: 177.18257}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1681710738
 MonoBehaviour:
@@ -586,7 +586,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 72274fc46ae9d4554ae74c3db965a4bc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7cf4f657681334fff9e2e743aa17cb2b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
