@@ -11,6 +11,11 @@ public class LevelChoice : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
     }
+    public void LoadStartScreen()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
+    }
     // load level by index
     public void LoadLevel(int level)
     {
