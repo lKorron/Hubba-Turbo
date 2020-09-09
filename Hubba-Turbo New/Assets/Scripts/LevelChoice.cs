@@ -21,6 +21,7 @@ public class LevelChoice : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(level);
+        SceneManager.LoadScene("Interface", LoadSceneMode.Additive);
     }
     // reload current level
     public void ReloadLevel()

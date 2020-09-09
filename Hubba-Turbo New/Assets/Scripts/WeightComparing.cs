@@ -13,9 +13,19 @@ public class WeightComparing : MonoBehaviour
     [SerializeField] private List<Item> playerItems = new List<Item>();
     [SerializeField] private List<Item> computerItems = new List<Item>();
 
+    private Win win;
+
     private void Start()
     {
         hingeJoint2d = GetComponent<HingeJoint2D>();
+        win = FindObjectOfType<Win>();
+
+        if (playerWin == null)
+        {
+            playerWin = new UnityEvent();
+        }
+        print(win);
+        playerWin.AddListener(() => win.PlayerWin());
     }
 
     private void Update()
