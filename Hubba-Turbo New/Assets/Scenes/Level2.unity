@@ -142,6 +142,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 10
+--- !u!1 &87672934 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 984294016896108570, guid: 717b927dbd2c5463caae8b50a84d78f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 984294016686014131}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &350923869 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3863049761774508599, guid: 6ad718be78182475b90194e23dd4c39b,
@@ -772,8 +778,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startItemForInstantiate: 3
-  _computerPrefabList: []
-  _computerPositionList: []
+  _computerPrefabList:
+  - {fileID: 87672934}
+  _computerPositionList:
+  - {x: 2, y: 2, z: 2}
 --- !u!4 &1858909323
 Transform:
   m_ObjectHideFlags: 0
