@@ -33,7 +33,6 @@ public class ObjectInstantiate : MonoBehaviour
         computerPrefabList = instantiateSettings.ComputerPrefabList;
         computerPositionList = instantiateSettings.ComputerPositionList;
 
-        print(computerPrefabList[0]);
 
         // Choosing start item
         switch (startItemForInstantiate)
@@ -110,6 +109,7 @@ public class ObjectInstantiate : MonoBehaviour
     // Computer smart isntantiate
     public void ComputerInstantiate()
     {
+        
         if (computerPrefabList.Count != computerPositionList.Count)
         {
             print("Error: Add values to both lists");
