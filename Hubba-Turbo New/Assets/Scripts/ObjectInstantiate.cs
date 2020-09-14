@@ -11,6 +11,8 @@ public class ObjectInstantiate : MonoBehaviour
     [SerializeField] private Items startItemForInstantiate; //Field for choosing start item
     [SerializeField] private List<GameObject> computerPrefabList;
     [SerializeField] private List<Vector3> computerPositionList;
+
+    private InstantiateSettings instantiateSettings;
     private ItemCollision playerItemCollision;
     private int index = 0; // Index for computer smart instantiate
     // Properties 
@@ -24,7 +26,13 @@ public class ObjectInstantiate : MonoBehaviour
 
     private void Start()
     {
-        
+        // Setting computer prefabs and their positions
+        instantiateSettings = FindObjectOfType<InstantiateSettings>();
+
+        startItemForInstantiate = instantiateSettings.StartItemForInstantiate;
+        computerPrefabList = instantiateSettings.ComputerPrefabList;
+        computerPositionList = instantiateSettings.ComputerPositionList;
+
         // Choosing start item
         switch (startItemForInstantiate)
         {
