@@ -7,19 +7,19 @@ public class ToggleGroupSetting : MonoBehaviour
 {
     private ToggleGroup toggleGroup;
     private ToggleItem[] toggleItems;
-    private ObjectInstantiate objectInstantiate;
+    private InstantiateSettings instantiateSettings;
     
     private void Start()
     {
         toggleGroup = FindObjectOfType<ToggleGroup>();
-        objectInstantiate = FindObjectOfType<ObjectInstantiate>();
+        instantiateSettings = FindObjectOfType<InstantiateSettings>();
 
         SetToggleGroup();
     }
 
     private void SetToggleGroup()
     {
-        Items currentItem = objectInstantiate.StartItemForInstantiate;
+        Items currentItem = instantiateSettings.StartItemForInstantiate;
 
         toggleItems = toggleGroup.GetComponentsInChildren<ToggleItem>();
 
