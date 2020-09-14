@@ -301,11 +301,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e0a29bde9dd420f9655c8a0d3eec46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startItemForInstantiate: 0
+  _startItemForInstantiate: 3
   _computerPrefabList:
   - {fileID: 6466273333405096971}
   _computerPositionList:
-  - {x: 0, y: 0, z: 0}
+  - {x: 2, y: 2, z: 2}
 --- !u!1 &738448233
 GameObject:
   m_ObjectHideFlags: 0

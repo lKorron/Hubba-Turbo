@@ -8,9 +8,9 @@ public class ObjectInstantiate : MonoBehaviour
     [SerializeField] private bool isComputerActive = true; // Activity of computer
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private GameObject computerPrefab;
-    [SerializeField] private Items startItemForInstantiate; //Field for choosing start item
-    [SerializeField] private List<GameObject> computerPrefabList;
-    [SerializeField] private List<Vector3> computerPositionList;
+     private Items startItemForInstantiate; //Field for choosing start item
+     private List<GameObject> computerPrefabList;
+     private List<Vector3> computerPositionList;
 
     private InstantiateSettings instantiateSettings;
     private ItemCollision playerItemCollision;
@@ -32,6 +32,8 @@ public class ObjectInstantiate : MonoBehaviour
         startItemForInstantiate = instantiateSettings.StartItemForInstantiate;
         computerPrefabList = instantiateSettings.ComputerPrefabList;
         computerPositionList = instantiateSettings.ComputerPositionList;
+
+        print(computerPrefabList[0]);
 
         // Choosing start item
         switch (startItemForInstantiate)
