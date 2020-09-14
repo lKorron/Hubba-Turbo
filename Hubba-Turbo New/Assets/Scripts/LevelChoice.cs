@@ -30,6 +30,7 @@ public class LevelChoice : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene();
         int index = scene.buildIndex;
         SceneManager.LoadScene(index);
+        SceneManager.LoadScene("Interface", LoadSceneMode.Additive);
     }
 
     public void NextLevel()
@@ -38,5 +39,8 @@ public class LevelChoice : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene();
         int index = scene.buildIndex;
         SceneManager.LoadScene(index + 1);
+        SceneManager.LoadScene("Interface", LoadSceneMode.Additive);
     }
 }
+
+

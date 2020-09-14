@@ -190,5 +190,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8452278368806029109, guid: 792d3fb0b8114405aa0b74da4b9bf0e1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1107495360}
+    - target: {fileID: 8452278368806029109, guid: 792d3fb0b8114405aa0b74da4b9bf0e1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452278368806029109, guid: 792d3fb0b8114405aa0b74da4b9bf0e1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LevelChoice, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 792d3fb0b8114405aa0b74da4b9bf0e1, type: 3}
+--- !u!114 &1107495360 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6990826828132528897, guid: 792d3fb0b8114405aa0b74da4b9bf0e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1107495359}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f94eb15229a41ea86df0c5b99cac23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
