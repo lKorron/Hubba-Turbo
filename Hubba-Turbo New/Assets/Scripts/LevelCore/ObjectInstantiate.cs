@@ -8,9 +8,11 @@ public class ObjectInstantiate : MonoBehaviour
     [SerializeField] private bool isComputerActive = true; // Activity of computer
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private GameObject computerPrefab;
-    [SerializeField] private Items startItemForInstantiate; //Field for choosing start item
-    [SerializeField] private List<GameObject> computerPrefabList;
-    [SerializeField] private List<Vector3> computerPositionList;
+     private Items startItemForInstantiate; //Field for choosing start item
+     private List<GameObject> computerPrefabList;
+     private List<Vector3> computerPositionList;
+
+    private InstantiateSettings instantiateSettings;
     private ItemCollision playerItemCollision;
     private int index = 0; // Index for computer smart instantiate
     // Properties 
@@ -24,7 +26,14 @@ public class ObjectInstantiate : MonoBehaviour
 
     private void Start()
     {
-        
+        // Setting computer prefabs and their positions
+        instantiateSettings = FindObjectOfType<InstantiateSettings>();
+
+        startItemForInstantiate = instantiateSettings.StartItemForInstantiate;
+        computerPrefabList = instantiateSettings.ComputerPrefabList;
+        computerPositionList = instantiateSettings.ComputerPositionList;
+
+
         // Choosing start item
         switch (startItemForInstantiate)
         {
@@ -67,6 +76,11 @@ public class ObjectInstantiate : MonoBehaviour
     }
  
     // Change prefab (red)
+    public void SetCharacter(Items character)
+    {
+        string characterName = character.ToString();
+        playerPrefab = (GameObject)Resources.Load("Prefabs/" + characterName, typeof(GameObject));
+    }
     public void SetRedColour()
     {
         playerPrefab = (GameObject)Resources.Load("Prefabs/RedCube", typeof(GameObject));
@@ -100,6 +114,7 @@ public class ObjectInstantiate : MonoBehaviour
     // Computer smart isntantiate
     public void ComputerInstantiate()
     {
+        
         if (computerPrefabList.Count != computerPositionList.Count)
         {
             print("Error: Add values to both lists");

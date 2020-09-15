@@ -6,16 +6,25 @@ using UnityEngine.Events;
 public class WeightComparing : MonoBehaviour
 {
     private HingeJoint2D hingeJoint2d; // Use for SetBalance() method
-    [SerializeField] private UnityEvent playerWin;
+    private UnityEvent playerWin;
 
     // Arrays for game items
 
     [SerializeField] private List<Item> playerItems = new List<Item>();
     [SerializeField] private List<Item> computerItems = new List<Item>();
 
+    private Win winGameObject;
+
     private void Start()
     {
         hingeJoint2d = GetComponent<HingeJoint2D>();
+        winGameObject = Resources.FindObjectsOfTypeAll<Win>()[0];
+
+        if (playerWin == null)
+        {
+            playerWin = new UnityEvent();
+        }
+        playerWin.AddListener(winGameObject.PlayerWin);
     }
 
     private void Update()

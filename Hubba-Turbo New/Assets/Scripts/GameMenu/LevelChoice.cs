@@ -21,6 +21,7 @@ public class LevelChoice : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(level);
+        SceneManager.LoadScene("Interface", LoadSceneMode.Additive);
     }
     // reload current level
     public void ReloadLevel()
@@ -29,6 +30,7 @@ public class LevelChoice : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene();
         int index = scene.buildIndex;
         SceneManager.LoadScene(index);
+        SceneManager.LoadScene("Interface", LoadSceneMode.Additive);
     }
 
     public void NextLevel()
@@ -37,5 +39,8 @@ public class LevelChoice : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene();
         int index = scene.buildIndex;
         SceneManager.LoadScene(index + 1);
+        SceneManager.LoadScene("Interface", LoadSceneMode.Additive);
     }
 }
+
+

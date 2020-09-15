@@ -6,24 +6,24 @@ using UnityEngine.UI;
 public class ToggleGroupSetting : MonoBehaviour
 {
     private ToggleGroup toggleGroup;
-    private ToggleItem[] toggleItems;
-    private ObjectInstantiate objectInstantiate;
+    private AnimalsPanelCell[] panelCells;
+    private InstantiateSettings instantiateSettings;
     
     private void Start()
     {
         toggleGroup = FindObjectOfType<ToggleGroup>();
-        objectInstantiate = FindObjectOfType<ObjectInstantiate>();
+        instantiateSettings = FindObjectOfType<InstantiateSettings>();
 
         SetToggleGroup();
     }
 
     private void SetToggleGroup()
     {
-        Items currentItem = objectInstantiate.StartItemForInstantiate;
+        Items currentItem = instantiateSettings.StartItemForInstantiate;
 
-        toggleItems = toggleGroup.GetComponentsInChildren<ToggleItem>();
+        panelCells = toggleGroup.GetComponentsInChildren<AnimalsPanelCell>();
 
-        foreach (var item in toggleItems)
+        foreach (var item in panelCells)
         {
             if (currentItem == item.Character)
             {
