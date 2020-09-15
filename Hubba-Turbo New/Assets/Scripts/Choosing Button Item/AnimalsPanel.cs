@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class AnimalsPanel : MonoBehaviour
 {
-    [SerializeField] private List<AnimalItem> _animalItems;
+    
     [SerializeField] private AnimalsPanelCell _animalsPanelCellTemplate;
     [SerializeField] private Transform _container;
 
+    private List<AnimalItem> _animalItems;
+    private InstantiateSettings _instantiateSettings;
+
     private void OnEnable()
     {
+        _instantiateSettings = FindObjectOfType<InstantiateSettings>();
+        _animalItems = _instantiateSettings.AnimalItems;
+
         Render(_animalItems);
+        
     }
 
     private void Render(List<AnimalItem> animalItems)
