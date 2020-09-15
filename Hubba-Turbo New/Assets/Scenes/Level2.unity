@@ -790,7 +790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e0a29bde9dd420f9655c8a0d3eec46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startItemForInstantiate: 3
+  _startItemForInstantiate: 2
   _animalItems:
   - {fileID: 11400000, guid: 0aa31a8b30c7640efa6730c552c2f491, type: 2}
   - {fileID: 11400000, guid: c770c2ffef6514a269719d07c8527443, type: 2}
