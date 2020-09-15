@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c1b5a6e96a354dbba6b325fc330d8f8, type: 3}
-  m_Name: Sheep
+  m_Name: Mouse
   m_EditorClassIdentifier: 
-  _character: 2
-  _iconSprite: {fileID: 21300000, guid: 918f5cf8bc0de496fa5d4030fde40042, type: 3}
+  _character: 3
+  _iconSprite: {fileID: 21300000, guid: de38f8ebc9e9241a1bfe8c57cff4f7a3, type: 3}

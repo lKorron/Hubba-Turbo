@@ -8,6 +8,9 @@ public class AnimalsPanelCell : MonoBehaviour
     [SerializeField] private Image _image;
     private Toggle _toggle;
     private ToggleGroup _toggleGroup;
+    private Items _character;
+
+    public Items Character { get { return _character; } }
 
     private void Start()
     {
@@ -19,6 +22,7 @@ public class AnimalsPanelCell : MonoBehaviour
     public void Render(AnimalItem animalItem)
     {
         _image.sprite = animalItem.IconSprite;
+        _character = animalItem.Character;
     }
     public void SetOn()
     {

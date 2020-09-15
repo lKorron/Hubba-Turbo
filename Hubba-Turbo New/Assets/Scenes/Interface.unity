@@ -399,6 +399,7 @@ GameObject:
   - component: {fileID: 1308977185}
   - component: {fileID: 1308977186}
   - component: {fileID: 1308977187}
+  - component: {fileID: 1308977188}
   m_Layer: 5
   m_Name: ' AnimalsPanel'
   m_TagString: Untagged
@@ -514,7 +515,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animalItems:
   - {fileID: 11400000, guid: c770c2ffef6514a269719d07c8527443, type: 2}
-  - {fileID: 11400000, guid: c770c2ffef6514a269719d07c8527443, type: 2}
+  - {fileID: 11400000, guid: 0aa31a8b30c7640efa6730c552c2f491, type: 2}
   _animalsPanelCellTemplate: {fileID: 8350034158260406399, guid: 5ec056fbe6931454294780eea07a3722,
     type: 3}
   _container: {fileID: 1308977182}
+--- !u!114 &1308977188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308977181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3790594dcf5c4885be6f736f3eab3f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

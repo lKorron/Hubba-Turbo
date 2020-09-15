@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ToggleGroupSetting : MonoBehaviour
 {
     private ToggleGroup toggleGroup;
-    private ToggleItem[] toggleItems;
+    private AnimalsPanelCell[] panelCells;
     private InstantiateSettings instantiateSettings;
     
     private void Start()
@@ -21,10 +21,11 @@ public class ToggleGroupSetting : MonoBehaviour
     {
         Items currentItem = instantiateSettings.StartItemForInstantiate;
 
-        toggleItems = toggleGroup.GetComponentsInChildren<ToggleItem>();
+        panelCells = toggleGroup.GetComponentsInChildren<AnimalsPanelCell>();
 
-        foreach (var item in toggleItems)
+        foreach (var item in panelCells)
         {
+            print(item.Character);
             if (currentItem == item.Character)
             {
                 item.SetOn();
