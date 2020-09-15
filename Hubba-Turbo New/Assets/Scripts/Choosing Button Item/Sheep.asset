@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Sheep
   m_EditorClassIdentifier: 
   _name: Sheep
-  _iconSprite: {fileID: 21300000, guid: f2f04db11143145ef9bee72af1c928d9, type: 3}
+  _iconSprite: {fileID: 21300000, guid: 918f5cf8bc0de496fa5d4030fde40042, type: 3}
