@@ -482,10 +482,10 @@ RectTransform:
   m_Father: {fileID: 2078925566}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24, y: 453}
-  m_SizeDelta: {x: 248.17792, y: 123.52225}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 24, y: -70}
+  m_SizeDelta: {x: 248.17792, y: 123.52222}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &637701490
 MonoBehaviour:
@@ -732,6 +732,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1127979218}
   - component: {fileID: 1127979219}
+  - component: {fileID: 1127979220}
   m_Layer: 0
   m_Name: background day
   m_TagString: Untagged
@@ -804,6 +805,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1127979220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127979217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86df450eaf45641979885a3fb6b14862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1130693538
 GameObject:
   m_ObjectHideFlags: 0
@@ -1098,10 +1111,10 @@ RectTransform:
   m_Father: {fileID: 2078925566}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -697.27, y: 419}
-  m_SizeDelta: {x: 239.25305, y: 137.50175}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 188.72998, y: -104}
+  m_SizeDelta: {x: 239.25305, y: 137.50177}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1331514764
 MonoBehaviour:
