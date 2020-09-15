@@ -30,6 +30,11 @@ public class AnimalsPanelCell : MonoBehaviour
 
 
     }
+
+    private void OnDisable()
+    {
+        _toggle.onValueChanged.RemoveAllListeners();
+    }
     public void Render(AnimalItem animalItem)
     {
         _image.sprite = animalItem.IconSprite;

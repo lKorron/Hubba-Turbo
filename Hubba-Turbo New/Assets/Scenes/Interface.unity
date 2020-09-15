@@ -439,7 +439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -513,9 +513,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb82af201103a46e3b450d1cdb1c275c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animalItems:
-  - {fileID: 11400000, guid: c770c2ffef6514a269719d07c8527443, type: 2}
-  - {fileID: 11400000, guid: 0aa31a8b30c7640efa6730c552c2f491, type: 2}
   _animalsPanelCellTemplate: {fileID: 8350034158260406399, guid: 5ec056fbe6931454294780eea07a3722,
     type: 3}
   _container: {fileID: 1308977182}
