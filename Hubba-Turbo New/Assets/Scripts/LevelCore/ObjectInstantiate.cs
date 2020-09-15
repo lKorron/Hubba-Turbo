@@ -76,6 +76,11 @@ public class ObjectInstantiate : MonoBehaviour
     }
  
     // Change prefab (red)
+    public void SetCharacter(Items character)
+    {
+        string characterName = character.ToString();
+        playerPrefab = (GameObject)Resources.Load("Prefabs/" + characterName, typeof(GameObject));
+    }
     public void SetRedColour()
     {
         playerPrefab = (GameObject)Resources.Load("Prefabs/RedCube", typeof(GameObject));
