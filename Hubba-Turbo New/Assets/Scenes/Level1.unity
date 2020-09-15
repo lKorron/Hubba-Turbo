@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e0a29bde9dd420f9655c8a0d3eec46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startItemForInstantiate: 2
+  _startItemForInstantiate: 3
   _computerPrefabList:
   - {fileID: 948859914}
   _computerPositionList:

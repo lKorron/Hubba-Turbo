@@ -25,7 +25,6 @@ public class ToggleGroupSetting : MonoBehaviour
 
         foreach (var item in panelCells)
         {
-            print(item.Character);
             if (currentItem == item.Character)
             {
                 item.SetOn();
