@@ -31,8 +31,13 @@ public class WeightComparing : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            print(IsMouseAndElephant());
+            print(IsMouseAndElephant(Animal.Mouse, Animal.Elephant));
         }
+    }
+
+    private void OnDisable()
+    {
+        playerWin.RemoveAllListeners();
     }
 
     // Add item to chosen array
@@ -84,31 +89,30 @@ public class WeightComparing : MonoBehaviour
     }
 
     // Checks are mouse and elephant together on board
-    public bool IsMouseAndElephant()
+    public bool IsMouseAndElephant(Animal firstAnimal, Animal secondAnimal)
     {
-        bool isMouse = false;
-        bool isElephant = false;
+        bool isFirstAnimal = false;
+        bool isSecondAnimal = false;
 
         foreach (var item in playerItems)
         {
             if (item != null)
             {
-                switch (item.gameObject.name)
+                if (item.gameObject.name == firstAnimal.ToString())
                 {
-                    case "Mouse":
-                        isMouse = true;
-                        break;
-                    case "Mouse(Clone)":
-                        isMouse = true;
-                        break;
-                    case "Elephant":
-                        isElephant = true;
-                        break;
-                    case "Elephant(Clone)":
-                        isElephant = true;
-                        break;
-                    default:
-                        break;
+                    isFirstAnimal = true;
+                }
+                if (item.gameObject.name == firstAnimal.ToString() + "(Clone)")
+                {
+                    isFirstAnimal = true;
+                }
+                if (item.gameObject.name == secondAnimal.ToString())
+                {
+                    isSecondAnimal = true;
+                }
+                if (item.gameObject.name == firstAnimal.ToString() + "(Clone)")
+                {
+                    isSecondAnimal = true;
                 }
             }
             
@@ -118,22 +122,19 @@ public class WeightComparing : MonoBehaviour
         {
             if (item != null)
             {
-                switch (item.gameObject.name)
+                if (item.gameObject.name == firstAnimal.ToString())
                 {
-                    case "Mouse":
-                        isMouse = true;
-                        break;
-                    case "Elephant":
-                        isElephant = true;
-                        break;
-                    default:
-                        break;
+                    isFirstAnimal = true;
+                }
+                if (item.gameObject.name == secondAnimal.ToString())
+                {
+                    isSecondAnimal = true;
                 }
             }
             
         }
 
-        return isMouse && isElephant;
+        return isFirstAnimal && isSecondAnimal;
     }
 
     // May be 

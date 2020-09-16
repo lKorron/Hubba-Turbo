@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Animator))]
+
 public class Escape : MonoBehaviour
 {
     [Range(0.0f, 1.0f)]
@@ -10,26 +13,37 @@ public class Escape : MonoBehaviour
     private WeightComparing weightComparing;
     private Rigidbody2D m_rigidbody;
     private Animator animator;
+    private ItemCollision[] itemCollisions;
     private float animationTime = 2f;
     private float delayAfterAnimation = 4f;
 
     private void Start()
     {
         m_rigidbody = GetComponent<Rigidbody2D>();
-        weightComparing = FindObjectOfType<WeightComparing>();
         animator = GetComponent<Animator>();
+
+        weightComparing = FindObjectOfType<WeightComparing>();
+        itemCollisions = FindObjectsOfType<ItemCollision>();
+
+        foreach (var item in itemCollisions)
+        {
+            item.OnCollision.AddListener(CheckAndEscape);
+        }
         
+
     }
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnDisable()
     {
-        CheckAndEscape();
+        foreach (var item in itemCollisions)
+        {
+            item.OnCollision.RemoveListener(CheckAndEscape);
+        }
     }
 
     public void CheckAndEscape()
     {
-        if (weightComparing.IsMouseAndElephant())
+        if (weightComparing.IsMouseAndElephant(Animal.Mouse, Animal.Elephant))
         {
             StartCoroutine(StartEscape());
         }
@@ -50,11 +64,12 @@ public class Escape : MonoBehaviour
 
 }
 
-public enum Fear
+public enum Animal
 {
-    mouse,
-    snake,
-    bird,
-    dog,
-    wolf
+    Mouse,
+    Snake,
+    Bird,
+    Dog,
+    Wolf,
+    Elephant
 }

@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class ItemCollision : MonoBehaviour
 {
     [SerializeField] private bool IsComputerActive = true; // Field determines will computer get turn or not
-    [SerializeField] private UnityEvent OnCollision; // Event for other actions
+    [SerializeField] public UnityEvent OnCollision; // Event for other actions
     private WeightComparing weightComparing;
     private ObjectInstantiate objectInstantiate;
 
