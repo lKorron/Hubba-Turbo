@@ -43,7 +43,7 @@ public class Escape : MonoBehaviour
 
     public void CheckAndEscape()
     {
-        if (weightComparing.IsMouseAndElephant())
+        if (weightComparing.IsMouseAndElephant(Animal.Mouse, Animal.Elephant))
         {
             StartCoroutine(StartEscape());
         }
@@ -64,11 +64,12 @@ public class Escape : MonoBehaviour
 
 }
 
-public enum Fear
+public enum Animal
 {
-    mouse,
-    snake,
-    bird,
-    dog,
-    wolf
+    Mouse,
+    Snake,
+    Bird,
+    Dog,
+    Wolf,
+    Elephant
 }
