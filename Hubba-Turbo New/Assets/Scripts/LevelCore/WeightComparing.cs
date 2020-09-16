@@ -35,6 +35,11 @@ public class WeightComparing : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        playerWin.RemoveAllListeners();
+    }
+
     // Add item to chosen array
     public void AddItem(Item item, Side side)
     {
