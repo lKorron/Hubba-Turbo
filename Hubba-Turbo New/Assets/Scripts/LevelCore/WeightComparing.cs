@@ -58,6 +58,22 @@ public class WeightComparing : MonoBehaviour
         }
     }
 
+    // Remove item from list
+    public void RemoveItem(Item item, Side side)
+    {
+        switch (side)
+        {
+            case Side.Player:
+                playerItems.Remove(item);
+                break;
+            case Side.Computer:
+                computerItems.Remove(item);
+                break;
+            default:
+                break;
+        }
+    }
+
     public void Compare()
     {
         int playerWeight = 0;
