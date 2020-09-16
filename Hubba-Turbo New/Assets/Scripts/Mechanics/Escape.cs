@@ -13,21 +13,32 @@ public class Escape : MonoBehaviour
     private WeightComparing weightComparing;
     private Rigidbody2D m_rigidbody;
     private Animator animator;
+    private ItemCollision[] itemCollisions;
     private float animationTime = 2f;
     private float delayAfterAnimation = 4f;
 
     private void Start()
     {
         m_rigidbody = GetComponent<Rigidbody2D>();
-        weightComparing = FindObjectOfType<WeightComparing>();
         animator = GetComponent<Animator>();
+
+        weightComparing = FindObjectOfType<WeightComparing>();
+        itemCollisions = FindObjectsOfType<ItemCollision>();
+
+        foreach (var item in itemCollisions)
+        {
+            item.OnCollision.AddListener(CheckAndEscape);
+        }
         
+
     }
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnDisable()
     {
-        CheckAndEscape();
+        foreach (var item in itemCollisions)
+        {
+            item.OnCollision.RemoveListener(CheckAndEscape);
+        }
     }
 
     public void CheckAndEscape()
