@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class Escape : MonoBehaviour
 {
+    [SerializeField] private Animal selfAnimal;
+    [SerializeField] private Animal fearAnimal;
     [Range(0.0f, 1.0f)]
     [SerializeField] private float flyingForce; // How fast unit will fly
 
@@ -43,7 +45,7 @@ public class Escape : MonoBehaviour
 
     public void CheckAndEscape()
     {
-        if (weightComparing.IsMouseAndElephant(Animal.Mouse, Animal.Elephant))
+        if (weightComparing.IsAnimalsOnBoard(fearAnimal, selfAnimal))
         {
             StartCoroutine(StartEscape());
         }
@@ -71,5 +73,6 @@ public enum Animal
     Bird,
     Dog,
     Wolf,
-    Elephant
+    Elephant,
+    Sheep
 }
