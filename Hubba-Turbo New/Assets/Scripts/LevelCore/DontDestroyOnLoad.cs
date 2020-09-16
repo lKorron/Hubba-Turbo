@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DontDestroyOnLoad : MonoBehaviour
 {
-    [SerializeField] private string _id;
+    private string _id;
 
     public static DontDestroyOnLoad Get(string id)
     {
@@ -16,6 +17,7 @@ public class DontDestroyOnLoad : MonoBehaviour
 
     private void Awake()
     {
+        _id = SceneManager.GetActiveScene().buildIndex.ToString();
         if (string.IsNullOrEmpty(_id))
         {
             _id = Guid.NewGuid().ToString();

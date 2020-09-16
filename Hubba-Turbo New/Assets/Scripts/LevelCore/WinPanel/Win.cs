@@ -22,7 +22,7 @@ public class Win : MonoBehaviour
         timer = FindObjectOfType<Timer>();
         floor = FindObjectOfType<Floor>();
 
-        // Find current LevelIndo
+        // Find current LevelInfo
         levelNumber = SceneManager.GetActiveScene().buildIndex;
         levels = FindObjectsOfType<Level>();
         levelInfo = FindLevelInfo();
@@ -59,7 +59,7 @@ public class Win : MonoBehaviour
 
     private Level FindLevelInfo()
     {
-        var foundItem = levels.SingleOrDefault(item => item.levelNumber == levelNumber);
+        var foundItem = levels.SingleOrDefault(item => item.LevelNumber == levelNumber);
         return foundItem;
     }
 
