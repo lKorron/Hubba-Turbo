@@ -16,6 +16,7 @@ public class Escape : MonoBehaviour
     private Rigidbody2D m_rigidbody;
     private Animator animator;
     private ItemCollision[] itemCollisions;
+    private bool isEscaping;
     private float animationTime = 2f;
     private float delayAfterAnimation = 4f;
 
@@ -45,7 +46,7 @@ public class Escape : MonoBehaviour
 
     public void CheckAndEscape()
     {
-        if (weightComparing.IsAnimalsOnBoard(fearAnimal, selfAnimal))
+        if (weightComparing.IsAnimalsOnBoard(fearAnimal, selfAnimal) && isEscaping == false)
         {
             StartCoroutine(StartEscape());
         }
@@ -55,11 +56,12 @@ public class Escape : MonoBehaviour
     private IEnumerator StartEscape()
     {
         animator.Play("ElephantEscape");
-
+        isEscaping = true;
         yield return new WaitForSeconds(animationTime);
         // Multiple for comfortable
         m_rigidbody.gravityScale = flyingForce * -1;
         yield return new WaitForSeconds(delayAfterAnimation);
+        isEscaping = false;
     }
 
     
