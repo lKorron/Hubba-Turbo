@@ -4,16 +4,22 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Item))]
 
 public class Escape : MonoBehaviour
 {
+    [SerializeField] private Animal selfAnimal;
+    [SerializeField] private Animal fearAnimal;
+    [SerializeField] private Side escapeSide;
     [Range(0.0f, 1.0f)]
     [SerializeField] private float flyingForce; // How fast unit will fly
 
     private WeightComparing weightComparing;
     private Rigidbody2D m_rigidbody;
     private Animator animator;
+    private Item itemSelf;
     private ItemCollision[] itemCollisions;
+    private bool isEscaping;
     private float animationTime = 2f;
     private float delayAfterAnimation = 4f;
 
@@ -21,6 +27,7 @@ public class Escape : MonoBehaviour
     {
         m_rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        itemSelf = GetComponent<Item>();
 
         weightComparing = FindObjectOfType<WeightComparing>();
         itemCollisions = FindObjectsOfType<ItemCollision>();
@@ -43,9 +50,10 @@ public class Escape : MonoBehaviour
 
     public void CheckAndEscape()
     {
-        if (weightComparing.IsMouseAndElephant(Animal.Mouse, Animal.Elephant))
+        if (weightComparing.IsAnimalsOnBoard(fearAnimal, selfAnimal) && isEscaping == false)
         {
             StartCoroutine(StartEscape());
+            weightComparing.RemoveItem(itemSelf, escapeSide);
         }
     }
 
@@ -53,11 +61,12 @@ public class Escape : MonoBehaviour
     private IEnumerator StartEscape()
     {
         animator.Play("ElephantEscape");
-
+        isEscaping = true;
         yield return new WaitForSeconds(animationTime);
         // Multiple for comfortable
         m_rigidbody.gravityScale = flyingForce * -1;
         yield return new WaitForSeconds(delayAfterAnimation);
+        isEscaping = false;
     }
 
     
@@ -71,5 +80,6 @@ public enum Animal
     Bird,
     Dog,
     Wolf,
-    Elephant
+    Elephant,
+    Sheep
 }

@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour, IComparable
 {
-    // Fields for images
-    [SerializeField] public Sprite oneStarSprite;
-    [SerializeField] public Sprite twoStarSprite;
-    [SerializeField] public Sprite threeStarSprite;
 
-    [SerializeField] private int countOfStars;
+    private int countOfStars;
+    private int levelNumber;
 
     public int CountOfStars
     {
@@ -18,31 +16,30 @@ public class Level : MonoBehaviour, IComparable
         private set { countOfStars = value; }
     }
 
-    public int levelNumber;
+    public int LevelNumber { get { return levelNumber; } }
+    
     // Property for changing sprites in menu
     public Sprite LevelSprite { get; private set; }
 
     private void Awake()
     {
+        levelNumber = SceneManager.GetActiveScene().buildIndex;
         DontDestroyOnLoad(transform.gameObject);
     }
 
 
     public void SetOneStar()
     {
-        LevelSprite = oneStarSprite;
         countOfStars = 1;
     }
 
     public void SetTwoStar()
     {
-        LevelSprite = twoStarSprite;
         countOfStars = 2;
     }
 
     public void SetThreeStar()
     {
-        LevelSprite = threeStarSprite;
         countOfStars = 3;
     }
 

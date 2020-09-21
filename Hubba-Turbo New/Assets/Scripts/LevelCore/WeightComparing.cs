@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(HingeJoint2D))]
+
 public class WeightComparing : MonoBehaviour
 {
     private HingeJoint2D hingeJoint2d; // Use for SetBalance() method
@@ -31,7 +33,7 @@ public class WeightComparing : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            print(IsMouseAndElephant(Animal.Mouse, Animal.Elephant));
+            print(IsAnimalsOnBoard(Animal.Mouse, Animal.Elephant));
         }
     }
 
@@ -50,6 +52,22 @@ public class WeightComparing : MonoBehaviour
                 break;
             case Side.Computer:
                 computerItems.Add(item);
+                break;
+            default:
+                break;
+        }
+    }
+
+    // Remove item from list
+    public void RemoveItem(Item item, Side side)
+    {
+        switch (side)
+        {
+            case Side.Player:
+                playerItems.Remove(item);
+                break;
+            case Side.Computer:
+                computerItems.Remove(item);
                 break;
             default:
                 break;
@@ -89,7 +107,7 @@ public class WeightComparing : MonoBehaviour
     }
 
     // Checks are mouse and elephant together on board
-    public bool IsMouseAndElephant(Animal firstAnimal, Animal secondAnimal)
+    public bool IsAnimalsOnBoard(Animal fearAnimal, Animal selfAnimal)
     {
         bool isFirstAnimal = false;
         bool isSecondAnimal = false;
@@ -98,19 +116,19 @@ public class WeightComparing : MonoBehaviour
         {
             if (item != null)
             {
-                if (item.gameObject.name == firstAnimal.ToString())
+                if (item.gameObject.name == fearAnimal.ToString())
                 {
                     isFirstAnimal = true;
                 }
-                if (item.gameObject.name == firstAnimal.ToString() + "(Clone)")
+                if (item.gameObject.name == fearAnimal.ToString() + "(Clone)")
                 {
                     isFirstAnimal = true;
                 }
-                if (item.gameObject.name == secondAnimal.ToString())
+                if (item.gameObject.name == selfAnimal.ToString())
                 {
                     isSecondAnimal = true;
                 }
-                if (item.gameObject.name == firstAnimal.ToString() + "(Clone)")
+                if (item.gameObject.name == fearAnimal.ToString() + "(Clone)")
                 {
                     isSecondAnimal = true;
                 }
@@ -122,11 +140,11 @@ public class WeightComparing : MonoBehaviour
         {
             if (item != null)
             {
-                if (item.gameObject.name == firstAnimal.ToString())
+                if (item.gameObject.name == fearAnimal.ToString())
                 {
                     isFirstAnimal = true;
                 }
-                if (item.gameObject.name == secondAnimal.ToString())
+                if (item.gameObject.name == selfAnimal.ToString())
                 {
                     isSecondAnimal = true;
                 }

@@ -50,10 +50,10 @@ public class Menu : MonoBehaviour
     private void DataSetUp(Level level)
     {
         List<int> levelsList = menuData.levels.ToList();
-        bool isLevelLast = level.levelNumber == menuLevels.Length;
+        bool isLevelLast = level.LevelNumber == menuLevels.Length;
         bool canProcess = levelsList.Count < menuLevels.Length;
         
-        levelsList[level.levelNumber - 1] = level.CountOfStars;
+        levelsList[level.LevelNumber - 1] = level.CountOfStars;
         if (level.CountOfStars > 0 && levelsList[levelsList.Count - 1] != 0 && canProcess) // Last element != 0
         {
             levelsList.Add(0);
