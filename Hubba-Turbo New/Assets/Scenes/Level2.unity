@@ -262,11 +262,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bb6b3a2ce4541818f449c42686ac2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oneStarSprite: {fileID: 21300000, guid: c5b6e13174c064d04a1428be7f1b1d29, type: 3}
-  twoStarSprite: {fileID: 21300000, guid: 917c9755b19704196b8f95940789ae74, type: 3}
-  threeStarSprite: {fileID: 21300000, guid: 310d249496f2845ccb74113b6b364bd5, type: 3}
-  countOfStars: 0
-  levelNumber: 2
 --- !u!4 &733548563
 Transform:
   m_ObjectHideFlags: 0
@@ -293,7 +288,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6a8e36f4940d4b3a9d26c9bec7d5a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: 2
 --- !u!1 &1060931173
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,7 +790,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c770c2ffef6514a269719d07c8527443, type: 2}
   _computerPrefabList:
   - {fileID: 87672934}
+  - {fileID: 2239413528635541096, guid: 3c68184a1dd1c46aa97687c3ddd09d34, type: 3}
   _computerPositionList:
+  - {x: 2, y: 2, z: 2}
   - {x: 2, y: 2, z: 2}
 --- !u!4 &1858909323
 Transform:
