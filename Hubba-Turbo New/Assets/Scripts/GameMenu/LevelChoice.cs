@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelChoice : MonoBehaviour
 {
-    // load main menu
+    // load level menu
     public void LoadMenu()
     {
         Time.timeScale = 1f;
@@ -15,6 +15,11 @@ public class LevelChoice : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
+    }
+    public void LoadZoneMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Zones");
     }
     // load level by index
     public void LoadLevel(int level)
