@@ -173,11 +173,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startItemForInstantiate: 3
   _animalItems:
+  - {fileID: 11400000, guid: 0aa31a8b30c7640efa6730c552c2f491, type: 2}
   - {fileID: 11400000, guid: c770c2ffef6514a269719d07c8527443, type: 2}
   _computerPrefabList:
   - {fileID: 1752755390664844304, guid: 91a350c1f0a0d43aebb05cc26fb67b73, type: 3}
   - {fileID: 1752755390664844304, guid: 91a350c1f0a0d43aebb05cc26fb67b73, type: 3}
+  - {fileID: 6226395327477669670, guid: a02539a34824d450bb6a149244bc4778, type: 3}
   _computerPositionList:
+  - {x: 2, y: 2, z: 2}
   - {x: 2, y: 2, z: 2}
   - {x: 2, y: 2, z: 2}
 --- !u!4 &87960448
