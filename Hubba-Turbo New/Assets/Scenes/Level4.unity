@@ -176,8 +176,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c770c2ffef6514a269719d07c8527443, type: 2}
   _computerPrefabList:
   - {fileID: 1752755390664844304, guid: 91a350c1f0a0d43aebb05cc26fb67b73, type: 3}
+  - {fileID: 1752755390664844304, guid: 91a350c1f0a0d43aebb05cc26fb67b73, type: 3}
   _computerPositionList:
-  - {x: 2, y: 2, z: 0}
+  - {x: 2, y: 2, z: 2}
+  - {x: 2, y: 2, z: 2}
 --- !u!4 &87960448
 Transform:
   m_ObjectHideFlags: 0
@@ -697,7 +699,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 366c923f6af284552acbabf9fcbd1289, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f782736b8b0e14d62bce9b9b4358db05, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
