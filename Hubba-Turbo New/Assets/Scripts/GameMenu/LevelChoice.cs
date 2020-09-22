@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 public class LevelChoice : MonoBehaviour
 {
     // load level menu
+    public void LoadScene(string sceneName)
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(sceneName);
+    }
     public void LoadMenu()
     {
         Time.timeScale = 1f;

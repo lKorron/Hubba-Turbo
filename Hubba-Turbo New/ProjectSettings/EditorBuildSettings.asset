@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Zones.unity
     guid: 6455adddfc65a4200a3946967c78fa56
   - enabled: 1
+    path: Assets/Scenes/ZoneTransition.unity
+    guid: ce8943549eb5841f7bb3c03ee299f96b
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: fb5072e59e9ef4d9da380821e6965f7e
   - enabled: 1
