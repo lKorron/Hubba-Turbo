@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public class Intro : MonoBehaviour
 {
     [SerializeField] private float _waitingTime;
-    [SerializeField] private SceneName scene;
+    [SerializeField] private SceneName _scene;
 
-    private void Start()
+    private void Awake()
     {
         StartCoroutine(WaitForVideo());
     }
@@ -21,7 +21,7 @@ public class Intro : MonoBehaviour
     private IEnumerator WaitForVideo()
     {
         yield return new  WaitForSeconds(_waitingTime);
-        SceneManager.LoadScene(scene.ToString());
+        SceneManager.LoadScene(_scene.ToString());
         
     }
 }
