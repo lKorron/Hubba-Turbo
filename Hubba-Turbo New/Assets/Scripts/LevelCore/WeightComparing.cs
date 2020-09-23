@@ -10,10 +10,10 @@ public class WeightComparing : MonoBehaviour
     private HingeJoint2D hingeJoint2d; // Use for SetBalance() method
     private UnityEvent playerWin;
 
-    // Arrays for game items
+    // Arrays for weight
 
-    [SerializeField] private List<Item> playerItems = new List<Item>();
-    [SerializeField] private List<Item> computerItems = new List<Item>();
+    [SerializeField] private int _playerWeight;
+    [SerializeField] private int _computerWeight;
 
     private Win winGameObject;
 
@@ -42,64 +42,31 @@ public class WeightComparing : MonoBehaviour
         playerWin.RemoveAllListeners();
     }
 
-    // Add item to chosen array
-    public void AddItem(Item item, Side side)
+    // Add weight to chosen array
+    public void AddWeight(Item item, Side side)
     {
-        switch (side)
+        int itemWeight = item.Weight;
+        if (side == Side.Player)
         {
-            case Side.Player:
-                playerItems.Add(item);
-                break;
-            case Side.Computer:
-                computerItems.Add(item);
-                break;
-            default:
-                break;
+            _playerWeight += itemWeight;
         }
+        else _computerWeight += itemWeight;
     }
 
-    // Remove item from list
-    public void RemoveItem(Item item, Side side)
+    // Take away weight from list
+    public void TakeAwayWeight(Item item, Side side)
     {
-        switch (side)
+        int itemWeight = item.Weight;
+        if (side == Side.Player)
         {
-            case Side.Player:
-                playerItems.Remove(item);
-                break;
-            case Side.Computer:
-                computerItems.Remove(item);
-                break;
-            default:
-                break;
+            _playerWeight += itemWeight;
         }
+        else _computerWeight += itemWeight;
     }
 
     public void Compare()
     {
-        int playerWeight = 0;
-        int computerWeight = 0;
-
-        for (int i = 0; i < playerItems.Count; i++)
-        {
-            if (playerItems[i] != null)
-            {
-                playerWeight += playerItems[i].Weight;
-            }
-            
-            
-            
-        }
-
-        for (int i = 0; i < computerItems.Count; i++)
-        {
-            if (computerItems[i] != null)
-            {
-                computerWeight += computerItems[i].Weight;
-            }
-            
-        }
-
-        if (playerWeight == computerWeight && playerWeight > 0 && computerWeight > 0)
+        if (_playerWeight == _computerWeight && _playerWeight > 0 && _computerWeight > 0)
         {
             SetBalance();
             playerWin.Invoke();
