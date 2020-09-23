@@ -350,6 +350,21 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6990826829333892249, guid: 792d3fb0b8114405aa0b74da4b9bf0e1,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6990826829333892249, guid: 792d3fb0b8114405aa0b74da4b9bf0e1,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 6990826829333892249, guid: 792d3fb0b8114405aa0b74da4b9bf0e1,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 6990826829415950917, guid: 792d3fb0b8114405aa0b74da4b9bf0e1,
         type: 3}
       propertyPath: m_AnchorMin.y

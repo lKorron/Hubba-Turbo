@@ -5,17 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class Intro : MonoBehaviour
 {
-    [SerializeField] private float waitingTime;
+    [SerializeField] private float _waitingTime;
+    [SerializeField] private SceneName _scene;
 
-    private void Start()
+    private void Awake()
     {
         StartCoroutine(WaitForVideo());
     }
-
+    #region
+    private void OnValidate()
+    {
+        if (_waitingTime < 0) _waitingTime = 0;
+    }
+    #endregion
     private IEnumerator WaitForVideo()
     {
-        yield return new  WaitForSeconds(waitingTime);
-        SceneManager.LoadScene("MainMenu");
+        yield return new  WaitForSeconds(_waitingTime);
+        SceneManager.LoadScene(_scene.ToString());
         
     }
+}
+
+public enum SceneName
+{
+    MainMenu,
+    Zones
 }
