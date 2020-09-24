@@ -12,7 +12,6 @@ public class InstantiateSettings : MonoBehaviour
 
     public Items StartItemForInstantiate => _startItemForInstantiate;
     public List<AnimalItem> AnimalItems => _inventoryItems;
-
     public InstantiateItem[] InstantiateItems => _instantiateItems;
 
 }

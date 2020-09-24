@@ -176,6 +176,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c770c2ffef6514a269719d07c8527443, type: 2}
   _instantiateItems:
   - _prefab: {fileID: 2239413528807572089}
+    _prefabsNumber: 1
     _position: {x: 2, y: 2, z: 2}
 --- !u!4 &87960448
 Transform:

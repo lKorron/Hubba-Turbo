@@ -8,9 +8,10 @@ public class ObjectInstantiate : MonoBehaviour
     [SerializeField] private bool isComputerActive = true; // Activity of computer
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private GameObject computerPrefab;
-     private Items startItemForInstantiate; //Field for choosing start item
-     public List<GameObject> computerPrefabList;
-     public List<Vector3> computerPositionList;
+    private Items startItemForInstantiate; //Field for choosing start item
+    public List<GameObject> computerPrefabList;
+    public List<Vector3> computerPositionList;
+    public List<int> instantiateNumberList;
 
     private InstantiateSettings instantiateSettings;
     private ItemCollision playerItemCollision;
@@ -130,8 +131,23 @@ public class ObjectInstantiate : MonoBehaviour
  
         Vector3 position = computerPositionList[index];
 
-        GameObject clone = Instantiate(prefab, position, Quaternion.identity);
-        clone.tag = "Computer";
+        int instantiateNumber = instantiateNumberList[index];
+
+        if (instantiateNumber == 0)
+        {
+            GameObject clone = Instantiate(prefab, position, Quaternion.identity);
+            clone.tag = "Computer";
+        }
+        else
+        {
+            for (int i = 0; i < instantiateNumber; i++)
+            {
+                GameObject clone = Instantiate(prefab, position, Quaternion.identity);
+                clone.tag = "Computer";
+            }
+        }
+
+        
 
         
         index++;
@@ -146,6 +162,7 @@ public class ObjectInstantiate : MonoBehaviour
             {
                 computerPrefabList.Add(item.Prefab);
                 computerPositionList.Add(item.Position);
+                instantiateNumberList.Add(item.PrefabsNumber);
             }
         }
         
