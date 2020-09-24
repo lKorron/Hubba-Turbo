@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class InstantiateSettings : MonoBehaviour
 {
+    [Header("Inventory Settings")]
     [SerializeField] private Items _startItemForInstantiate;
-    [SerializeField] private List<AnimalItem> _animalItems;
-    [SerializeField] private List<GameObject> _computerPrefabList;
-    [SerializeField] private List<Vector3> _computerPositionList;
+    [SerializeField] private List<AnimalItem> _inventoryItems;
+    [Header("Computer instantiate Settings")]
+    [SerializeField] private InstantiateItem[] _instantiateItems;
 
-    public Items StartItemForInstantiate { get { return _startItemForInstantiate; } }
-    public List<AnimalItem> AnimalItems { get { return _animalItems; } }
-    public List<GameObject> ComputerPrefabList { get { return _computerPrefabList; } }
-    public List<Vector3> ComputerPositionList { get { return _computerPositionList; } }
+    public Items StartItemForInstantiate => _startItemForInstantiate;
+    public List<AnimalItem> AnimalItems => _inventoryItems;
 
+    public InstantiateItem[] InstantiateItems => _instantiateItems;
 
 }

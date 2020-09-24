@@ -5,6 +5,9 @@ using UnityEngine;
 [System.Serializable]
 public class InstantiateItem
 {
-    public int _weight;
-    public Vector3 _position;
+    [SerializeField] private GameObject _prefab;
+    [SerializeField] private Vector3 _position;
+
+    public GameObject Prefab => _prefab;
+    public Vector3 Position => _position;
 }
