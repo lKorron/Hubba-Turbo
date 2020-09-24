@@ -782,7 +782,10 @@ MonoBehaviour:
   _inventoryItems:
   - {fileID: 11400000, guid: 0aa31a8b30c7640efa6730c552c2f491, type: 2}
   - {fileID: 11400000, guid: c770c2ffef6514a269719d07c8527443, type: 2}
-  _instantiateItems: []
+  _instantiateItems:
+  - _prefab: {fileID: 984294016686014132}
+    _prefabsNumber: 0
+    _position: {x: 2, y: 2, z: 2}
 --- !u!4 &1858909323
 Transform:
   m_ObjectHideFlags: 0
@@ -1024,6 +1027,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 717b927dbd2c5463caae8b50a84d78f8, type: 3}
+--- !u!1 &984294016686014132 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 984294016896108570, guid: 717b927dbd2c5463caae8b50a84d78f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 984294016686014131}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1035641468112708772
 PrefabInstance:
   m_ObjectHideFlags: 0
