@@ -11,26 +11,34 @@ public class ItemCollision : MonoBehaviour
     private WeightComparing weightComparing;
     private ObjectInstantiate objectInstantiate;
     private BoxCollider2D _collider;
+    private Camera _camera;
 
     private void Start()
     {
         _collider = GetComponent<BoxCollider2D>();
+        _camera = FindObjectOfType<Camera>();
         weightComparing = FindObjectOfType<WeightComparing>();
         objectInstantiate = FindObjectOfType<ObjectInstantiate>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Side side = GetCollisionSide(_collider, collision);
+        Side side = GetCollisionSide(collision);
 
         if (side == Side.Player)
         {
-
+            SetItem(collision, side);
+            if (IsComputerActive)
+                objectInstantiate.ComputerInstantiate();
+            else weightComparing.Compare();
         }
         if (side == Side.Computer)
         {
-
+            SetItem(collision, side);
+            weightComparing.Compare();
         }
+
+        /*
         switch (collision.gameObject.tag)
         {
             case "PlayerStart":
@@ -54,7 +62,7 @@ public class ItemCollision : MonoBehaviour
                 break;
             default:
                 break;
-        }
+        } */
         // Comparing
         if (objectInstantiate.IsComputerEndInstantiate)
         {
@@ -77,18 +85,18 @@ public class ItemCollision : MonoBehaviour
         Item item = collision.gameObject.GetComponent<Item>();
         if (item != null && item.IsCollided == false)
         {
-            print(GetCollisionSide(_collider, collision));
+            print(GetCollisionSide(collision));
             item.IsCollided = true;
 
             weightComparing.AddItem(item, side);
 
         }
-        else throw new System.NullReferenceException("Item equals to null");
+        if (item == null) throw new System.NullReferenceException("Item equals to null");
     }
 
-    private Side GetCollisionSide(Collider2D platformCollider, Collision2D collision)
+    private Side GetCollisionSide(Collision2D collision)
     {
-        Vector3 center = platformCollider.bounds.center;
+        Vector3 center = _camera.ScreenToWorldPoint(new Vector3(Screen.width / 2, 0, 0));
         Vector3 contactPoint = collision.contacts[0].point;
 
         bool isRight = contactPoint.x > center.x;
