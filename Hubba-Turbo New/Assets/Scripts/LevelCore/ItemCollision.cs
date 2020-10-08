@@ -25,14 +25,14 @@ public class ItemCollision : MonoBehaviour
     {
         Side side = GetCollisionSide(collision);
 
-        if (side == Side.Player)
+        if (side == Side.Player && collision.gameObject.tag != "Platform")
         {
             SetItem(collision, side);
             if (IsComputerActive)
                 objectInstantiate.ComputerInstantiate();
             else weightComparing.Compare();
         }
-        if (side == Side.Computer)
+        if (side == Side.Computer && collision.gameObject.tag != "Platform")
         {
             SetItem(collision, side);
             weightComparing.Compare();
@@ -85,7 +85,6 @@ public class ItemCollision : MonoBehaviour
         Item item = collision.gameObject.GetComponent<Item>();
         if (item != null && item.IsCollided == false)
         {
-            print(GetCollisionSide(collision));
             item.IsCollided = true;
 
             weightComparing.AddItem(item, side);
