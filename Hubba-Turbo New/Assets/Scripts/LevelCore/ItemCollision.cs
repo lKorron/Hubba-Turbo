@@ -3,19 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(BoxCollider2D))]
+
 public class ItemCollision : MonoBehaviour
 {
     [SerializeField] private bool IsComputerActive = true; // Field determines will computer get turn or not
     [SerializeField] public UnityEvent OnCollision; // Event for other actions
     private WeightComparing weightComparing;
     private ObjectInstantiate objectInstantiate;
-    private BoxCollider2D _collider;
     private Camera _camera;
 
     private void Start()
     {
-        _collider = GetComponent<BoxCollider2D>();
         _camera = FindObjectOfType<Camera>();
         weightComparing = FindObjectOfType<WeightComparing>();
         objectInstantiate = FindObjectOfType<ObjectInstantiate>();
@@ -25,53 +23,11 @@ public class ItemCollision : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<ItemCollision>())
         {
-
-
+         
             Side side = GetCollisionSide(collision);
 
-            if (side == Side.Player)
-            {
-                SetItem(collision, side);
-                if (IsComputerActive)
-                    objectInstantiate.ComputerInstantiate();
-                else weightComparing.Compare();
-            }
-            if (side == Side.Computer && collision.gameObject.tag != "Platform")
-            {
-                SetItem(collision, side);
-                //weightComparing.Compare();
-            }
+            SetItem(collision, side);
 
-            /*
-            switch (collision.gameObject.tag)
-            {
-                case "PlayerStart":
-                    SetItem(collision, Side.Player);
-                    break;
-                case "Player":
-                    collision.gameObject.tag = "Untagged";
-                    SetItem(collision, Side.Player);
-                    if (IsComputerActive)
-                    {
-
-                        objectInstantiate.ComputerInstantiate();
-                    }
-                    else weightComparing.Compare();
-
-
-                    break;
-                case "Computer":
-                    SetItem(collision, Side.Computer);
-                    weightComparing.Compare();
-                    break;
-                default:
-                    break;
-            } */
-            // Comparing
-            if (objectInstantiate.IsComputerEndInstantiate)
-            {
-                weightComparing.Compare();
-            }
             // Other actions
             OnCollision.Invoke();
         }
@@ -85,17 +41,25 @@ public class ItemCollision : MonoBehaviour
     // Adding item (collision) to instance array
     private void SetItem(Collision2D collision, Side side)
     {
-        collision.gameObject.tag = "Untagged";
-
         Item item = collision.gameObject.GetComponent<Item>();
         if (item != null && item.IsCollided == false)
         {
             item.IsCollided = true;
 
             weightComparing.AddItem(item, side);
+            if (side == Side.Player)
+            {
+                objectInstantiate.ComputerInstantiate();
+            }
+            if (objectInstantiate.IsComputerEndInstantiate)
+            {
+                weightComparing.Compare();
+            }
+            
 
         }
-        if (item == null) throw new System.NullReferenceException("Item equals to null");
+        ItemCollision itemCollision = collision.gameObject.GetComponent<ItemCollision>();
+        if (itemCollision == null) throw new System.NullReferenceException("Item equals to null");
     }
 
     private Side GetCollisionSide(Collision2D collision)
@@ -108,12 +72,7 @@ public class ItemCollision : MonoBehaviour
 
         if (isRight) return Side.Computer;
         if (isLeft) return Side.Player;
-
-        else
-        {
-            return Side.Player;
-            throw new System.Exception("Method can't correctly dermine side");
-        }
+        throw new System.Exception("Method can't correctly dermine side");
 
     }
 
