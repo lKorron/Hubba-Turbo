@@ -23,53 +23,58 @@ public class ItemCollision : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Side side = GetCollisionSide(collision);
+        if (collision.gameObject.GetComponent<ItemCollision>())
+        {
 
-        if (side == Side.Player && collision.gameObject.tag != "Platform")
-        {
-            SetItem(collision, side);
-            if (IsComputerActive)
-                objectInstantiate.ComputerInstantiate();
-            else weightComparing.Compare();
-        }
-        if (side == Side.Computer && collision.gameObject.tag != "Platform")
-        {
-            SetItem(collision, side);
-            weightComparing.Compare();
-        }
 
-        /*
-        switch (collision.gameObject.tag)
-        {
-            case "PlayerStart":
-                SetItem(collision, Side.Player);
-                break;
-            case "Player":
-                collision.gameObject.tag = "Untagged";
-                SetItem(collision, Side.Player);
+            Side side = GetCollisionSide(collision);
+
+            if (side == Side.Player)
+            {
+                SetItem(collision, side);
                 if (IsComputerActive)
-                {
-                    
                     objectInstantiate.ComputerInstantiate();
-                }
                 else weightComparing.Compare();
-                
-                
-                break;
-            case "Computer":
-                SetItem(collision, Side.Computer);
+            }
+            if (side == Side.Computer && collision.gameObject.tag != "Platform")
+            {
+                SetItem(collision, side);
+                //weightComparing.Compare();
+            }
+
+            /*
+            switch (collision.gameObject.tag)
+            {
+                case "PlayerStart":
+                    SetItem(collision, Side.Player);
+                    break;
+                case "Player":
+                    collision.gameObject.tag = "Untagged";
+                    SetItem(collision, Side.Player);
+                    if (IsComputerActive)
+                    {
+
+                        objectInstantiate.ComputerInstantiate();
+                    }
+                    else weightComparing.Compare();
+
+
+                    break;
+                case "Computer":
+                    SetItem(collision, Side.Computer);
+                    weightComparing.Compare();
+                    break;
+                default:
+                    break;
+            } */
+            // Comparing
+            if (objectInstantiate.IsComputerEndInstantiate)
+            {
                 weightComparing.Compare();
-                break;
-            default:
-                break;
-        } */
-        // Comparing
-        if (objectInstantiate.IsComputerEndInstantiate)
-        {
-            weightComparing.Compare();
+            }
+            // Other actions
+            OnCollision.Invoke();
         }
-        // Other actions
-        OnCollision.Invoke();
     }
     // Setting computer activity from outside
     public void SetComputerActive(bool isActive)
