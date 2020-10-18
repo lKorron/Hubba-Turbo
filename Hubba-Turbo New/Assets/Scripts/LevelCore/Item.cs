@@ -6,17 +6,15 @@ using UnityEngine.Events;
 public class Item : MonoBehaviour
 {
     [SerializeField] private int _weight;
+    [SerializeField] private bool _isStartItem;
 
     public bool IsCollided { get; set; } = false;
-    public int Weight { get; private set; } // property for list processing
+    public int Weight => _weight; // property for list processing
+    public bool IsStartItem => _isStartItem;
 
-    private void Awake()
-    {
-        Weight = _weight;
-    }
     public Item(int weight)
     {
-        this.Weight = weight;
+        _weight = weight;
     }
     
 }

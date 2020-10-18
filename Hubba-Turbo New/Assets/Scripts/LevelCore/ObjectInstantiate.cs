@@ -69,7 +69,6 @@ public class ObjectInstantiate : MonoBehaviour
 
             // Activity of computer dealing with prefabs
             playerItemCollision = clone.GetComponent<ItemCollision>();
-            playerItemCollision.SetComputerActive(isComputerActive);
             
         }
 

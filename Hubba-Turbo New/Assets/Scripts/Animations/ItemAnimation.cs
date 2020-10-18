@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AnimationClip))]
+[RequireComponent(typeof(Item))]
+[RequireComponent(typeof(Animator))]
 public class ItemAnimation : MonoBehaviour
 {
     [SerializeField] private float delay; // Delay between animations
