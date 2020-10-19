@@ -7,26 +7,28 @@ using UnityEngine.Events;
 
 public class WeightComparing : MonoBehaviour
 {
-    private HingeJoint2D hingeJoint2d; // Use for SetBalance() method
-    private UnityEvent playerWin;
-
     // Arrays for game items
-
     [SerializeField] private List<Item> playerItems = new List<Item>();
     [SerializeField] private List<Item> computerItems = new List<Item>();
+    // For Comparing
+    [SerializeField] private int playerItemsWeight = 0;
+    [SerializeField] private int computerItemsWeight = 0;
+    // Use for SetBalance() method
+    private HingeJoint2D _hingeJoint2d; 
+    private UnityEvent _playerWin;
 
-    private Win winGameObject;
+    private Win _winInstance;
 
     private void Start()
     {
-        hingeJoint2d = GetComponent<HingeJoint2D>();
-        winGameObject = Resources.FindObjectsOfTypeAll<Win>()[0];
+        _hingeJoint2d = GetComponent<HingeJoint2D>();
+        _winInstance = Resources.FindObjectsOfTypeAll<Win>()[0];
 
-        if (playerWin == null)
+        if (_playerWin == null)
         {
-            playerWin = new UnityEvent();
+            _playerWin = new UnityEvent();
         }
-        playerWin.AddListener(winGameObject.PlayerWin);
+        _playerWin.AddListener(_winInstance.PlayerWin);
     }
 
     private void Update()
@@ -39,70 +41,49 @@ public class WeightComparing : MonoBehaviour
 
     private void OnDisable()
     {
-        playerWin.RemoveAllListeners();
+        _playerWin.RemoveAllListeners();
     }
 
     // Add item to chosen array
     public void AddItem(Item item, Side side)
     {
-        switch (side)
+        if (side == Side.Player)
         {
-            case Side.Player:
-                playerItems.Add(item);
-                break;
-            case Side.Computer:
-                computerItems.Add(item);
-                break;
-            default:
-                break;
+            playerItems.Add(item);
+            playerItemsWeight += item.Weight;
+        }
+        if (side == Side.Computer)
+        {
+            computerItems.Add(item);
+            computerItemsWeight += item.Weight;
         }
     }
 
     // Remove item from list
     public void RemoveItem(Item item, Side side)
     {
-        switch (side)
+        if (side == Side.Player)
         {
-            case Side.Player:
-                playerItems.Remove(item);
-                break;
-            case Side.Computer:
-                computerItems.Remove(item);
-                break;
-            default:
-                break;
+            playerItems.Remove(item);
+            playerItemsWeight -= item.Weight;
+            if (playerItemsWeight < 0) playerItemsWeight = 0;
+        }
+        if (side == Side.Computer)
+        {
+            computerItems.Remove(item);
+            computerItemsWeight -= item.Weight;
+            if (computerItemsWeight < 0) computerItemsWeight = 0;
         }
     }
 
     public void Compare()
     {
-        int playerWeight = 0;
-        int computerWeight = 0;
-
-        for (int i = 0; i < playerItems.Count; i++)
-        {
-            if (playerItems[i] != null)
-            {
-                playerWeight += playerItems[i].Weight;
-            }
-            
-            
-            
-        }
-
-        for (int i = 0; i < computerItems.Count; i++)
-        {
-            if (computerItems[i] != null)
-            {
-                computerWeight += computerItems[i].Weight;
-            }
-            
-        }
-
-        if (playerWeight == computerWeight && playerWeight > 0 && computerWeight > 0)
+        if (playerItemsWeight == computerItemsWeight
+            && playerItemsWeight > 0
+            && computerItemsWeight > 0)
         {
             SetBalance();
-            playerWin.Invoke();
+            _playerWin.Invoke();
         }
     }
 
@@ -161,7 +142,7 @@ public class WeightComparing : MonoBehaviour
         JointMotor2D motor = new JointMotor2D();
         motor.motorSpeed = 100;
         motor.maxMotorTorque = 1f;
-        hingeJoint2d.motor = motor;
+        _hingeJoint2d.motor = motor;
     }
 
     // Turn platform into balance state
@@ -170,7 +151,7 @@ public class WeightComparing : MonoBehaviour
         JointAngleLimits2D limits = new JointAngleLimits2D();
         limits.min = 0f;
         limits.max = 0f;
-        hingeJoint2d.limits = limits;
+        _hingeJoint2d.limits = limits;
     }
 }
 

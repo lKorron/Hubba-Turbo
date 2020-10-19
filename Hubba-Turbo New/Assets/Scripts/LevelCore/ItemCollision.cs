@@ -41,22 +41,22 @@ public class ItemCollision : MonoBehaviour
             item.IsCollided = true;
 
             _weightComparing.AddItem(item, side);
+            _objectInstantiate.CheckComputerEndInstantiate();
             if (side == Side.Player && item.IsStartItem == false)
             {
                 _objectInstantiate.ComputerInstantiate();
             }
+            
             if (_objectInstantiate.IsComputerEndInstantiate)
             {
                 _weightComparing.Compare();
             }
-            
-
         }
         ItemCollision itemCollision = collision.gameObject.GetComponent<ItemCollision>();
         if (itemCollision == null) throw new System.NullReferenceException("Item equals to null");
     }
 
-    private Side GetCollisionSide(Collision2D collision)
+    public Side GetCollisionSide(Collision2D collision)
     {
         Vector3 center = _camera.ScreenToWorldPoint(new Vector3(Screen.width / 2, 0, 0));
         Vector3 contactPoint = collision.contacts[0].point;
@@ -67,8 +67,5 @@ public class ItemCollision : MonoBehaviour
         if (isRight) return Side.Computer;
         if (isLeft) return Side.Player;
         throw new System.Exception("Method can't correctly dermine side");
-
     }
-
-
 }

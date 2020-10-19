@@ -14,4 +14,12 @@ public class InstantiateSettings : MonoBehaviour
     public List<AnimalItem> AnimalItems => _inventoryItems;
     public InstantiateItem[] InstantiateItems => _instantiateItems;
 
+    private void OnValidate()
+    {
+        foreach (var item in _instantiateItems)
+        {
+            if (item.PrefabsNumber < 1)
+                item.SetStandartPrefabNumber();
+        }
+    }
 }

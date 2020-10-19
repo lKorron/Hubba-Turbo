@@ -14,5 +14,9 @@ public class InstantiateItem
     public int PrefabsNumber => _prefabsNumber;
     public Vector3 Position => _position;
 
-    
+    public void SetStandartPrefabNumber()
+    {
+        _prefabsNumber = 1;
+    }
+
 }
