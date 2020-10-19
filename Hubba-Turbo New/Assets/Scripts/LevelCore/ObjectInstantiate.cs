@@ -152,6 +152,15 @@ public class ObjectInstantiate : MonoBehaviour
         index++;
     }
 
+    public void CheckComputerEndInstantiate()
+    {
+        if (index == computerPrefabList.Count)
+        {
+            IsComputerEndInstantiate = true;
+            return;
+        }
+    }
+
     private void SetItems()
     {
         var instantiateItems = instantiateSettings.InstantiateItems;

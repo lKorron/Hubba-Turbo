@@ -41,16 +41,16 @@ public class ItemCollision : MonoBehaviour
             item.IsCollided = true;
 
             _weightComparing.AddItem(item, side);
+            _objectInstantiate.CheckComputerEndInstantiate();
             if (side == Side.Player && item.IsStartItem == false)
             {
                 _objectInstantiate.ComputerInstantiate();
             }
+            
             if (_objectInstantiate.IsComputerEndInstantiate)
             {
                 _weightComparing.Compare();
             }
-            
-
         }
         ItemCollision itemCollision = collision.gameObject.GetComponent<ItemCollision>();
         if (itemCollision == null) throw new System.NullReferenceException("Item equals to null");
