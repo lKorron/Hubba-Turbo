@@ -7,6 +7,7 @@ TagManager:
   - Computer
   - Platform
   - PlayerStart
+  - ObjectDestroyer
   layers:
   - Default
   - TransparentFX

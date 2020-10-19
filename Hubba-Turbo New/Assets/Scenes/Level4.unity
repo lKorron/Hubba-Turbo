@@ -172,17 +172,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startItemForInstantiate: 3
-  _animalItems:
-  - {fileID: 11400000, guid: 0aa31a8b30c7640efa6730c552c2f491, type: 2}
-  - {fileID: 11400000, guid: c770c2ffef6514a269719d07c8527443, type: 2}
-  _computerPrefabList:
-  - {fileID: 1752755390664844304, guid: 91a350c1f0a0d43aebb05cc26fb67b73, type: 3}
-  - {fileID: 1752755390664844304, guid: 91a350c1f0a0d43aebb05cc26fb67b73, type: 3}
-  - {fileID: 6226395327477669670, guid: a02539a34824d450bb6a149244bc4778, type: 3}
-  _computerPositionList:
-  - {x: 2, y: 2, z: 2}
-  - {x: 2, y: 2, z: 2}
-  - {x: 2, y: 2, z: 2}
+  _inventoryItems: []
+  _instantiateItems: []
 --- !u!4 &87960448
 Transform:
   m_ObjectHideFlags: 0
@@ -429,6 +420,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Elephant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676736881776497899, guid: c4fac233725a344239738322d6402271,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4fac233725a344239738322d6402271, type: 3}
@@ -1436,7 +1432,7 @@ PrefabInstance:
     - target: {fileID: 3863049761774508605, guid: 6ad718be78182475b90194e23dd4c39b,
         type: 3}
       propertyPath: m_TagString
-      value: Platform
+      value: Computer
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3863049761774508594, guid: 6ad718be78182475b90194e23dd4c39b, type: 3}

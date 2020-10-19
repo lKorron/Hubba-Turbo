@@ -8,9 +8,10 @@ public class ObjectInstantiate : MonoBehaviour
     [SerializeField] private bool isComputerActive = true; // Activity of computer
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private GameObject computerPrefab;
-     private Items startItemForInstantiate; //Field for choosing start item
-     private List<GameObject> computerPrefabList;
-     private List<Vector3> computerPositionList;
+    private Items startItemForInstantiate; //Field for choosing start item
+    public List<GameObject> computerPrefabList;
+    public List<Vector3> computerPositionList;
+    public List<int> instantiateNumberList;
 
     private InstantiateSettings instantiateSettings;
     private ItemCollision playerItemCollision;
@@ -30,9 +31,9 @@ public class ObjectInstantiate : MonoBehaviour
         instantiateSettings = FindObjectOfType<InstantiateSettings>();
 
         startItemForInstantiate = instantiateSettings.StartItemForInstantiate;
-        computerPrefabList = instantiateSettings.ComputerPrefabList;
-        computerPositionList = instantiateSettings.ComputerPositionList;
+        
 
+        SetItems();
 
         // Choosing start item
         switch (startItemForInstantiate)
@@ -68,7 +69,6 @@ public class ObjectInstantiate : MonoBehaviour
 
             // Activity of computer dealing with prefabs
             playerItemCollision = clone.GetComponent<ItemCollision>();
-            playerItemCollision.SetComputerActive(isComputerActive);
             
         }
 
@@ -127,16 +127,45 @@ public class ObjectInstantiate : MonoBehaviour
             return;
         }
         GameObject prefab = computerPrefabList[index];
+ 
         Vector3 position = computerPositionList[index];
 
-        GameObject clone = Instantiate(prefab, position, Quaternion.identity);
-        clone.tag = "Computer";
+        int instantiateNumber = instantiateNumberList[index];
+
+        if (instantiateNumber == 0)
+        {
+            GameObject clone = Instantiate(prefab, position, Quaternion.identity);
+            clone.tag = "Computer";
+        }
+        else
+        {
+            for (int i = 0; i < instantiateNumber; i++)
+            {
+                GameObject clone = Instantiate(prefab, position, Quaternion.identity);
+                clone.tag = "Computer";
+            }
+        }
+
+        
 
         
         index++;
     }
 
-    
+    private void SetItems()
+    {
+        var instantiateItems = instantiateSettings.InstantiateItems;
+        if (instantiateItems != null)
+        {
+            foreach (var item in instantiateItems)
+            {
+                computerPrefabList.Add(item.Prefab);
+                computerPositionList.Add(item.Position);
+                instantiateNumberList.Add(item.PrefabsNumber);
+            }
+        }
+        
+    }
 
 
 }

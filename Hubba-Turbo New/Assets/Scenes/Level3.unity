@@ -670,6 +670,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Elephant
       objectReference: {fileID: 0}
+    - target: {fileID: 1676736881776497899, guid: c4fac233725a344239738322d6402271,
+        type: 3}
+      propertyPath: m_TagString
+      value: Computer
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4fac233725a344239738322d6402271, type: 3}
 --- !u!1 &1640613802
@@ -702,11 +707,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startItemForInstantiate: 3
-  _animalItems:
+  _inventoryItems:
   - {fileID: 11400000, guid: 0aa31a8b30c7640efa6730c552c2f491, type: 2}
   - {fileID: 11400000, guid: c770c2ffef6514a269719d07c8527443, type: 2}
-  _computerPrefabList: []
-  _computerPositionList: []
+  _instantiateItems: []
 --- !u!4 &1640613804
 Transform:
   m_ObjectHideFlags: 0

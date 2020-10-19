@@ -230,6 +230,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6990826829097647743, guid: 792d3fb0b8114405aa0b74da4b9bf0e1,
+        type: 3}
+      propertyPath: instantiateItems.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6990826829151519855, guid: 792d3fb0b8114405aa0b74da4b9bf0e1,
         type: 3}
       propertyPath: m_AnchorMin.y
