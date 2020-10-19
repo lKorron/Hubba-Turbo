@@ -67,8 +67,5 @@ public class ItemCollision : MonoBehaviour
         if (isRight) return Side.Computer;
         if (isLeft) return Side.Player;
         throw new System.Exception("Method can't correctly dermine side");
-
     }
-
-
 }

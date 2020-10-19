@@ -5,22 +5,17 @@ using UnityEngine.UI;
 
 public class ObjectInstantiate : MonoBehaviour
 {
-    [SerializeField] private bool isComputerActive = true; // Activity of computer
-    [SerializeField] private GameObject playerPrefab;
-    [SerializeField] private GameObject computerPrefab;
-    public List<GameObject> computerPrefabList;
-    public List<Vector3> computerPositionList;
-    public List<int> instantiateNumberList;
+    private GameObject playerPrefab;
+
+    private List<GameObject> computerPrefabList = new List<GameObject>();
+    private List<Vector3> computerPositionList = new List<Vector3>();
+    private List<int> instantiateNumberList = new List<int>();
 
     private InstantiateSettings instantiateSettings;
-    private ItemCollision playerItemCollision;
     private int index = 0; // Index for computer smart instantiate
     // Properties 
     public bool IsComputerEndInstantiate { get; private set; } = false;
     public bool IsPlayerCanInstantiate { get; set; } = true;
-
-    
-   
 
     private void Start()
     {
@@ -31,7 +26,7 @@ public class ObjectInstantiate : MonoBehaviour
 
     private void Update()
     {
-        Click();
+        ClickProcessing();
     }
  
     // Change prefab (red)
@@ -39,27 +34,6 @@ public class ObjectInstantiate : MonoBehaviour
     {
         string characterName = character.ToString();
         playerPrefab = (GameObject)Resources.Load("Prefabs/" + characterName, typeof(GameObject));
-    }
-    public void SetRedColour()
-    {
-        playerPrefab = (GameObject)Resources.Load("Prefabs/RedCube", typeof(GameObject));
-
-    }
-    // Change prefab (blue)
-    public void SetBlueColour()
-    {
-        playerPrefab = (GameObject)Resources.Load("Prefabs/BlueCube", typeof(GameObject));
-        
-    }
-
-    public void SetSheep(bool changeValue)
-    {
-        playerPrefab = (GameObject)Resources.Load("Prefabs/Sheep", typeof(GameObject));
-    }
-
-    public void SetMouse(bool changeValue)
-    {
-        playerPrefab = (GameObject)Resources.Load("Prefabs/Mouse", typeof(GameObject));
     }
 
     // Computer smart isntantiate
@@ -111,10 +85,9 @@ public class ObjectInstantiate : MonoBehaviour
                 instantiateNumberList.Add(item.PrefabsNumber);
             }
         }
-        
     }
 
-    private void Click()
+    private void ClickProcessing()
     {
         // Mouse input
         if (IsPlayerCanInstantiate && Input.GetButtonDown("Fire1") && Input.mousePosition.x < Screen.width / 2)
@@ -124,15 +97,8 @@ public class ObjectInstantiate : MonoBehaviour
             mousePosition.z = 2.0f;
             Vector3 objectPosition = Camera.main.ScreenToWorldPoint(mousePosition);
             GameObject clone = Instantiate(playerPrefab, objectPosition, Quaternion.identity);
-            clone.tag = "Player";
-
-            // Activity of computer dealing with prefabs
-            playerItemCollision = clone.GetComponent<ItemCollision>();
-
         }
     }
-
-
 }
 
 // All characters in game
@@ -143,6 +109,5 @@ public enum Items
     sheep,
     mouse,
     elephant
-
 }
 

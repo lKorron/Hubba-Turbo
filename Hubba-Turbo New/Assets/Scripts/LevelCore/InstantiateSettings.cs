@@ -22,5 +22,4 @@ public class InstantiateSettings : MonoBehaviour
                 item.SetStandartPrefabNumber();
         }
     }
-
 }
