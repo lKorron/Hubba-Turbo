@@ -193,18 +193,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &350923869 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3863049761774508599, guid: 6ad718be78182475b90194e23dd4c39b,
-    type: 3}
-  m_PrefabInstance: {fileID: 3863049762119923306}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1165985587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcdbb0d31517647a888d3e4f21f51476, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &367898369
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,7 +803,7 @@ PrefabInstance:
         type: 3}
       propertyPath: weightComparing
       value: 
-      objectReference: {fileID: 350923869}
+      objectReference: {fileID: 0}
     - target: {fileID: 1898151845141786268, guid: c3283fdaa1ee14bc685aa2db80eccbb2,
         type: 3}
       propertyPath: m_Name
@@ -1207,7 +1195,7 @@ PrefabInstance:
         type: 3}
       propertyPath: weightComparing
       value: 
-      objectReference: {fileID: 350923869}
+      objectReference: {fileID: 0}
     - target: {fileID: 55791867994731521, guid: c3283fdaa1ee14bc685aa2db80eccbb2,
         type: 3}
       propertyPath: OnPlayerCollisionWithOther.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -1435,7 +1423,7 @@ PrefabInstance:
     - target: {fileID: 1513108364, guid: 8b8951e87416441889dc3eb3d28fdf31, type: 3}
       propertyPath: weightComparing
       value: 
-      objectReference: {fileID: 350923869}
+      objectReference: {fileID: 0}
     - target: {fileID: 1513108364, guid: 8b8951e87416441889dc3eb3d28fdf31, type: 3}
       propertyPath: IsComputerActive
       value: 0

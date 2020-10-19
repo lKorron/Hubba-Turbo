@@ -56,7 +56,7 @@ public class ItemCollision : MonoBehaviour
         if (itemCollision == null) throw new System.NullReferenceException("Item equals to null");
     }
 
-    private Side GetCollisionSide(Collision2D collision)
+    public Side GetCollisionSide(Collision2D collision)
     {
         Vector3 center = _camera.ScreenToWorldPoint(new Vector3(Screen.width / 2, 0, 0));
         Vector3 contactPoint = collision.contacts[0].point;
