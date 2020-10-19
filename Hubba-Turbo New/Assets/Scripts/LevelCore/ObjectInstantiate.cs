@@ -36,6 +36,7 @@ public class ObjectInstantiate : MonoBehaviour
         SetItems();
 
         // Choosing start item
+        /*
         switch (startItemForInstantiate)
         {
             case Items.blueCube:
@@ -52,27 +53,12 @@ public class ObjectInstantiate : MonoBehaviour
                 break;
             default:
                 break;
-        }
+        }*/
     }
 
     private void Update()
     {
-        // Mouse input
-        if (IsPlayerCanInstantiate && Input.GetButtonDown("Fire1") && Input.mousePosition.x < Screen.width / 2)
-        {
-            
-            Vector3 mousePosition = Input.mousePosition;
-            mousePosition.z = 2.0f;       
-            Vector3 objectPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-            GameObject clone = Instantiate(playerPrefab, objectPosition, Quaternion.identity);
-            clone.tag = "Player";
-
-            // Activity of computer dealing with prefabs
-            playerItemCollision = clone.GetComponent<ItemCollision>();
-            
-        }
-
-        
+        Click();
     }
  
     // Change prefab (red)
@@ -103,51 +89,30 @@ public class ObjectInstantiate : MonoBehaviour
         playerPrefab = (GameObject)Resources.Load("Prefabs/Mouse", typeof(GameObject));
     }
 
-    // Computer turn
-    public void OldComputerIntantiate()
-    {
-        GameObject clone = Instantiate(computerPrefab, new Vector3(3, 5, 0), Quaternion.identity);
-        clone.tag = "Computer";
-        
-    }
-
     // Computer smart isntantiate
     public void ComputerInstantiate()
     {
-        
         if (computerPrefabList.Count != computerPositionList.Count)
-        {
-            print("Error: Add values to both lists");
-            return;
-            
-        }
+            throw new MissingComponentException("Error: Add values to both lists");
+
         if (index == computerPrefabList.Count)
         {
             IsComputerEndInstantiate = true;
             return;
         }
-        GameObject prefab = computerPrefabList[index];
- 
-        Vector3 position = computerPositionList[index];
 
+        GameObject prefab = computerPrefabList[index];
+        Vector3 position = computerPositionList[index];
         int instantiateNumber = instantiateNumberList[index];
 
         if (instantiateNumber == 0)
-        {
-            GameObject clone = Instantiate(prefab, position, Quaternion.identity);
-            clone.tag = "Computer";
-        }
+            Instantiate(prefab, position, Quaternion.identity);
         else
         {
             for (int i = 0; i < instantiateNumber; i++)
-            {
-                GameObject clone = Instantiate(prefab, position, Quaternion.identity);
-                clone.tag = "Computer";
-            }
+                Instantiate(prefab, position, Quaternion.identity);
+            
         }
-
-        
-
         
         index++;
     }
@@ -174,6 +139,24 @@ public class ObjectInstantiate : MonoBehaviour
             }
         }
         
+    }
+
+    private void Click()
+    {
+        // Mouse input
+        if (IsPlayerCanInstantiate && Input.GetButtonDown("Fire1") && Input.mousePosition.x < Screen.width / 2)
+        {
+
+            Vector3 mousePosition = Input.mousePosition;
+            mousePosition.z = 2.0f;
+            Vector3 objectPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            GameObject clone = Instantiate(playerPrefab, objectPosition, Quaternion.identity);
+            clone.tag = "Player";
+
+            // Activity of computer dealing with prefabs
+            playerItemCollision = clone.GetComponent<ItemCollision>();
+
+        }
     }
 
 
