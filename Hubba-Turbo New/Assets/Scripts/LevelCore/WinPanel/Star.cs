@@ -25,7 +25,6 @@ public class Star : MonoBehaviour
 
     public void SetStar()
     {
-        
         image.sprite = starFill;
     }
 

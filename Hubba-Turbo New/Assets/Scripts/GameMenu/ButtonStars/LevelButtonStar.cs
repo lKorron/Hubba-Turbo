@@ -28,10 +28,5 @@ public class LevelButtonStar : MonoBehaviour
         gameObject.SetActive(true);
         _image.sprite = _blackStarSprite;
     }
-
-    public void DeleteStar()
-    {
-        gameObject.SetActive(false);
-    }
    
 }
