@@ -9,12 +9,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Button))]
 public class LevelButton : MonoBehaviour, IComparable
 {
-    [SerializeField] private Sprite zeroStarSprite;
-    [SerializeField] private Sprite oneStarSprite;
-    [SerializeField] private Sprite twoStarSprite;
-    [SerializeField] private Sprite threeStarSprite;
-    [SerializeField] private Sprite blockSprite;
-
+    private LevelButtonStars _levelButtonStars;
     private LevelChoice _levelChoice;
     private Button _button;
     private UnityAction _goToLevel;
@@ -27,6 +22,7 @@ public class LevelButton : MonoBehaviour, IComparable
 
         _levelImage = GetComponent<Image>();
         _button = GetComponent<Button>();
+        _levelButtonStars = GetComponentInChildren<LevelButtonStars>();
         _levelChoice = FindObjectOfType<LevelChoice>();
 
         _goToLevel = () => _levelChoice.LoadLevel(levelNumber);
@@ -40,28 +36,12 @@ public class LevelButton : MonoBehaviour, IComparable
 
     public void SetStars(int starsCount)
     {
-        switch (starsCount)
-        {
-            case 0:
-                SetZeroStar();
-                break;
-            case 1:
-                SetOneStar();
-                break;
-            case 2:
-                SetTwoStar();
-                break;
-            case 3:
-                SetThreeStar();
-                break;
-            default:
-                break;
-        }
+        _levelButtonStars.SetStars(starsCount);
     }
 
     public void BlockLevel()
     {
-        _levelImage.sprite = blockSprite;
+        //_levelImage.sprite = blockSprite;
         _button.interactable = false;
     }
 
@@ -85,24 +65,4 @@ public class LevelButton : MonoBehaviour, IComparable
         }
         else return 0;
     }
-    private void SetZeroStar()
-    {
-        _levelImage.sprite = zeroStarSprite;
-    }
-    private void SetOneStar()
-    {
-        _levelImage.sprite = oneStarSprite;
-    }
-
-    private void SetTwoStar()
-    {
-        _levelImage.sprite = twoStarSprite;
-    }
-
-    private void SetThreeStar()
-    {
-        _levelImage.sprite = threeStarSprite;
-    }
-
-    
 }
