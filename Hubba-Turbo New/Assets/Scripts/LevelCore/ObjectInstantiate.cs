@@ -8,7 +8,6 @@ public class ObjectInstantiate : MonoBehaviour
     [SerializeField] private bool isComputerActive = true; // Activity of computer
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private GameObject computerPrefab;
-    private Items startItemForInstantiate; //Field for choosing start item
     public List<GameObject> computerPrefabList;
     public List<Vector3> computerPositionList;
     public List<int> instantiateNumberList;
@@ -20,40 +19,14 @@ public class ObjectInstantiate : MonoBehaviour
     public bool IsComputerEndInstantiate { get; private set; } = false;
     public bool IsPlayerCanInstantiate { get; set; } = true;
 
-    public Items StartItemForInstantiate {
-        get { return startItemForInstantiate; }
-    }
+    
    
 
     private void Start()
     {
         // Setting computer prefabs and their positions
         instantiateSettings = FindObjectOfType<InstantiateSettings>();
-
-        startItemForInstantiate = instantiateSettings.StartItemForInstantiate;
-        
-
         SetItems();
-
-        // Choosing start item
-        /*
-        switch (startItemForInstantiate)
-        {
-            case Items.blueCube:
-                SetBlueColour();
-                break;
-            case Items.redCube:
-                SetRedColour();
-                break;
-            case Items.sheep:
-                SetSheep(true);
-                break;
-            case Items.mouse:
-                SetMouse(true);
-                break;
-            default:
-                break;
-        }*/
     }
 
     private void Update()
