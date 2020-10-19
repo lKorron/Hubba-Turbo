@@ -66,11 +66,13 @@ public class WeightComparing : MonoBehaviour
         {
             playerItems.Remove(item);
             playerItemsWeight -= item.Weight;
+            if (playerItemsWeight < 0) playerItemsWeight = 0;
         }
         if (side == Side.Computer)
         {
             computerItems.Remove(item);
             computerItemsWeight -= item.Weight;
+            if (computerItemsWeight < 0) computerItemsWeight = 0;
         }
     }
 

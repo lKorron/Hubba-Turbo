@@ -3,26 +3,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
+[RequireComponent(typeof(Image))]
+[RequireComponent(typeof(Button))]
 public class LevelButton : MonoBehaviour, IComparable
 {
     [SerializeField] private Sprite zeroStarSprite;
     [SerializeField] private Sprite oneStarSprite;
     [SerializeField] private Sprite twoStarSprite;
     [SerializeField] private Sprite threeStarSprite;
-    
     [SerializeField] private Sprite blockSprite;
 
-    private Button button;
+    private LevelChoice _levelChoice;
+    private Button _button;
+    private UnityAction _goToLevel;
 
     public int levelNumber; // Id for sorting
-    private Image levelImage;
+    private Image _levelImage;
 
     private void Awake()
     {
-        levelImage = GetComponent<Image>();
-        button = GetComponent<Button>();
-        
+
+        _levelImage = GetComponent<Image>();
+        _button = GetComponent<Button>();
+        _levelChoice = FindObjectOfType<LevelChoice>();
+
+        _goToLevel = () => _levelChoice.LoadLevel(levelNumber);
+        _button.onClick.AddListener(_goToLevel);
+    }
+
+    private void OnDisable()
+    {
+        _button.onClick.RemoveListener(_goToLevel);
     }
 
     public void SetStars(int starsCount)
@@ -48,8 +61,8 @@ public class LevelButton : MonoBehaviour, IComparable
 
     public void BlockLevel()
     {
-        levelImage.sprite = blockSprite;
-        button.interactable = false;
+        _levelImage.sprite = blockSprite;
+        _button.interactable = false;
     }
 
 
@@ -74,21 +87,21 @@ public class LevelButton : MonoBehaviour, IComparable
     }
     private void SetZeroStar()
     {
-        levelImage.sprite = zeroStarSprite;
+        _levelImage.sprite = zeroStarSprite;
     }
     private void SetOneStar()
     {
-        levelImage.sprite = oneStarSprite;
+        _levelImage.sprite = oneStarSprite;
     }
 
     private void SetTwoStar()
     {
-        levelImage.sprite = twoStarSprite;
+        _levelImage.sprite = twoStarSprite;
     }
 
     private void SetThreeStar()
     {
-        levelImage.sprite = threeStarSprite;
+        _levelImage.sprite = threeStarSprite;
     }
 
     
