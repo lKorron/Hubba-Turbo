@@ -21,6 +21,8 @@ public class Menu : MonoBehaviour
         menuLevels = FindObjectsOfType<LevelButton>();
         saveSystem = FindObjectOfType<SaveSystem>();
 
+        saveSystem.FirstTimeCreate();
+
         if (IsClearData)
         {
             saveSystem.DeleteFile();

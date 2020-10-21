@@ -39,4 +39,10 @@ public class SaveSystem : MonoBehaviour
     {
         File.Delete(Application.persistentDataPath + "/Levels.dat");
     }
+
+    public void FirstTimeCreate()
+    {
+        FileStream file = new FileStream(Application.persistentDataPath + "/Levels.dat", FileMode.OpenOrCreate);
+        file.Close();
+    }
 }
