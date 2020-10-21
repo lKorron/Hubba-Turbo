@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelData
+[CreateAssetMenu(menuName = "LevelData")]
+public class LevelData : ScriptableObject
 {
-    private string imageName;
+    [SerializeField] private int[] _levels;
 
-    public LevelData()
+    public int[] Levels
     {
-
+        get { return _levels; }
+        set { _levels = value; }
     }
 }
+

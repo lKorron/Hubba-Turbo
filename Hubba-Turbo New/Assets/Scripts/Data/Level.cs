@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour, IComparable
 {
-
+    [SerializeField] private LevelData _levelData;
     private int countOfStars;
     private int levelNumber;
 
@@ -25,8 +25,11 @@ public class Level : MonoBehaviour, IComparable
     {
         levelNumber = SceneManager.GetActiveScene().buildIndex;
         DontDestroyOnLoad(transform.gameObject);
-    }
 
+
+        countOfStars = _levelData.Levels[levelNumber - 1];
+        
+    }
 
     public void SetOneStar()
     {

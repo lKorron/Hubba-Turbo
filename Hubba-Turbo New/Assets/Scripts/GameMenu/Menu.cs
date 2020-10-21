@@ -8,6 +8,7 @@ using System.Linq;
 public class Menu : MonoBehaviour
 {
     [SerializeField] private bool IsClearData;
+    [SerializeField] private LevelData _levelData;
     [SerializeField] public MenuData menuData;
     private Level[] levels; // Don't destroy objets array
     private LevelButton[] menuLevels; // Menu buttons array
@@ -47,6 +48,7 @@ public class Menu : MonoBehaviour
         
 
         ShowLevel();
+        _levelData.Levels = menuData.levels;
     }
     
     private void DataSetUp(Level level)
@@ -61,6 +63,7 @@ public class Menu : MonoBehaviour
             levelsList.Add(0);
         }
         menuData.levels = levelsList.ToArray();
+
         Destroy(level.gameObject);
 
         
