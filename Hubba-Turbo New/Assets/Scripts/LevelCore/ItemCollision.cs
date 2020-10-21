@@ -68,4 +68,17 @@ public class ItemCollision : MonoBehaviour
         if (isLeft) return Side.Player;
         throw new System.Exception("Method can't correctly dermine side");
     }
+
+    public Side GetCollisionSide(Collider2D collision)
+    {
+        Vector3 center = _camera.ScreenToWorldPoint(new Vector3(Screen.width / 2, 0, 0));
+        Vector3 contactPoint = collision.ClosestPoint(transform.position);
+
+        bool isRight = contactPoint.x > center.x;
+        bool isLeft = contactPoint.x < center.x;
+
+        if (isRight) return Side.Computer;
+        if (isLeft) return Side.Player;
+        throw new System.Exception("Method can't correctly dermine side");
+    }
 }

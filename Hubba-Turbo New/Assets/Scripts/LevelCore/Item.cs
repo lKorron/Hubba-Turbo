@@ -9,6 +9,8 @@ public class Item : MonoBehaviour
     [SerializeField] private bool _isStartItem;
 
     public bool IsCollided { get; set; } = false;
+    public bool IsRemoved { get; set; } = false;
+
     public int Weight => _weight; // property for list processing
     public bool IsStartItem => _isStartItem;
 
