@@ -34,16 +34,19 @@ public class Level : MonoBehaviour, IComparable
     public void SetOneStar()
     {
         countOfStars = 1;
+        _levelData.Levels[levelNumber - 1] = 1;
     }
 
     public void SetTwoStar()
     {
         countOfStars = 2;
+        _levelData.Levels[levelNumber - 1] = 2;
     }
 
     public void SetThreeStar()
     {
         countOfStars = 3;
+        _levelData.Levels[levelNumber - 1] = 3;
     }
 
     // For array sort
