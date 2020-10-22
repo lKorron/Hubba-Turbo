@@ -49,6 +49,12 @@ public class Level : MonoBehaviour, IComparable
         _levelData.Levels[levelNumber - 1] = 3;
     }
 
+    public void SetStars(int count)
+    {
+        countOfStars = count;
+        _levelData.Levels[levelNumber - 1] = count;
+    }
+
     // For array sort
     public int CompareTo(object obj)
     {
