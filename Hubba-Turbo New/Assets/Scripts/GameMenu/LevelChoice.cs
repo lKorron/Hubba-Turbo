@@ -6,59 +6,76 @@ using UnityEngine.SceneManagement;
 public class LevelChoice : MonoBehaviour
 {
     [SerializeField] private GameObject _loadScreen;
+
     // load level menu
     public void LoadScene(string sceneName)
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(sceneName);
+        LoadMenuElements(sceneName);
     }
+
     public void LoadMenu()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Menu");
+        LoadMenuElements(GameScene.Menu);
     }
+
     public void LoadStartScreen()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+        LoadMenuElements(GameScene.MainMenu);
     }
+
     public void LoadZoneMenu()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Zones");
+        LoadMenuElements(GameScene.Zones);
     }
+
     // load level by index
     public void LoadLevel(int level)
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(level);
-        SceneManager.LoadScene("Interface", LoadSceneMode.Additive);
+        LoadLevelElements(level);
     }
+
     public void LoadLevelWithLoadScreen(int level)
     {
         _loadScreen.SetActive(true);
-        Time.timeScale = 1f;
-        SceneManager.LoadSceneAsync(level);
-        SceneManager.LoadScene("Interface", LoadSceneMode.Additive);
+        LoadLevelElements(level);
     }
+
     // reload current level
     public void ReloadLevel()
     {
-        Time.timeScale = 1f;
         Scene scene = SceneManager.GetActiveScene();
         int index = scene.buildIndex;
-        SceneManager.LoadScene(index);
-        SceneManager.LoadScene("Interface", LoadSceneMode.Additive);
+        LoadLevelElements(index);
+       
     }
 
     public void NextLevel()
     {
-        Time.timeScale = 1f;
         Scene scene = SceneManager.GetActiveScene();
         int index = scene.buildIndex;
-        SceneManager.LoadScene(index + 1);
-        SceneManager.LoadScene("Interface", LoadSceneMode.Additive);
+        LoadLevelElements(index + 1);
     }
+
+    private void LoadLevelElements(int index)
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadSceneAsync(index);
+        string name = GameScene.Interface.ToString();
+        SceneManager.LoadScene(name, LoadSceneMode.Additive);
+    }
+
+    private void LoadMenuElements(GameScene gameScene)
+    {
+        Time.timeScale = 1f;
+        name = gameScene.ToString();
+        SceneManager.LoadScene(name);
+    }
+    private void LoadMenuElements(string sceneName)
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(sceneName);
+    }
+
 }
 
 

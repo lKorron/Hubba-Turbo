@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _waitingTime: 6
-  scene: 0
+  _scene: 1
 --- !u!1 &1137847253
 GameObject:
   m_ObjectHideFlags: 0
