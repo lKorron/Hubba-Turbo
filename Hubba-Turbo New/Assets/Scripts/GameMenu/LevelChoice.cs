@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelChoice : MonoBehaviour
 {
+    [SerializeField] private GameObject _loadScreen;
     // load level menu
     public void LoadScene(string sceneName)
     {
@@ -31,6 +32,13 @@ public class LevelChoice : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(level);
+        SceneManager.LoadScene("Interface", LoadSceneMode.Additive);
+    }
+    public void LoadLevelWithLoadScreen(int level)
+    {
+        _loadScreen.SetActive(true);
+        Time.timeScale = 1f;
+        SceneManager.LoadSceneAsync(level);
         SceneManager.LoadScene("Interface", LoadSceneMode.Additive);
     }
     // reload current level
