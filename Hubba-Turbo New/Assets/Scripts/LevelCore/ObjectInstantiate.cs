@@ -108,6 +108,7 @@ public enum Items
     redCube,
     sheep,
     mouse,
-    elephant
+    elephant,
+    cat
 }
 
