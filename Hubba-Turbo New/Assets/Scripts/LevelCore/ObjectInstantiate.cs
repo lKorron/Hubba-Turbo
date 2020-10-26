@@ -101,14 +101,5 @@ public class ObjectInstantiate : MonoBehaviour
     }
 }
 
-// All characters in game
-public enum Items
-{
-    blueCube,
-    redCube,
-    sheep,
-    mouse,
-    elephant,
-    cat
-}
+
 
