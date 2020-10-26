@@ -1,5 +1,7 @@
 # Hubba-Turbo
 Can you strike a balance? Easy task, isn't it? However, in our game on the scales there are living plasticine characters ...
+# How to start
+To start the game, start the first scene - the intro.
 # Screenshots
 <div>
   <img width="360" height="200" align="left" src="https://github.com/lKorron/Hubba-TurboRep/blob/master/Hubba-Turbo%20New/Assets/ScreenShots/StartScreen.png">
