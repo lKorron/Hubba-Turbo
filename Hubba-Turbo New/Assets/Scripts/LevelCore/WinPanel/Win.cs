@@ -40,18 +40,18 @@ public class Win : MonoBehaviour
         if (timer.IsTimerEnd == false ^ floor.IsWasCollision == false)
         {
             starsPanel.SetTwoStars();
-            levelInfo.SetTwoStar();
+            levelInfo.SetStars(2);
             
         }
         else if (timer.IsTimerEnd == false && floor.IsWasCollision == false)
         {
             starsPanel.SetThreeStars();
-            levelInfo.SetThreeStar();
+            levelInfo.SetStars(3);
         }
         else
         {
             starsPanel.SetOneStar();
-            levelInfo.SetOneStar();
+            levelInfo.SetStars(1);
         }
 
         

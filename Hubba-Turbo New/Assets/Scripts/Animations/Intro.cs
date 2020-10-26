@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Intro : MonoBehaviour
 {
     [SerializeField] private float _waitingTime;
-    [SerializeField] private SceneName _scene;
+    [SerializeField] private GameScene _scene;
 
     private void Awake()
     {
@@ -22,12 +22,5 @@ public class Intro : MonoBehaviour
     {
         yield return new  WaitForSeconds(_waitingTime);
         SceneManager.LoadScene(_scene.ToString());
-        
     }
-}
-
-public enum SceneName
-{
-    MainMenu,
-    Zones
 }
