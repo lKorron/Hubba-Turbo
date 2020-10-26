@@ -33,7 +33,7 @@ public class ObjectInstantiate : MonoBehaviour
     public void SetCharacter(Items character)
     {
         string characterName = character.ToString();
-        playerPrefab = (GameObject)Resources.Load("Prefabs/" + characterName, typeof(GameObject));
+        playerPrefab = (GameObject)Resources.Load("Prefabs/Animals" + characterName, typeof(GameObject));
     }
 
     // Computer smart isntantiate
