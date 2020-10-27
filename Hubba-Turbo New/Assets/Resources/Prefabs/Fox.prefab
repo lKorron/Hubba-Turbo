@@ -191,7 +191,7 @@ Animator:
   m_GameObject: {fileID: 4643198847498687479}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ca65fe39cb0b64c968c87480a40fc265, type: 2}
+  m_Controller: {fileID: 9100000, guid: 228f3ce287d984abb8483eb1cd263459, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -213,6 +213,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 7
-  m_animationClip: {fileID: 0}
+  m_animationClip: {fileID: 7400000, guid: 9cc4ff9ae16694a3da03c5bd897de0a3, type: 2}
   isPlaying: 1
   isRandomFactorActive: 1
