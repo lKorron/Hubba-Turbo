@@ -11,5 +11,8 @@ public enum Items
     mouse,
     elephant,
     cat,
-    fox
+    fox,
+    yellowBird,
+    wolf,
+    goose
 }

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c1b5a6e96a354dbba6b325fc330d8f8, type: 3}
-  m_Name: YellowBird
+  m_Name: Goose
   m_EditorClassIdentifier: 
-  _character: 7
-  _iconSprite: {fileID: 21300000, guid: 5cd1c391240274ce6a104efdc5947f16, type: 3}
+  _character: 9
+  _iconSprite: {fileID: 21300000, guid: 5dbac0c5ea09e433eb2f23a3cac41634, type: 3}
