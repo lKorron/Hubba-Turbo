@@ -8,31 +8,31 @@ using UnityEngine;
 
 public class Escape : MonoBehaviour
 {
-    [SerializeField] private Animal _selfAnimal;
-    [SerializeField] private Animal _fearAnimal;
-    [SerializeField] private Side _escapeSide;
+    [SerializeField] private Animal selfAnimal;
+    [SerializeField] private Animal fearAnimal;
+    [SerializeField] private Side escapeSide;
     [Range(0.0f, 1.0f)]
-    [SerializeField] private float _flyingForce; // How fast unit will fly
+    [SerializeField] private float flyingForce; // How fast unit will fly
 
-    private WeightComparing _weightComparing;
-    private Rigidbody2D _rigidbody;
-    private Animator _animator;
-    private Item _itemSelf;
-    private ItemCollision[] _itemCollisions;
-    private bool _isEscaping;
-    private float _animationTime = 2f;
-    private float _delayAfterAnimation = 4f;
+    private WeightComparing weightComparing;
+    private Rigidbody2D m_rigidbody;
+    private Animator animator;
+    private Item itemSelf;
+    private ItemCollision[] itemCollisions;
+    private bool isEscaping;
+    private float animationTime = 2f;
+    private float delayAfterAnimation = 4f;
 
     private void Start()
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
-        _animator = GetComponent<Animator>();
-        _itemSelf = GetComponent<Item>();
+        m_rigidbody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        itemSelf = GetComponent<Item>();
 
-        _weightComparing = FindObjectOfType<WeightComparing>();
-        _itemCollisions = FindObjectsOfType<ItemCollision>();
+        weightComparing = FindObjectOfType<WeightComparing>();
+        itemCollisions = FindObjectsOfType<ItemCollision>();
 
-        foreach (var item in _itemCollisions)
+        foreach (var item in itemCollisions)
         {
             item.OnCollision.AddListener(CheckAndEscape);
         }
@@ -42,7 +42,7 @@ public class Escape : MonoBehaviour
 
     private void OnDisable()
     {
-        foreach (var item in _itemCollisions)
+        foreach (var item in itemCollisions)
         {
             item.OnCollision.RemoveListener(CheckAndEscape);
         }
@@ -50,23 +50,23 @@ public class Escape : MonoBehaviour
 
     public void CheckAndEscape()
     {
-        if (_weightComparing.IsAnimalsOnBoard(_fearAnimal, _selfAnimal) && _isEscaping == false)
+        if (weightComparing.IsAnimalsOnBoard(fearAnimal, selfAnimal) && isEscaping == false)
         {
             StartCoroutine(StartEscape());
-            _weightComparing.RemoveItem(_itemSelf, _escapeSide);
+            weightComparing.RemoveItem(itemSelf, escapeSide);
         }
     }
 
     // Flying method
     private IEnumerator StartEscape()
     {
-        _animator.Play("ElephantEscape");
-        _isEscaping = true;
-        yield return new WaitForSeconds(_animationTime);
+        animator.Play("ElephantEscape");
+        isEscaping = true;
+        yield return new WaitForSeconds(animationTime);
         // Multiple for comfortable
-        _rigidbody.gravityScale = _flyingForce * -1;
-        yield return new WaitForSeconds(_delayAfterAnimation);
-        _isEscaping = false;
+        m_rigidbody.gravityScale = flyingForce * -1;
+        yield return new WaitForSeconds(delayAfterAnimation);
+        isEscaping = false;
     }
 
     
