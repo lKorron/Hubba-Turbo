@@ -73,13 +73,4 @@ public class Escape : MonoBehaviour
 
 }
 
-public enum Animal
-{
-    Mouse,
-    Snake,
-    Bird,
-    Dog,
-    Wolf,
-    Elephant,
-    Sheep
-}
+

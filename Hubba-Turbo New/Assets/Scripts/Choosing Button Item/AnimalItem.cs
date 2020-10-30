@@ -5,9 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "AnimalItem")]
 public class AnimalItem : ScriptableObject
 {
-    [SerializeField] private Items _character;
+    [SerializeField] private Animal _animal;
     [SerializeField] private Sprite _iconSprite;
 
-    public Items Character { get { return _character; } }
+    public Animal Animal { get { return _animal; } }
     public Sprite IconSprite { get { return _iconSprite; } }
 }
