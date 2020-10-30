@@ -92,7 +92,7 @@ public class WeightComparing : MonoBehaviour
     public bool IsAnimalsOnBoard(Animal fearAnimal, Animal selfAnimal)
     {
         bool isFirstAnimalInList = false;
-        bool isSecondAnimalInList = false;
+        bool isSecondAnimal = false;
 
         List<Item> items = playerItems.Concat(computerItems).ToList();
 
@@ -108,12 +108,12 @@ public class WeightComparing : MonoBehaviour
                 if (item.gameObject.name == selfAnimal.ToString()
                 || item.gameObject.name == selfAnimal.ToString() + "(Clone)")
                 {
-                    isSecondAnimalInList = true;
+                    isSecondAnimal = true;
                 }
             }
         });
 
-        return isFirstAnimalInList && isSecondAnimalInList;
+        return isFirstAnimalInList && isSecondAnimal;
     }
 
     // May be 
