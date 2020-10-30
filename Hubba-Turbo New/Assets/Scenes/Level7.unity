@@ -557,11 +557,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1041868883, guid: c4fac233725a344239738322d6402271, type: 3}
       propertyPath: _selfAnimal
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1041868883, guid: c4fac233725a344239738322d6402271, type: 3}
       propertyPath: _fearAnimal
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1676736881776497896, guid: c4fac233725a344239738322d6402271,
         type: 3}

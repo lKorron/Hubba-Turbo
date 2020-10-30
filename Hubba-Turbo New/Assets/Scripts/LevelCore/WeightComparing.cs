@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -90,50 +91,29 @@ public class WeightComparing : MonoBehaviour
     // Checks are mouse and elephant together on board
     public bool IsAnimalsOnBoard(Animal fearAnimal, Animal selfAnimal)
     {
-        bool isFirstAnimal = false;
-        bool isSecondAnimal = false;
+        bool isFirstAnimalInList = false;
+        bool isSecondAnimalInList = false;
 
-        foreach (var item in playerItems)
+        List<Item> items = playerItems.Concat(computerItems).ToList();
+
+        items.ForEach(item =>
         {
             if (item != null)
             {
-                if (item.gameObject.name == fearAnimal.ToString())
+                if (item.gameObject.name == fearAnimal.ToString()
+                || item.gameObject.name == fearAnimal.ToString() + "(Clone)")
                 {
-                    isFirstAnimal = true;
+                    isFirstAnimalInList = true;
                 }
-                if (item.gameObject.name == fearAnimal.ToString() + "(Clone)")
+                if (item.gameObject.name == selfAnimal.ToString()
+                || item.gameObject.name == selfAnimal.ToString() + "(Clone)")
                 {
-                    isFirstAnimal = true;
-                }
-                if (item.gameObject.name == selfAnimal.ToString())
-                {
-                    isSecondAnimal = true;
-                }
-                if (item.gameObject.name == fearAnimal.ToString() + "(Clone)")
-                {
-                    isSecondAnimal = true;
+                    isSecondAnimalInList = true;
                 }
             }
-            
-        }
+        });
 
-        foreach (var item in computerItems)
-        {
-            if (item != null)
-            {
-                if (item.gameObject.name == fearAnimal.ToString())
-                {
-                    isFirstAnimal = true;
-                }
-                if (item.gameObject.name == selfAnimal.ToString())
-                {
-                    isSecondAnimal = true;
-                }
-            }
-            
-        }
-
-        return isFirstAnimal && isSecondAnimal;
+        return isFirstAnimalInList && isSecondAnimalInList;
     }
 
     // May be 
