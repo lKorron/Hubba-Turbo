@@ -5,12 +5,12 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Item))]
+[RequireComponent(typeof(ItemCollision))]
 
 public class Escape : MonoBehaviour
 {
     [SerializeField] private Animal _selfAnimal;
     [SerializeField] private Animal _fearAnimal;
-    [SerializeField] private Side _escapeSide;
     [Range(0.0f, 1.0f)]
     [SerializeField] private float _flyingForce; // How fast unit will fly
 
@@ -18,16 +18,18 @@ public class Escape : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private Animator _animator;
     private Item _itemSelf;
+    private ItemCollision _selfItemCollision;
     private ItemCollision[] _itemCollisions;
     private bool _isEscaping;
     private float _animationTime = 2f;
-    private float delayAfterAnimation = 4f;
+    private float _delayAfterAnimation = 4f;
 
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _itemSelf = GetComponent<Item>();
+        _selfItemCollision = GetComponent<ItemCollision>();
 
         _weightComparing = FindObjectOfType<WeightComparing>();
         _itemCollisions = FindObjectsOfType<ItemCollision>();
@@ -53,7 +55,8 @@ public class Escape : MonoBehaviour
         if (_weightComparing.IsAnimalsOnBoard(_fearAnimal, _selfAnimal) && _isEscaping == false)
         {
             StartCoroutine(StartEscape());
-            _weightComparing.RemoveItem(_itemSelf, _escapeSide);
+            Side side = _selfItemCollision.Side;
+            _weightComparing.RemoveItem(_itemSelf, side);
         }
     }
 
@@ -65,7 +68,7 @@ public class Escape : MonoBehaviour
         yield return new WaitForSeconds(_animationTime);
         // Multiple for comfortable
         _rigidbody.gravityScale = _flyingForce * -1;
-        yield return new WaitForSeconds(delayAfterAnimation);
+        yield return new WaitForSeconds(_delayAfterAnimation);
         _isEscaping = false;
     }
 
