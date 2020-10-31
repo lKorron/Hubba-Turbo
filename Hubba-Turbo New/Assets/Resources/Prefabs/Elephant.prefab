@@ -191,7 +191,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b408173ff2db4a9b8741738d1f6e80a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsComputerActive: 1
   OnCollision:
     m_PersistentCalls:
       m_Calls: []
@@ -208,6 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weight: 10
+  _isStartItem: 0
 --- !u!95 &1041868875
 Animator:
   serializedVersion: 3
@@ -239,4 +239,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 671aaf880bf94439492c808a23609984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flyingForce: 0.247
+  _selfAnimal: 4
+  _fearAnimal: 3
+  _flyingForce: 0

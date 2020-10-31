@@ -63,7 +63,9 @@ public class Escape : MonoBehaviour
     // Flying method
     private IEnumerator StartEscape()
     {
-        _animator.Play("ElephantEscape");
+        string clipName = _selfAnimal.ToString() + "Escape";
+        print(clipName);
+        _animator.Play(clipName);
         _isEscaping = true;
         yield return new WaitForSeconds(_animationTime);
         // Multiple for comfortable
