@@ -21,7 +21,7 @@ public class ItemAnimation : MonoBehaviour
         _animator = GetComponent<Animator>();
         // Getting name from clip
         _animationName = _animationClip.name;
-
+ 
         StartCoroutine(DelayAnimation());
     }
 
