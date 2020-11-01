@@ -862,6 +862,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6367785451159934451, guid: 717b927dbd2c5463caae8b50a84d78f8,
+        type: 3}
+      propertyPath: _animationTime
+      value: 2.51
+      objectReference: {fileID: 0}
+    - target: {fileID: -6367785451159934451, guid: 717b927dbd2c5463caae8b50a84d78f8,
+        type: 3}
+      propertyPath: _delayBeforeRotation
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 984294016896108570, guid: 717b927dbd2c5463caae8b50a84d78f8,
         type: 3}
       propertyPath: m_Name
@@ -920,6 +930,11 @@ PrefabInstance:
     - target: {fileID: 984294016896108574, guid: 717b927dbd2c5463caae8b50a84d78f8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 984294016896108575, guid: 717b927dbd2c5463caae8b50a84d78f8,
+        type: 3}
+      propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
