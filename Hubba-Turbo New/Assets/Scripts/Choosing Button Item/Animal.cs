@@ -14,5 +14,6 @@ public enum Animal
     Fox,
     YellowBird,
     Wolf,
-    Goose
+    Goose,
+    Dog
 }

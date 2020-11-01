@@ -401,6 +401,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6946117599983984408, guid: b4bf7e5425aa44c0daa32b51f4fcb00b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 465df0196b783440aab69dbb2ccf270b,
+        type: 3}
     - target: {fileID: 6946117599983984409, guid: b4bf7e5425aa44c0daa32b51f4fcb00b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -439,7 +445,7 @@ PrefabInstance:
     - target: {fileID: 6946117599983984409, guid: b4bf7e5425aa44c0daa32b51f4fcb00b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6946117599983984409, guid: b4bf7e5425aa44c0daa32b51f4fcb00b,
         type: 3}
@@ -873,6 +879,7 @@ MonoBehaviour:
   _inventoryItems:
   - {fileID: 11400000, guid: c770c2ffef6514a269719d07c8527443, type: 2}
   - {fileID: 11400000, guid: 0aa31a8b30c7640efa6730c552c2f491, type: 2}
+  - {fileID: 11400000, guid: 4325de6e3955440bcb803b4e91b79ee4, type: 2}
   _instantiateItems: []
 --- !u!4 &1640613804
 Transform:

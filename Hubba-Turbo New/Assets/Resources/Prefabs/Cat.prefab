@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 6946117599983984415}
   - component: {fileID: 1498608664}
   - component: {fileID: 1498608663}
+  - component: {fileID: 2123063624687048016}
   m_Layer: 0
   m_Name: Cat
   m_TagString: PlayerStart
@@ -164,7 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b408173ff2db4a9b8741738d1f6e80a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsComputerActive: 1
   OnCollision:
     m_PersistentCalls:
       m_Calls: []
@@ -181,6 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weight: 5
+  _isStartItem: 0
 --- !u!95 &1498608664
 Animator:
   serializedVersion: 3
@@ -216,3 +217,20 @@ MonoBehaviour:
   m_animationClip: {fileID: 7400000, guid: b16dfe60ed1cd47efb07e46a380d4250, type: 2}
   isPlaying: 1
   isRandomFactorActive: 1
+--- !u!114 &2123063624687048016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6946117599983984410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671aaf880bf94439492c808a23609984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _selfAnimal: 5
+  _fearAnimal: 10
+  _flyingForce: 0.228
+  _animationTime: 3
+  _delayBeforeRotation: 8
