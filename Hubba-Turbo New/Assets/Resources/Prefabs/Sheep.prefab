@@ -148,7 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b408173ff2db4a9b8741738d1f6e80a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsComputerActive: 1
   OnCollision:
     m_PersistentCalls:
       m_Calls: []
@@ -165,6 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weight: 3
+  _isStartItem: 0
 --- !u!58 &2239413528635541103
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221065b6d0f5c495bad4aff4bc975021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 7
-  m_animationClip: {fileID: 7400000, guid: 8ca98a8e3c5924fad835c302612c4b15, type: 2}
-  isPlaying: 1
-  isRandomFactorActive: 1
+  _delay: 0
+  _animationClip: {fileID: 7400000, guid: 8ca98a8e3c5924fad835c302612c4b15, type: 2}
+  _isPlaying: 1
+  _isRandomFactorActive: 1

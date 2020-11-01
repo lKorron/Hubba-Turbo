@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221065b6d0f5c495bad4aff4bc975021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 7
-  m_animationClip: {fileID: 7400000, guid: f841d32b375a34f469f7b6c21f374956, type: 2}
-  isPlaying: 1
-  isRandomFactorActive: 1
+  _delay: 0
+  _animationClip: {fileID: 7400000, guid: f841d32b375a34f469f7b6c21f374956, type: 2}
+  _isPlaying: 1
+  _isRandomFactorActive: 1
