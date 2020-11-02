@@ -21,10 +21,19 @@ public class ItemAnimation : MonoBehaviour
         _animator = GetComponent<Animator>();
         // Getting name from clip
         _animationName = _animationClip.name;
- 
-        StartCoroutine(DelayAnimation());
+
+        StartAnimation();
     }
 
+    public void StopAnimation()
+    {
+        StopCoroutine(DelayAnimation());
+    }
+
+    public void StartAnimation()
+    {
+        StartCoroutine(DelayAnimation());
+    }
 
     private IEnumerator DelayAnimation()
     {
@@ -38,6 +47,7 @@ public class ItemAnimation : MonoBehaviour
             // Our delay
             yield return new WaitForSeconds(_delay + _randomTime);
             // Start animation
+            
             _animator.Play(_animationName);
             // Delay = animationTime
             yield return new WaitForSeconds(_animationTime);

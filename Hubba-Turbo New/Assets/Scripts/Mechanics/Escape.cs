@@ -77,6 +77,9 @@ public class Escape : MonoBehaviour
     // Flying method
     private IEnumerator StartEscape()
     {
+        if (TryGetComponent(out ItemAnimation itemAnimation))
+            itemAnimation.StopAnimation();
+
         _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
         string clipName = _selfAnimal.ToString() + "Escape";
         _animator.Play(clipName);
@@ -88,6 +91,9 @@ public class Escape : MonoBehaviour
         DisableColliders();
         _canRotate = true;
         _isEscaping = false;
+
+        if (itemAnimation != null)
+            itemAnimation.StartAnimation();
     }
 
     private void DisableColliders()
