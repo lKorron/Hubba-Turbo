@@ -17,8 +17,8 @@ public class Escape : MonoBehaviour
     [SerializeField] private float _flyingForce; // How fast unit will fly
     [SerializeField] private bool _isAnimalNeedToRotate;
     [SerializeField] private float _animationTime = 2f;
-    [SerializeField] private float _delayBeforeRotation = 1f;
 
+    private float _delayBeforeRotation = 1f;
     private float _rotationSpeed = 70f;
     private WeightComparing _weightComparing;
     private Rigidbody2D _rigidbody;
@@ -35,8 +35,6 @@ public class Escape : MonoBehaviour
     {
         if (_animationTime < 0)
             _animationTime = 0;
-        if (_delayBeforeRotation < 0)
-            _delayBeforeRotation = 0;
     }
     #endregion
 
