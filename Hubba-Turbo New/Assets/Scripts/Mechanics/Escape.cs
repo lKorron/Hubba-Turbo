@@ -15,7 +15,7 @@ public class Escape : MonoBehaviour
     [SerializeField] private Animal _fearAnimal;
     [Range(0.0f, 1.0f)]
     [SerializeField] private float _flyingForce; // How fast unit will fly
-    [SerializeField] private bool _isAnimalNeedToRotate;
+    [SerializeField] private bool _isAnimalWillRotate;
     [SerializeField] private float _animationTime = 2f;
 
     private float _delayBeforeRotation = 1f;
@@ -59,7 +59,7 @@ public class Escape : MonoBehaviour
 
     private void Update()
     {
-        if (_canRotate && _isAnimalNeedToRotate)
+        if (_canRotate && _isAnimalWillRotate)
             Rotate();
     }
 
