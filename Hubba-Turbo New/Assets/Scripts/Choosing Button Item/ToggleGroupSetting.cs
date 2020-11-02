@@ -19,7 +19,7 @@ public class ToggleGroupSetting : MonoBehaviour
 
     private void SetToggleGroup()
     {
-        Items currentItem = instantiateSettings.StartItemForInstantiate;
+        Animal currentItem = instantiateSettings.StartItemForInstantiate;
 
         panelCells = toggleGroup.GetComponentsInChildren<AnimalsPanelCell>();
 

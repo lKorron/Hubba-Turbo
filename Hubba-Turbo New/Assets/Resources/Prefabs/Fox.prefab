@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4643198847498687474}
   - component: {fileID: 6880385864110867957}
   - component: {fileID: 6880385864110867958}
+  - component: {fileID: 2812609576351690909}
   m_Layer: 0
   m_Name: Fox
   m_TagString: Computer
@@ -101,7 +102,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 3
+  m_Mass: 4
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -212,7 +213,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221065b6d0f5c495bad4aff4bc975021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 7
-  m_animationClip: {fileID: 7400000, guid: 9cc4ff9ae16694a3da03c5bd897de0a3, type: 2}
-  isPlaying: 1
-  isRandomFactorActive: 1
+  _delay: 0
+  _animationClip: {fileID: 7400000, guid: 9cc4ff9ae16694a3da03c5bd897de0a3, type: 2}
+  _isPlaying: 1
+  _isRandomFactorActive: 1
+--- !u!114 &2812609576351690909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4643198847498687479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671aaf880bf94439492c808a23609984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _selfAnimal: 6
+  _fearAnimal: 10
+  _flyingForce: 0.15
+  _animationTime: 3
+  _delayBeforeRotation: 0

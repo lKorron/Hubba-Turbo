@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class ToggleItem : MonoBehaviour
 {
-    [SerializeField] private Items character;
+    [SerializeField] private Animal character;
     private Toggle toggle;
 
-    public Items Character
+    public Animal Character
     {
         get { return character; }
     }

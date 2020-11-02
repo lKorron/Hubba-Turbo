@@ -10,6 +10,9 @@ public class ItemCollision : MonoBehaviour
     private WeightComparing _weightComparing;
     private ObjectInstantiate _objectInstantiate;
     private Camera _camera;
+    private Side _side;
+
+    public Side Side => _side;
 
     private void Start()
     {
@@ -23,9 +26,8 @@ public class ItemCollision : MonoBehaviour
         if (collision.gameObject.GetComponent<ItemCollision>())
         {
          
-            Side side = GetCollisionSide(collision);
-
-            SetItem(collision, side);
+            _side = GetCollisionSide(collision);
+            SetItem(collision, _side);
 
             // Other actions
             OnCollision.Invoke();

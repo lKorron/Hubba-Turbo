@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c1b5a6e96a354dbba6b325fc330d8f8, type: 3}
   m_Name: Wolf
   m_EditorClassIdentifier: 
-  _character: 8
+  _animal: 8
   _iconSprite: {fileID: 21300000, guid: 207a002eb2c0940599770875f22282a0, type: 3}

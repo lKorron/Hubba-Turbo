@@ -30,7 +30,7 @@ public class ObjectInstantiate : MonoBehaviour
     }
  
     // Change prefab (red)
-    public void SetCharacter(Items character)
+    public void SetCharacter(Animal character)
     {
         string characterName = character.ToString();
         playerPrefab = (GameObject)Resources.Load("Prefabs/" + characterName, typeof(GameObject));
