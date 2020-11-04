@@ -27,6 +27,7 @@ public class ObjectInstantiate : MonoBehaviour
     private void Update()
     {
         ClickProcessing();
+        //TouchProcessing();
     }
  
     // Change prefab (red)
@@ -96,6 +97,17 @@ public class ObjectInstantiate : MonoBehaviour
             Vector3 mousePosition = Input.mousePosition;
             mousePosition.z = 2.0f;
             Vector3 objectPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            GameObject clone = Instantiate(playerPrefab, objectPosition, Quaternion.identity);
+        }
+    }
+
+    private void TouchProcessing()
+    {
+        if (Input.touchCount > 0 && Input.touches[0].position.x < Screen.width / 2)
+        {
+            Touch touch = Input.GetTouch(0);
+            Vector3 touchPosition = touch.position;
+            Vector3 objectPosition = Camera.main.ScreenToWorldPoint(touchPosition);
             GameObject clone = Instantiate(playerPrefab, objectPosition, Quaternion.identity);
         }
     }
