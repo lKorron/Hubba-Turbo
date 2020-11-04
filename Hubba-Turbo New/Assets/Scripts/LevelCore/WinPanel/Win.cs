@@ -6,69 +6,73 @@ using System.Linq;
 
 public class Win : MonoBehaviour
 {
-    [SerializeField] private GameObject _winEffect;
-    [SerializeField] private float delay = 2f;
+    [SerializeField] private ParticleSystem _winEffect;
+    [SerializeField] private float _delay = 2f;
 
-    private Level levelInfo;
-    private Level[] levels;
-    private ObjectInstantiate objectInstantiate;
-    private StarsPanel starsPanel;
-    private Timer timer;
-    private Floor floor;
-    private int levelNumber; // Build index
+    private Level _levelInfo;
+    private Level[] _levels;
+    private ObjectInstantiate _objectInstantiate;
+    private StarsPanel _starsPanel;
+    private Timer _timer;
+    private Floor _floor;
+    private int _levelNumber; // Build index
+
+    #region OnValidate
+    private void OnValidate()
+    {
+        if (_delay < 0)
+            _delay = 0;
+    }
+    #endregion
 
     private void Awake()
     {
-        objectInstantiate = FindObjectOfType<ObjectInstantiate>();
-        starsPanel = FindObjectOfType<StarsPanel>();
-        timer = FindObjectOfType<Timer>();
-        floor = FindObjectOfType<Floor>();
+        _objectInstantiate = FindObjectOfType<ObjectInstantiate>();
+        _starsPanel = FindObjectOfType<StarsPanel>();
+        _timer = FindObjectOfType<Timer>();
+        _floor = FindObjectOfType<Floor>();
 
         // Find current LevelInfo
-        levelNumber = SceneManager.GetActiveScene().buildIndex;
-        levels = FindObjectsOfType<Level>();
-        levelInfo = FindLevelInfo();
+        _levelNumber = SceneManager.GetActiveScene().buildIndex;
+        _levels = FindObjectsOfType<Level>();
+        _levelInfo = FindLevelInfo();
 
     }
 
     public void PlayerWin()
     {
         gameObject.SetActive(true);
-        _winEffect.SetActive(true);
+        _winEffect.gameObject.SetActive(true);
         // Pause
         StartCoroutine(PauseCoroutine());
-        objectInstantiate.IsPlayerCanInstantiate = false;
+        _objectInstantiate.IsPlayerCanInstantiate = false;
 
         // Two stars processing
-        if (timer.IsTimerEnd == false ^ floor.IsWasCollision == false)
-        {
-            starsPanel.SetTwoStars();
-            levelInfo.SetStars(2);
+        if (_timer.IsTimerEnd == false ^ _floor.IsWasCollision == false)
+            SetStars(2);
             
-        }
-        else if (timer.IsTimerEnd == false && floor.IsWasCollision == false)
-        {
-            starsPanel.SetThreeStars();
-            levelInfo.SetStars(3);
-        }
-        else
-        {
-            starsPanel.SetOneStar();
-            levelInfo.SetStars(1);
-        }
+        else if (_timer.IsTimerEnd == false && _floor.IsWasCollision == false)
+            SetStars(3);
 
-        
+        else
+            SetStars(1);
+    }
+
+    private void SetStars(int starsCount)
+    {
+        _starsPanel.SetStars(starsCount);
+        _levelInfo.SetStars(starsCount);
     }
 
     private Level FindLevelInfo()
     {
-        var foundItem = levels.SingleOrDefault(item => item.LevelNumber == levelNumber);
+        var foundItem = _levels.SingleOrDefault(item => item.LevelNumber == _levelNumber);
         return foundItem;
     }
 
     private IEnumerator PauseCoroutine()
     {
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(_delay);
         Time.timeScale = 0f;
     }
 }

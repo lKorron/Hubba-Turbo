@@ -227,9 +227,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c19ee357060fb408583a1323b63fda6b, type: 3}
---- !u!1 &267170197 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3932511454872549198, guid: c19ee357060fb408583a1323b63fda6b,
+--- !u!198 &267170197 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3932511454872549196, guid: c19ee357060fb408583a1323b63fda6b,
     type: 3}
   m_PrefabInstance: {fileID: 267170196}
   m_PrefabAsset: {fileID: 0}
@@ -2329,7 +2329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93d2b101924444ad6a6e3e81923fdbd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stars:
+  _stars:
   - {fileID: 6990826828111531500}
   - {fileID: 6990826828375565302}
   - {fileID: 6990826828332258851}
@@ -3076,7 +3076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _winEffect: {fileID: 267170197}
-  delay: 2
+  _delay: 2
 --- !u!224 &8452278368797821329
 RectTransform:
   m_ObjectHideFlags: 0
