@@ -6,7 +6,9 @@ using System.Linq;
 
 public class Win : MonoBehaviour
 {
+    [SerializeField] private GameObject _winEffect;
     [SerializeField] private float delay = 2f;
+
     private Level levelInfo;
     private Level[] levels;
     private ObjectInstantiate objectInstantiate;
@@ -32,6 +34,7 @@ public class Win : MonoBehaviour
     public void PlayerWin()
     {
         gameObject.SetActive(true);
+        _winEffect.SetActive(true);
         // Pause
         StartCoroutine(PauseCoroutine());
         objectInstantiate.IsPlayerCanInstantiate = false;
