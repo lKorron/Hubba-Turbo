@@ -10,9 +10,9 @@ public class StarsPanel : MonoBehaviour
     {
         if (starsCount == 1)
             SetOneStar();
-        if (starsCount == 2)
+        else if (starsCount == 2)
             SetTwoStars();
-        if (starsCount == 3)
+        else if (starsCount == 3)
             SetThreeStars();
         else Debug.LogError("Enter correct number of stars");
     }
