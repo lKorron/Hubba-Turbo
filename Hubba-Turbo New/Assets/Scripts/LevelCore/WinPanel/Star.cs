@@ -5,32 +5,25 @@ using UnityEngine.UI;
 
 public class Star : MonoBehaviour
 {
-    // Index for 
-    [SerializeField] private int index;
-    private Image image;
-    private Sprite starFill;
-    private Sprite starEmpty;
+    private Image _image;
+    private Sprite _starFill;
+    private Sprite _starEmpty;
 
     private void Awake()
     {
-        image = GetComponent<Image>();
-        starFill = Resources.Load<Sprite>("Sprites/UI/Star");
-        starEmpty = image.sprite;
-    }
-
-    public int GetIndex()
-    {
-        return index;
+        _image = GetComponent<Image>();
+        _starFill = Resources.Load<Sprite>("Sprites/UI/Star");
+        _starEmpty = _image.sprite;
     }
 
     public void SetStar()
     {
-        image.sprite = starFill;
+        _image.sprite = _starFill;
     }
 
     public void SetEmptyStar()
     {
-        image.sprite = starEmpty;
+        _image.sprite = _starEmpty;
     }
 
     
