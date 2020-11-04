@@ -15,9 +15,10 @@ public class Escape : MonoBehaviour
     [SerializeField] private Animal _fearAnimal;
     [Range(0.0f, 1.0f)]
     [SerializeField] private float _flyingForce; // How fast unit will fly
+    [SerializeField] private bool _isAnimalWillRotate;
     [SerializeField] private float _animationTime = 2f;
-    [SerializeField] private float _delayBeforeRotation = 1f;
 
+    private float _delayBeforeRotation = 1f;
     private float _rotationSpeed = 70f;
     private WeightComparing _weightComparing;
     private Rigidbody2D _rigidbody;
@@ -28,7 +29,14 @@ public class Escape : MonoBehaviour
     private Collider2D[] _colliders;
     private bool _isEscaping;
     private bool _canRotate;
-    
+
+    #region OnValidate
+    private void OnValidate()
+    {
+        if (_animationTime < 0)
+            _animationTime = 0;
+    }
+    #endregion
 
     private void Start()
     {
@@ -51,7 +59,7 @@ public class Escape : MonoBehaviour
 
     private void Update()
     {
-        if (_canRotate)
+        if (_canRotate && _isAnimalWillRotate)
             Rotate();
     }
 

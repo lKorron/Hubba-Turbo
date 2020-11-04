@@ -242,5 +242,5 @@ MonoBehaviour:
   _selfAnimal: 4
   _fearAnimal: 3
   _flyingForce: 0
-  _animationTime: 2
-  _delayBeforeRotation: 6
+  _isAnimalNeedToRotate: 0
+  _animationTime: 2.7

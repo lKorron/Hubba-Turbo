@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2239413528635541103}
   - component: {fileID: 1390252138}
   - component: {fileID: 1390252137}
+  - component: {fileID: 4515180768392063034}
   m_Layer: 0
   m_Name: Sheep
   m_TagString: Computer
@@ -216,3 +217,20 @@ MonoBehaviour:
   _animationClip: {fileID: 7400000, guid: 8ca98a8e3c5924fad835c302612c4b15, type: 2}
   _isPlaying: 1
   _isRandomFactorActive: 1
+--- !u!114 &4515180768392063034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2239413528635541096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671aaf880bf94439492c808a23609984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _selfAnimal: 2
+  _fearAnimal: 8
+  _flyingForce: 0.279
+  _animationTime: 3.5
+  _delayBeforeRotation: 1

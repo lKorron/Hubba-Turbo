@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Old Class
 public class ToggleItem : MonoBehaviour
 {
     [SerializeField] private Animal character;
@@ -22,8 +23,6 @@ public class ToggleItem : MonoBehaviour
     {
         toggle.isOn = true;
     }
-
-
 
 
 }
