@@ -14,7 +14,10 @@ public class Menu : MonoBehaviour
     private LevelButton[] menuLevels; // Menu buttons array
     private SaveSystem saveSystem;
 
-     
+    private void Awake()
+    {
+        _levelData.Levels = menuData.levels;
+    }
 
     private void Start()
     {
@@ -48,7 +51,7 @@ public class Menu : MonoBehaviour
         
 
         ShowLevel();
-        _levelData.Levels = menuData.levels;
+       
     }
     
     private void DataSetUp(Level level)
