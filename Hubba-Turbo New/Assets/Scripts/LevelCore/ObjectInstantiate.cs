@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class ObjectInstantiate : MonoBehaviour
 {
-    private GameObject playerPrefab;
+    [SerializeField] private Control _control;
 
-    private List<GameObject> computerPrefabList = new List<GameObject>();
-    private List<Vector3> computerPositionList = new List<Vector3>();
-    private List<int> instantiateNumberList = new List<int>();
-
-    private InstantiateSettings instantiateSettings;
-    private int index = 0; // Index for computer smart instantiate
+    private List<GameObject> _computerPrefabList = new List<GameObject>();
+    private List<Vector3> _computerPositionList = new List<Vector3>();
+    private List<int> _instantiateNumberList = new List<int>();
+    private InstantiateSettings _instantiateSettings;
+    private GameObject _playerPrefab;
+    private int _index = 0; // Index for computer smart instantiate
     // Properties 
     public bool IsComputerEndInstantiate { get; private set; } = false;
     public bool IsPlayerCanInstantiate { get; set; } = true;
@@ -20,38 +20,40 @@ public class ObjectInstantiate : MonoBehaviour
     private void Start()
     {
         // Setting computer prefabs and their positions
-        instantiateSettings = FindObjectOfType<InstantiateSettings>();
+        _instantiateSettings = FindObjectOfType<InstantiateSettings>();
         SetItems();
     }
 
     private void Update()
     {
-        ClickProcessing();
-        //TouchProcessing();
+        if (_control == Control.Mouse)
+            ClickProcessing();
+        if (_control == Control.Touch)
+            TouchProcessing();
     }
  
     // Change prefab (red)
     public void SetCharacter(Animal character)
     {
         string characterName = character.ToString();
-        playerPrefab = (GameObject)Resources.Load("Prefabs/" + characterName, typeof(GameObject));
+        _playerPrefab = (GameObject)Resources.Load("Prefabs/" + characterName, typeof(GameObject));
     }
 
     // Computer smart isntantiate
     public void ComputerInstantiate()
     {
-        if (computerPrefabList.Count != computerPositionList.Count)
+        if (_computerPrefabList.Count != _computerPositionList.Count)
             throw new MissingComponentException("Error: Add values to both lists");
 
-        if (index == computerPrefabList.Count)
+        if (_index == _computerPrefabList.Count)
         {
             IsComputerEndInstantiate = true;
             return;
         }
 
-        GameObject prefab = computerPrefabList[index];
-        Vector3 position = computerPositionList[index];
-        int instantiateNumber = instantiateNumberList[index];
+        GameObject prefab = _computerPrefabList[_index];
+        Vector3 position = _computerPositionList[_index];
+        int instantiateNumber = _instantiateNumberList[_index];
 
         if (instantiateNumber == 0)
             Instantiate(prefab, position, Quaternion.identity);
@@ -62,12 +64,12 @@ public class ObjectInstantiate : MonoBehaviour
             
         }
         
-        index++;
+        _index++;
     }
 
     public void CheckComputerEndInstantiate()
     {
-        if (index == computerPrefabList.Count)
+        if (_index == _computerPrefabList.Count)
         {
             IsComputerEndInstantiate = true;
             return;
@@ -76,14 +78,14 @@ public class ObjectInstantiate : MonoBehaviour
 
     private void SetItems()
     {
-        var instantiateItems = instantiateSettings.InstantiateItems;
+        var instantiateItems = _instantiateSettings.InstantiateItems;
         if (instantiateItems != null)
         {
             foreach (var item in instantiateItems)
             {
-                computerPrefabList.Add(item.Prefab);
-                computerPositionList.Add(item.Position);
-                instantiateNumberList.Add(item.PrefabsNumber);
+                _computerPrefabList.Add(item.Prefab);
+                _computerPositionList.Add(item.Position);
+                _instantiateNumberList.Add(item.PrefabsNumber);
             }
         }
     }
@@ -97,7 +99,7 @@ public class ObjectInstantiate : MonoBehaviour
             Vector3 mousePosition = Input.mousePosition;
             mousePosition.z = 2.0f;
             Vector3 objectPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-            GameObject clone = Instantiate(playerPrefab, objectPosition, Quaternion.identity);
+            GameObject clone = Instantiate(_playerPrefab, objectPosition, Quaternion.identity);
         }
     }
 
@@ -108,7 +110,7 @@ public class ObjectInstantiate : MonoBehaviour
             Touch touch = Input.GetTouch(0);
             Vector3 touchPosition = touch.position;
             Vector3 objectPosition = Camera.main.ScreenToWorldPoint(touchPosition);
-            GameObject clone = Instantiate(playerPrefab, objectPosition, Quaternion.identity);
+            GameObject clone = Instantiate(_playerPrefab, objectPosition, Quaternion.identity);
         }
     }
 }
