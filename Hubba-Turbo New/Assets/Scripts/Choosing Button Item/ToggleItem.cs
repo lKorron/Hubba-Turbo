@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Old Class
 public class ToggleItem : MonoBehaviour
 {
-    [SerializeField] private Items character;
+    [SerializeField] private Animal character;
     private Toggle toggle;
 
-    public Items Character
+    public Animal Character
     {
         get { return character; }
     }
@@ -22,8 +23,6 @@ public class ToggleItem : MonoBehaviour
     {
         toggle.isOn = true;
     }
-
-
 
 
 }

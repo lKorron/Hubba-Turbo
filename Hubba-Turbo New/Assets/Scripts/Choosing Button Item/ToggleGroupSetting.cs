@@ -5,25 +5,25 @@ using UnityEngine.UI;
 
 public class ToggleGroupSetting : MonoBehaviour
 {
-    private ToggleGroup toggleGroup;
-    private AnimalsPanelCell[] panelCells;
-    private InstantiateSettings instantiateSettings;
+    private ToggleGroup _toggleGroup;
+    private AnimalsPanelCell[] _panelCells;
+    private InstantiateSettings _instantiateSettings;
     
     private void Start()
     {
-        toggleGroup = FindObjectOfType<ToggleGroup>();
-        instantiateSettings = FindObjectOfType<InstantiateSettings>();
+        _toggleGroup = FindObjectOfType<ToggleGroup>();
+        _instantiateSettings = FindObjectOfType<InstantiateSettings>();
 
         SetToggleGroup();
     }
 
     private void SetToggleGroup()
     {
-        Items currentItem = instantiateSettings.StartItemForInstantiate;
+        Animal currentItem = _instantiateSettings.StartItemForInstantiate;
 
-        panelCells = toggleGroup.GetComponentsInChildren<AnimalsPanelCell>();
+        _panelCells = _toggleGroup.GetComponentsInChildren<AnimalsPanelCell>();
 
-        foreach (var item in panelCells)
+        foreach (var item in _panelCells)
         {
             if (currentItem == item.Character)
             {

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 984294016896108573}
   - component: {fileID: 971598086}
   - component: {fileID: 971598085}
+  - component: {fileID: -6367785451159934451}
   m_Layer: 0
   m_Name: Mouse
   m_TagString: Untagged
@@ -147,7 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b408173ff2db4a9b8741738d1f6e80a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsComputerActive: 1
   OnCollision:
     m_PersistentCalls:
       m_Calls: []
@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weight: 2
+  _isStartItem: 0
 --- !u!95 &971598086
 Animator:
   serializedVersion: 3
@@ -195,7 +196,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221065b6d0f5c495bad4aff4bc975021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 7
-  m_animationClip: {fileID: 7400000, guid: b0b83c8641038493db0e754f95305739, type: 2}
-  isPlaying: 1
-  isRandomFactorActive: 1
+  _delay: 0
+  _animationClip: {fileID: 7400000, guid: b0b83c8641038493db0e754f95305739, type: 2}
+  _isPlaying: 1
+  _isRandomFactorActive: 1
+--- !u!114 &-6367785451159934451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984294016896108570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671aaf880bf94439492c808a23609984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _selfAnimal: 3
+  _fearAnimal: 5
+  _flyingForce: 0.086
+  _isAnimalWillRotate: 1
+  _animationTime: 2.52
