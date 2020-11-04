@@ -932,7 +932,6 @@ MonoBehaviour:
   _startItemForInstantiate: 2
   _inventoryItems:
   - {fileID: 11400000, guid: c770c2ffef6514a269719d07c8527443, type: 2}
-  - {fileID: 11400000, guid: d6b6f8b5aba66492aa33a00f1e2ae39b, type: 2}
   _instantiateItems:
   - _prefab: {fileID: 2239413528635541096, guid: 3c68184a1dd1c46aa97687c3ddd09d34,
       type: 3}
@@ -1018,11 +1017,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4515180768392063034, guid: 3c68184a1dd1c46aa97687c3ddd09d34,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c68184a1dd1c46aa97687c3ddd09d34, type: 3}

@@ -551,18 +551,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1041868883, guid: c4fac233725a344239738322d6402271, type: 3}
-      propertyPath: _flyingForce
-      value: 0.245
-      objectReference: {fileID: 0}
-    - target: {fileID: 1041868883, guid: c4fac233725a344239738322d6402271, type: 3}
-      propertyPath: _selfAnimal
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1041868883, guid: c4fac233725a344239738322d6402271, type: 3}
-      propertyPath: _fearAnimal
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 1676736881776497896, guid: c4fac233725a344239738322d6402271,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -601,7 +589,7 @@ PrefabInstance:
     - target: {fileID: 1676736881776497896, guid: c4fac233725a344239738322d6402271,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1676736881776497896, guid: c4fac233725a344239738322d6402271,
         type: 3}

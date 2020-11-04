@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -91,29 +90,50 @@ public class WeightComparing : MonoBehaviour
     // Checks are mouse and elephant together on board
     public bool IsAnimalsOnBoard(Animal fearAnimal, Animal selfAnimal)
     {
-        bool isFirstAnimalInList = false;
+        bool isFirstAnimal = false;
         bool isSecondAnimal = false;
 
-        List<Item> items = playerItems.Concat(computerItems).ToList();
-
-        items.ForEach(item =>
+        foreach (var item in playerItems)
         {
             if (item != null)
             {
-                if (item.gameObject.name == fearAnimal.ToString()
-                || item.gameObject.name == fearAnimal.ToString() + "(Clone)")
+                if (item.gameObject.name == fearAnimal.ToString())
                 {
-                    isFirstAnimalInList = true;
+                    isFirstAnimal = true;
                 }
-                if (item.gameObject.name == selfAnimal.ToString()
-                || item.gameObject.name == selfAnimal.ToString() + "(Clone)")
+                if (item.gameObject.name == fearAnimal.ToString() + "(Clone)")
+                {
+                    isFirstAnimal = true;
+                }
+                if (item.gameObject.name == selfAnimal.ToString())
+                {
+                    isSecondAnimal = true;
+                }
+                if (item.gameObject.name == fearAnimal.ToString() + "(Clone)")
                 {
                     isSecondAnimal = true;
                 }
             }
-        });
+            
+        }
 
-        return isFirstAnimalInList && isSecondAnimal;
+        foreach (var item in computerItems)
+        {
+            if (item != null)
+            {
+                if (item.gameObject.name == fearAnimal.ToString())
+                {
+                    isFirstAnimal = true;
+                }
+                if (item.gameObject.name == selfAnimal.ToString())
+                {
+                    isSecondAnimal = true;
+                }
+            }
+            
+        }
+
+        return isFirstAnimal && isSecondAnimal;
     }
 
     // May be 

@@ -9,10 +9,10 @@ public class AnimalsPanelCell : MonoBehaviour
     [SerializeField] private Image _image;
     private Toggle _toggle;
     private ToggleGroup _toggleGroup;
-    private Animal _character;
+    private Items _character;
     private ObjectInstantiate _objectInstantiate;
 
-    public Animal Character { get { return _character; } }
+    public Items Character { get { return _character; } }
 
     private void Start()
     {
@@ -27,21 +27,22 @@ public class AnimalsPanelCell : MonoBehaviour
             _objectInstantiate.SetCharacter(_character);
 
         });
+
+
     }
 
     private void OnDisable()
     {
         _toggle.onValueChanged.RemoveAllListeners();
     }
-
     public void Render(AnimalItem animalItem)
     {
         _image.sprite = animalItem.IconSprite;
-        _character = animalItem.Animal;
+        _character = animalItem.Character;
     }
-
     public void SetOn()
     {
         _toggle.isOn = true;
     }
+
 }

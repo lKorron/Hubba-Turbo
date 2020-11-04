@@ -13,7 +13,6 @@ public class Menu : MonoBehaviour
     private Level[] levels; // Don't destroy objets array
     private LevelButton[] menuLevels; // Menu buttons array
     private SaveSystem saveSystem;
-    private StarsCounter _starsCounter;
 
      
 
@@ -22,7 +21,6 @@ public class Menu : MonoBehaviour
         levels = FindObjectsOfType<Level>();
         menuLevels = FindObjectsOfType<LevelButton>();
         saveSystem = FindObjectOfType<SaveSystem>();
-        _starsCounter = FindObjectOfType<StarsCounter>();
 
         saveSystem.FirstTimeCreate();
 
@@ -51,7 +49,6 @@ public class Menu : MonoBehaviour
 
         ShowLevel();
         _levelData.Levels = menuData.levels;
-        _starsCounter.DisplayCollectedStars();
     }
     
     private void DataSetUp(Level level)

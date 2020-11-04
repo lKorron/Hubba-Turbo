@@ -15,8 +15,7 @@ public class Intro : MonoBehaviour
     #region
     private void OnValidate()
     {
-        if (_waitingTime < 0)
-            _waitingTime = 0;
+        if (_waitingTime < 0) _waitingTime = 0;
     }
     #endregion
     private IEnumerator WaitForVideo()

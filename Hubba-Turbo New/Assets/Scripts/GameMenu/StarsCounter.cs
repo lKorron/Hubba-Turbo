@@ -10,7 +10,7 @@ public class StarsCounter : MonoBehaviour
     private Text _text;
     private int[] _starsArray;
 
-    public void DisplayCollectedStars()
+    private void Start()
     {
         _text = GetComponent<Text>();
         _starsArray = _levelData.Levels;

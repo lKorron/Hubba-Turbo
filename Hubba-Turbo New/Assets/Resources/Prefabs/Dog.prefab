@@ -163,8 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4602880db2a14eea8159d25dce250ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weight: 6
-  _isStartItem: 0
+  _weight: 5
 --- !u!58 &9069290035925803584
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -212,7 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221065b6d0f5c495bad4aff4bc975021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _delay: 0
-  _animationClip: {fileID: 7400000, guid: b88f72f1e904448bc96a957df589e9fb, type: 2}
-  _isPlaying: 1
-  _isRandomFactorActive: 1
+  delay: 7
+  m_animationClip: {fileID: 7400000, guid: b88f72f1e904448bc96a957df589e9fb, type: 2}
+  isPlaying: 1
+  isRandomFactorActive: 1

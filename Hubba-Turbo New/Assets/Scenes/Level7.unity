@@ -551,38 +551,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-<<<<<<< HEAD
     - target: {fileID: 1676736881776497896, guid: c4fac233725a344239738322d6402271,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.3917522
-=======
-    - target: {fileID: 1041868883, guid: c4fac233725a344239738322d6402271, type: 3}
-      propertyPath: _flyingForce
-      value: 0.245
-      objectReference: {fileID: 0}
-    - target: {fileID: 1041868883, guid: c4fac233725a344239738322d6402271, type: 3}
-      propertyPath: _selfAnimal
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1041868883, guid: c4fac233725a344239738322d6402271, type: 3}
-      propertyPath: _fearAnimal
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1676736881776497896, guid: c4fac233725a344239738322d6402271,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.75
->>>>>>> master
       objectReference: {fileID: 0}
     - target: {fileID: 1676736881776497896, guid: c4fac233725a344239738322d6402271,
         type: 3}
       propertyPath: m_LocalPosition.y
-<<<<<<< HEAD
       value: 2.206186
-=======
-      value: 2.09
->>>>>>> master
       objectReference: {fileID: 0}
     - target: {fileID: 1676736881776497896, guid: c4fac233725a344239738322d6402271,
         type: 3}
@@ -634,14 +611,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Elephant
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
-    - target: {fileID: 1676736881776497902, guid: c4fac233725a344239738322d6402271,
-        type: 3}
-      propertyPath: _isStartItem
-      value: 1
-      objectReference: {fileID: 0}
->>>>>>> master
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4fac233725a344239738322d6402271, type: 3}
 --- !u!1 &1060931173
@@ -912,7 +881,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startItemForInstantiate: 2
   _inventoryItems:
-<<<<<<< HEAD
   - {fileID: 11400000, guid: 0aa31a8b30c7640efa6730c552c2f491, type: 2}
   - {fileID: 11400000, guid: 0aa31a8b30c7640efa6730c552c2f491, type: 2}
   - {fileID: 11400000, guid: 5f0827f8c84954e20b2e9d0e10ff84e9, type: 2}
@@ -927,16 +895,6 @@ MonoBehaviour:
   - _prefab: {fileID: 0}
     _prefabsNumber: 1
     _position: {x: 0, y: 0, z: 0}
-=======
-  - {fileID: 11400000, guid: c770c2ffef6514a269719d07c8527443, type: 2}
-  - {fileID: 11400000, guid: 0aa31a8b30c7640efa6730c552c2f491, type: 2}
-  - {fileID: 11400000, guid: 5f0827f8c84954e20b2e9d0e10ff84e9, type: 2}
-  _instantiateItems:
-  - _prefab: {fileID: 984294016896108570, guid: 717b927dbd2c5463caae8b50a84d78f8,
-      type: 3}
-    _prefabsNumber: 1
-    _position: {x: 2, y: 2, z: 0}
->>>>>>> master
 --- !u!4 &1640613804
 Transform:
   m_ObjectHideFlags: 0

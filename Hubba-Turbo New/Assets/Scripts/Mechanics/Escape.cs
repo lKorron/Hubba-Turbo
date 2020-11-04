@@ -1,55 +1,38 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Item))]
-[RequireComponent(typeof(ItemCollision))]
-[RequireComponent(typeof(Collider2D))]
 
 public class Escape : MonoBehaviour
 {
-    [SerializeField] private Animal _selfAnimal;
-    [SerializeField] private Animal _fearAnimal;
+    [SerializeField] private Animal selfAnimal;
+    [SerializeField] private Animal fearAnimal;
+    [SerializeField] private Side escapeSide;
     [Range(0.0f, 1.0f)]
-    [SerializeField] private float _flyingForce; // How fast unit will fly
-    [SerializeField] private bool _isAnimalWillRotate;
-    [SerializeField] private float _animationTime = 2f;
+    [SerializeField] private float flyingForce; // How fast unit will fly
 
-    private float _delayBeforeRotation = 1f;
-    private float _rotationSpeed = 70f;
-    private WeightComparing _weightComparing;
-    private Rigidbody2D _rigidbody;
-    private Animator _animator;
-    private Item _itemSelf;
-    private ItemCollision _selfItemCollision;
-    private ItemCollision[] _itemCollisions;
-    private Collider2D[] _colliders;
-    private bool _isEscaping;
-    private bool _canRotate;
-
-    #region OnValidate
-    private void OnValidate()
-    {
-        if (_animationTime < 0)
-            _animationTime = 0;
-    }
-    #endregion
+    private WeightComparing weightComparing;
+    private Rigidbody2D m_rigidbody;
+    private Animator animator;
+    private Item itemSelf;
+    private ItemCollision[] itemCollisions;
+    private bool isEscaping;
+    private float animationTime = 2f;
+    private float delayAfterAnimation = 4f;
 
     private void Start()
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
-        _animator = GetComponent<Animator>();
-        _itemSelf = GetComponent<Item>();
-        _selfItemCollision = GetComponent<ItemCollision>();
-        _colliders = GetComponents<Collider2D>();
+        m_rigidbody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        itemSelf = GetComponent<Item>();
 
-        _weightComparing = FindObjectOfType<WeightComparing>();
-        _itemCollisions = FindObjectsOfType<ItemCollision>();
+        weightComparing = FindObjectOfType<WeightComparing>();
+        itemCollisions = FindObjectsOfType<ItemCollision>();
 
-        foreach (var item in _itemCollisions)
+        foreach (var item in itemCollisions)
         {
             item.OnCollision.AddListener(CheckAndEscape);
         }
@@ -57,15 +40,9 @@ public class Escape : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        if (_canRotate && _isAnimalWillRotate)
-            Rotate();
-    }
-
     private void OnDisable()
     {
-        foreach (var item in _itemCollisions)
+        foreach (var item in itemCollisions)
         {
             item.OnCollision.RemoveListener(CheckAndEscape);
         }
@@ -73,49 +50,36 @@ public class Escape : MonoBehaviour
 
     public void CheckAndEscape()
     {
-        if (_weightComparing.IsAnimalsOnBoard(_fearAnimal, _selfAnimal) && _isEscaping == false)
+        if (weightComparing.IsAnimalsOnBoard(fearAnimal, selfAnimal) && isEscaping == false)
         {
             StartCoroutine(StartEscape());
-            Side side = _selfItemCollision.Side;
-            _weightComparing.RemoveItem(_itemSelf, side);
-            
+            weightComparing.RemoveItem(itemSelf, escapeSide);
         }
     }
 
     // Flying method
     private IEnumerator StartEscape()
     {
-        if (TryGetComponent(out ItemAnimation itemAnimation))
-            itemAnimation.StopAnimation();
-
-        _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
-        string clipName = _selfAnimal.ToString() + "Escape";
-        _animator.Play(clipName);
-        _isEscaping = true;
-        yield return new WaitForSeconds(_animationTime);
+        animator.Play("ElephantEscape");
+        isEscaping = true;
+        yield return new WaitForSeconds(animationTime);
         // Multiple for comfortable
-        _rigidbody.gravityScale = _flyingForce * -1;
-        yield return new WaitForSeconds(_delayBeforeRotation);
-        DisableColliders();
-        _canRotate = true;
-        _isEscaping = false;
+        m_rigidbody.gravityScale = flyingForce * -1;
+        yield return new WaitForSeconds(delayAfterAnimation);
+        isEscaping = false;
     }
 
-    private void DisableColliders()
-    {
-        foreach (var collider in _colliders)
-        {
-            collider.isTrigger = true;
-        }
-    }
-
-    private void Rotate()
-    {
-        var targetRotation = Quaternion.Euler(Vector3.zero);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
-
-    }
     
 
 }
 
+public enum Animal
+{
+    Mouse,
+    Snake,
+    Bird,
+    Dog,
+    Wolf,
+    Elephant,
+    Sheep
+}
