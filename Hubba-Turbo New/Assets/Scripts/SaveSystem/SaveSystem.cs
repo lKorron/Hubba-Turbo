@@ -19,7 +19,7 @@ public class SaveSystem : MonoBehaviour
         FileStream file = new FileStream(Application.persistentDataPath + "/Levels.dat", FileMode.OpenOrCreate);
 
         BinaryFormatter formatter = new BinaryFormatter();
-        formatter.Serialize(file, menu.menuData);
+        formatter.Serialize(file, menu.MenuData);
 
         file.Close();
 
@@ -29,7 +29,7 @@ public class SaveSystem : MonoBehaviour
     {
         FileStream file = new FileStream(Application.persistentDataPath + "/Levels.dat", FileMode.Open);
         BinaryFormatter formatter = new BinaryFormatter();
-        menu.menuData =  (MenuData)formatter.Deserialize(file);
+        menu.MenuData =  (MenuData)formatter.Deserialize(file);
 
         file.Close();
 
