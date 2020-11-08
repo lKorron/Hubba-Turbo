@@ -5,18 +5,18 @@ using UnityEngine;
 public class Octapus : MonoBehaviour
 {
 
-    private Platform _platform;
+    private Platform platform;
 
     private void Start()
     {
-        _platform = Platform.Singleton;
+        platform = FindObjectOfType<Platform>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Platform" && _platform.IsPlatformSlippery == false)
+        if (collision.gameObject.tag == "Platform" && platform.IsPlatformSlippery == false)
         {
-            _platform.SetPlatformSlippery();
+            platform.SetPlatformSlippery();
         }
     }
 }
