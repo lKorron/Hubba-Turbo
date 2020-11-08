@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class StarsCounter : MonoBehaviour
 {
     [SerializeField] private LevelData _levelData;
+
     private Text _text;
     private int[] _starsArray;
 
@@ -15,11 +16,11 @@ public class StarsCounter : MonoBehaviour
         _text = GetComponent<Text>();
         _starsArray = _levelData.Levels;
 
-        _text.text += " " + SumOfArrayDigits(_starsArray).ToString();
+        _text.text += " " + SumOfDigitsArray(_starsArray).ToString();
         
     }
 
-    private int SumOfArrayDigits(int[] array)
+    private int SumOfDigitsArray(int[] array)
     {
         int sum = 0;
         foreach (var digit in array)
