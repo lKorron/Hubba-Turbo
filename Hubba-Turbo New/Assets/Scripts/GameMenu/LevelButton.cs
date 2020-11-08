@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(Image))]
 [RequireComponent(typeof(Button))]
 public class LevelButton : MonoBehaviour, IComparable
 {
@@ -15,15 +14,13 @@ public class LevelButton : MonoBehaviour, IComparable
     private UnityAction _goToLevel;
 
     public int levelNumber; // Id for sorting
-    private Image _levelImage;
 
     private void Awake()
     {
 
-        _levelImage = GetComponent<Image>();
         _button = GetComponent<Button>();
         _levelButtonStars = GetComponentInChildren<LevelButtonStars>();
-        _levelChoice = FindObjectOfType<LevelChoice>();
+        _levelChoice = LevelChoice.Instance;
 
         _goToLevel = () => _levelChoice.LoadLevelWithLoadScreen(levelNumber);
         _button.onClick.AddListener(_goToLevel);

@@ -13,7 +13,7 @@ public class AnimalsPanel : MonoBehaviour
 
     private void OnEnable()
     {
-        _instantiateSettings = FindObjectOfType<InstantiateSettings>();
+        _instantiateSettings = InstantiateSettings.Instance;
         _animalItems = _instantiateSettings.AnimalItems;
 
         Render(_animalItems);

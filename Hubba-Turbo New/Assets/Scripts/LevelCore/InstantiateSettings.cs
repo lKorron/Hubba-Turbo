@@ -13,7 +13,9 @@ public class InstantiateSettings : MonoBehaviour
     public Animal StartItemForInstantiate => _startItemForInstantiate;
     public List<AnimalItem> AnimalItems => _inventoryItems;
     public InstantiateItem[] InstantiateItems => _instantiateItems;
+    public static InstantiateSettings Instance { get; private set; }
 
+    #region OnValidate
     private void OnValidate()
     {
         foreach (var item in _instantiateItems)
@@ -21,5 +23,11 @@ public class InstantiateSettings : MonoBehaviour
             if (item.PrefabsNumber < 1)
                 item.SetStandartPrefabNumber();
         }
+    }
+    #endregion
+
+    private void Awake()
+    {
+        Instance = this;
     }
 }

@@ -7,7 +7,7 @@ using System.Linq;
 
 public class Menu : MonoBehaviour
 {
-    [SerializeField] private bool IsClearData;
+    [SerializeField] private bool _isClearData;
     [SerializeField] private LevelData _levelData;
     [SerializeField] private MenuData _menuData;
     private Level[] _levels; // Don't destroy objets array
@@ -30,7 +30,7 @@ public class Menu : MonoBehaviour
 
         _saveSystem.FirstTimeCreate();
 
-        if (IsClearData)
+        if (_isClearData)
         {
             _saveSystem.DeleteFile();
             _saveSystem.Save();
@@ -46,7 +46,7 @@ public class Menu : MonoBehaviour
             }
         }
 
-        if (IsClearData == false)
+        if (_isClearData == false)
         {
             _saveSystem.Save();
         }
