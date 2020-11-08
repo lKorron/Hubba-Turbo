@@ -9,9 +9,16 @@ public class Platform : MonoBehaviour
     private Sprite slipperyPlatformSprite;
 
     public bool IsPlatformSlippery { get; private set; }
+    public static Platform Singleton { get; private set; }
+
+    private void Awake()
+    {
+        Singleton = this;
+    }
 
     private void Start()
     {
+        
         lowFrictionMaterial = Resources.Load<PhysicsMaterial2D>("Materials/LowFriction");
         slipperyPlatformSprite = Resources.Load<Sprite>("Sprites/Platforms/PlatformSlippery");
     }
