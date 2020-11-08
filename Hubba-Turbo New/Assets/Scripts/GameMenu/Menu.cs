@@ -25,8 +25,8 @@ public class Menu : MonoBehaviour
     {
         _levels = FindObjectsOfType<Level>();
         _menuLevels = FindObjectsOfType<LevelButton>();
-        _saveSystem = FindObjectOfType<SaveSystem>();
-        _starsCounter = FindObjectOfType<StarsCounter>();
+        _saveSystem = SaveSystem.Instance;
+        _starsCounter = StarsCounter.Instance;
 
         _saveSystem.FirstTimeCreate();
 

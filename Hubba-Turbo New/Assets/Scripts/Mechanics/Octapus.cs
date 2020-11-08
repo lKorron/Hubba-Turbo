@@ -9,7 +9,7 @@ public class Octapus : MonoBehaviour
 
     private void Start()
     {
-        _platform = Platform.Singleton;
+        _platform = Platform.Instance;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

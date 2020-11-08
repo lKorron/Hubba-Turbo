@@ -9,8 +9,11 @@ public class SaveSystem : MonoBehaviour
 
     private Menu menu;
 
+    public static SaveSystem Instance { get; private set; }
+
     private void Awake()
     {
+        Instance = this;
         menu = FindObjectOfType<Menu>();
     }
     // Save menudata info into file

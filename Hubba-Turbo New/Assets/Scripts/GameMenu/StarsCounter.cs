@@ -11,6 +11,13 @@ public class StarsCounter : MonoBehaviour
     private Text _text;
     private int[] _starsArray;
 
+    public static StarsCounter Instance { get; private set; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     public void DisplayCollectedStars()
     {
         _text = GetComponent<Text>();

@@ -9,11 +9,11 @@ public class Platform : MonoBehaviour
     private Sprite slipperyPlatformSprite;
 
     public bool IsPlatformSlippery { get; private set; }
-    public static Platform Singleton { get; private set; }
+    public static Platform Instance { get; private set; }
 
     private void Awake()
     {
-        Singleton = this;
+        Instance = this;
     }
 
     private void Start()
