@@ -9,7 +9,7 @@ public class Menu : MonoBehaviour
 {
     [SerializeField] private bool IsClearData;
     [SerializeField] private LevelData _levelData;
-    [SerializeField] public MenuData _menuData;
+    [SerializeField] private MenuData _menuData;
     private Level[] _levels; // Don't destroy objets array
     private LevelButton[] _menuLevels; // Menu buttons array
     private SaveSystem _saveSystem;
