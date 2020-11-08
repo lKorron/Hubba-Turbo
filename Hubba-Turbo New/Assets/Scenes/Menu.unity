@@ -416,7 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de61ce91ae7f4ca4b1a325845c5001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelNumber: 8
+  _levelNumber: 8
 --- !u!114 &80504312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -732,7 +732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de61ce91ae7f4ca4b1a325845c5001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelNumber: 9
+  _levelNumber: 9
 --- !u!114 &169288341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1658,7 +1658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de61ce91ae7f4ca4b1a325845c5001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelNumber: 4
+  _levelNumber: 4
 --- !u!114 &398621196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2055,7 +2055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de61ce91ae7f4ca4b1a325845c5001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelNumber: 3
+  _levelNumber: 3
 --- !u!114 &446585299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2436,7 +2436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de61ce91ae7f4ca4b1a325845c5001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelNumber: 7
+  _levelNumber: 7
 --- !u!114 &474799900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3398,10 +3398,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fd0b8942bb5f4d9491d256f3a365c32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsClearData: 0
+  _isClearData: 0
   _levelData: {fileID: 11400000, guid: 5a71f5be0c4f041c7a0d0863ec1fe4e3, type: 2}
-  menuData:
-    levels: 00000000
+  _menuData:
+    levels: 
 --- !u!4 &745423830
 Transform:
   m_ObjectHideFlags: 0
@@ -3829,7 +3829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de61ce91ae7f4ca4b1a325845c5001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelNumber: 10
+  _levelNumber: 10
 --- !u!114 &879952632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5168,7 +5168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de61ce91ae7f4ca4b1a325845c5001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelNumber: 2
+  _levelNumber: 2
 --- !u!114 &1282073340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5596,7 +5596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de61ce91ae7f4ca4b1a325845c5001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelNumber: 1
+  _levelNumber: 1
 --- !u!1 &1399102797
 GameObject:
   m_ObjectHideFlags: 0
@@ -6590,7 +6590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de61ce91ae7f4ca4b1a325845c5001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelNumber: 6
+  _levelNumber: 6
 --- !u!114 &1980142554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6805,7 +6805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de61ce91ae7f4ca4b1a325845c5001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelNumber: 5
+  _levelNumber: 5
 --- !u!114 &2002796573
 MonoBehaviour:
   m_ObjectHideFlags: 0
