@@ -21,7 +21,7 @@ public class LevelButton : MonoBehaviour, IComparable
 
         _button = GetComponent<Button>();
         _levelButtonStars = GetComponentInChildren<LevelButtonStars>();
-        _levelChoice = LevelChoice.Instance;
+        _levelChoice = FindObjectOfType<LevelChoice>();
 
         _goToLevel = () => _levelChoice.LoadLevelWithLoadScreen(_levelNumber);
         _button.onClick.AddListener(_goToLevel);
