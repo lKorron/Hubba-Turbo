@@ -5,8 +5,8 @@ using UnityEngine.Events;
 
 public class Platform : MonoBehaviour
 {
-    private PhysicsMaterial2D lowFrictionMaterial;
-    private Sprite slipperyPlatformSprite;
+    [SerializeField] private PhysicsMaterial2D _lowFrictionMaterial;
+    [SerializeField] private Sprite _slipperyPlatformSprite;
 
     public bool IsPlatformSlippery { get; private set; }
     public static Platform Instance { get; private set; }
@@ -16,24 +16,17 @@ public class Platform : MonoBehaviour
         Instance = this;
     }
 
-    private void Start()
-    {
-        
-        lowFrictionMaterial = Resources.Load<PhysicsMaterial2D>("Materials/LowFriction");
-        slipperyPlatformSprite = Resources.Load<Sprite>("Sprites/Platforms/PlatformSlippery");
-    }
-
     public void SetPlatformSlippery()
     {
         IsPlatformSlippery = true;
 
         // Change friction
         BoxCollider2D collisionBoxCollider = GetComponent<BoxCollider2D>();
-        collisionBoxCollider.sharedMaterial = lowFrictionMaterial;
+        collisionBoxCollider.sharedMaterial = _lowFrictionMaterial;
 
         // Change sprite
         SpriteRenderer collisionSpriteRenderer = GetComponent<SpriteRenderer>();
-        collisionSpriteRenderer.sprite = slipperyPlatformSprite;
+        collisionSpriteRenderer.sprite = _slipperyPlatformSprite;
     }
 
 

@@ -14,7 +14,7 @@ public class Octapus : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Platform" && _platform.IsPlatformSlippery == false)
+        if (collision.gameObject.GetComponent<Platform>() && _platform.IsPlatformSlippery == false)
         {
             _platform.SetPlatformSlippery();
         }
