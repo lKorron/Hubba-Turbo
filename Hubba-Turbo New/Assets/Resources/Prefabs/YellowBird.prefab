@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 9093995458198126702}
   - component: {fileID: 7000742348253648489}
   - component: {fileID: 7000742348253648490}
+  - component: {fileID: 8723257690510607681}
   m_Layer: 0
   m_Name: YellowBird
   m_TagString: Computer
@@ -199,3 +200,20 @@ MonoBehaviour:
   _animationClip: {fileID: 7400000, guid: f841d32b375a34f469f7b6c21f374956, type: 2}
   _isPlaying: 1
   _isRandomFactorActive: 1
+--- !u!114 &8723257690510607681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9093995458198126699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671aaf880bf94439492c808a23609984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _selfAnimal: 7
+  _fearAnimal: 5
+  _flyingForce: 0.247
+  _isAnimalWillRotate: 1
+  _animationTime: 0
