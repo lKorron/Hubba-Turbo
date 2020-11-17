@@ -35,21 +35,18 @@ public class Menu : MonoBehaviour
             _saveSystem.DeleteFile();
             _saveSystem.Save();
         }
-        else _saveSystem.Load();
+        else
+            _saveSystem.Load();
         
 
         foreach (var level in _levels)
         {
             if (level != null)
-            {
                 DataSetUp(level);
-            }
         }
 
         if (_isClearData == false)
-        {
             _saveSystem.Save();
-        }
         
         
 
@@ -61,7 +58,6 @@ public class Menu : MonoBehaviour
     private void DataSetUp(ILevel level)
     {
         List<int> levelsList = _menuData.levels.ToList();
-        bool isLevelLast = level.LevelNumber == _menuLevels.Length;
         bool canProcess = levelsList.Count < _menuLevels.Length;
         
         levelsList[level.LevelNumber - 1] = level.CountOfStars;
