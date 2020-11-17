@@ -1,8 +1,7 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(menuName = "AnimalItem")]
-public class AnimalItem : ScriptableObject
+public class AnimalItem : ScriptableObject, IAnimalItem
 {
     [SerializeField] private Animal _animal;
     [SerializeField] private Sprite _iconSprite;
