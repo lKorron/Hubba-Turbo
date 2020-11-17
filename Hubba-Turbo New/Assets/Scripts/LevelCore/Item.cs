@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Item : MonoBehaviour
+public class Item : MonoBehaviour, IItem
 {
     [SerializeField] private int _weight;
     [SerializeField] private bool _isStartItem;
