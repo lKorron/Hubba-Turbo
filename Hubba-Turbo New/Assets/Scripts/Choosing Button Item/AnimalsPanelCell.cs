@@ -4,12 +4,13 @@ using UnityEngine.UI;
 public class AnimalsPanelCell : MonoBehaviour
 {
     [SerializeField] private Image _image;
+
     private Toggle _toggle;
     private ToggleGroup _toggleGroup;
     private Animal _character;
     private ObjectInstantiate _objectInstantiate;
 
-    public Animal Character { get { return _character; } }
+    public Animal Character => _character;
 
     private void Start()
     {
