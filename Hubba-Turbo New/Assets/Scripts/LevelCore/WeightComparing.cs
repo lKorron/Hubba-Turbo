@@ -46,7 +46,7 @@ public class WeightComparing : MonoBehaviour
     }
 
     // Add item to chosen array
-    public void AddItem(Item item, Side side)
+    public void AddItem(IItem item, Side side)
     {
         if (side == Side.Player)
         {
@@ -61,7 +61,7 @@ public class WeightComparing : MonoBehaviour
     }
 
     // Remove item from list
-    public void RemoveItem(Item item, Side side)
+    public void RemoveItem(IItem item, Side side)
     {
         if (side == Side.Player)
         {
