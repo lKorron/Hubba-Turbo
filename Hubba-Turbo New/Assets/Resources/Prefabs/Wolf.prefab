@@ -232,5 +232,5 @@ MonoBehaviour:
   _selfAnimal: 8
   _fearAnimal: 10
   _flyingForce: 0.105
-  _isAnimalWillRotate: 0
-  _animationTime: 3
+  _isAnimalWillRotate: 1
+  _animationTime: 2

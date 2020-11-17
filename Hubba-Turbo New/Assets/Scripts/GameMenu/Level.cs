@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
 
-public class Level : MonoBehaviour, IComparable
+public class Level : MonoBehaviour, ILevel
 {
     [SerializeField] private LevelData _levelData;
     private int countOfStars;
@@ -27,7 +27,7 @@ public class Level : MonoBehaviour, IComparable
         DontDestroyOnLoad(transform.gameObject);
 
 
-        countOfStars = _levelData.Levels[levelNumber - 1];
+        countOfStars = _levelData.Levels[levelNumber - 1]; 
         
     }
 

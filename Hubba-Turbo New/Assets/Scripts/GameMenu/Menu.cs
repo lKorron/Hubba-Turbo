@@ -57,8 +57,8 @@ public class Menu : MonoBehaviour
         _levelData.Levels = _menuData.levels;
         _starsCounter.DisplayCollectedStars();
     }
-    
-    private void DataSetUp(Level level)
+
+    private void DataSetUp(ILevel level)
     {
         List<int> levelsList = _menuData.levels.ToList();
         bool isLevelLast = level.LevelNumber == _menuLevels.Length;
