@@ -5,14 +5,13 @@ using UnityEngine.UI;
 
 public class Star : MonoBehaviour
 {
+    [SerializeField] private Sprite _starFill;
     private Image _image;
-    private Sprite _starFill;
     private Sprite _starEmpty;
 
     private void Awake()
     {
         _image = GetComponent<Image>();
-        _starFill = Resources.Load<Sprite>("Sprites/UI/Star");
         _starEmpty = _image.sprite;
     }
 

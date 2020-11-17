@@ -695,7 +695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c11d2915e5ba144fca9f7b629b8e88c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index: 0
+  _starFill: {fileID: 21300000, guid: 3e1e2d3239c554c3a8bf221ef31cede3, type: 3}
 --- !u!222 &6990826828111531501
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1095,7 +1095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c11d2915e5ba144fca9f7b629b8e88c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index: 2
+  _starFill: {fileID: 21300000, guid: 3e1e2d3239c554c3a8bf221ef31cede3, type: 3}
 --- !u!222 &6990826828332258852
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1185,7 +1185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c11d2915e5ba144fca9f7b629b8e88c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index: 1
+  _starFill: {fileID: 21300000, guid: 3e1e2d3239c554c3a8bf221ef31cede3, type: 3}
 --- !u!222 &6990826828375565303
 CanvasRenderer:
   m_ObjectHideFlags: 0
