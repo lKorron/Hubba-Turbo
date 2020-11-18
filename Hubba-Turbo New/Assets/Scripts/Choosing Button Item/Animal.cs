@@ -13,5 +13,6 @@ public enum Animal
     Wolf,
     Goose,
     Dog,
-    RedBird
+    RedBird,
+    Giraffe
 }
