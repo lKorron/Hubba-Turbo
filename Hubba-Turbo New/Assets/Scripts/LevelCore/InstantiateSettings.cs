@@ -22,6 +22,8 @@ public class InstantiateSettings : MonoBehaviour
         {
             if (item.PrefabsNumber < 1)
                 item.SetStandartPrefabNumber();
+            if (item.Prefab == false)
+                print("false");
         }
     }
     #endregion
