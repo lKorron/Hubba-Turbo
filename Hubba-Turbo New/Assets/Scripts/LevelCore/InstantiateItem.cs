@@ -19,8 +19,4 @@ public class InstantiateItem
         _prefabsNumber = 1;
     }
 
-    public void ClearPrefab()
-    {
-        _prefab = null;
-    }
 }

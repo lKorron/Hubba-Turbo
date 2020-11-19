@@ -22,11 +22,6 @@ public class InstantiateSettings : MonoBehaviour
         {
             if (item.PrefabsNumber < 1)
                 item.SetStandartPrefabNumber();
-            if (item.Prefab.GetComponent<Item>() == false)
-            {
-                item.ClearPrefab();
-                Debug.Log("Please use correct prefab");
-            }
         }
     }
     #endregion
