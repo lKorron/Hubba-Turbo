@@ -940,7 +940,6 @@ MonoBehaviour:
   _inventoryItems:
   - {fileID: 11400000, guid: c770c2ffef6514a269719d07c8527443, type: 2}
   - {fileID: 11400000, guid: 0aa31a8b30c7640efa6730c552c2f491, type: 2}
-  - {fileID: 11400000, guid: 5f0827f8c84954e20b2e9d0e10ff84e9, type: 2}
   _instantiateItems: []
 --- !u!4 &1640613804
 Transform:

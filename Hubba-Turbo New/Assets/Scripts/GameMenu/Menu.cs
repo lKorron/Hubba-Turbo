@@ -7,84 +7,84 @@ using System.Linq;
 
 public class Menu : MonoBehaviour
 {
-    [SerializeField] private bool IsClearData;
+    [SerializeField] private bool _isClearData;
     [SerializeField] private LevelData _levelData;
-    [SerializeField] public MenuData menuData;
-    private Level[] levels; // Don't destroy objets array
-    private LevelButton[] menuLevels; // Menu buttons array
-    private SaveSystem saveSystem;
+    [SerializeField] private MenuData _menuData;
+    private Level[] _levels; // Don't destroy objets array
+    private LevelButton[] _menuLevels; // Menu buttons array
+    private SaveSystem _saveSystem;
     private StarsCounter _starsCounter;
 
+    public MenuData MenuData
+    { get { return _menuData; }
+      set { _menuData = value; }
+    }
      
 
     private void Start()
     {
-        levels = FindObjectsOfType<Level>();
-        menuLevels = FindObjectsOfType<LevelButton>();
-        saveSystem = FindObjectOfType<SaveSystem>();
-        _starsCounter = FindObjectOfType<StarsCounter>();
+        _levels = FindObjectsOfType<Level>();
+        _menuLevels = FindObjectsOfType<LevelButton>();
+        _saveSystem = SaveSystem.Instance;
+        _starsCounter = StarsCounter.Instance;
 
-        saveSystem.FirstTimeCreate();
+        _saveSystem.FirstTimeCreate();
 
-        if (IsClearData)
+        if (_isClearData)
         {
-            saveSystem.DeleteFile();
-            saveSystem.Save();
+            _saveSystem.DeleteFile();
+            _saveSystem.Save();
         }
-        else saveSystem.Load();
+        else
+            _saveSystem.Load();
         
 
-        foreach (var level in levels)
+        foreach (var level in _levels)
         {
             if (level != null)
-            {
                 DataSetUp(level);
-            }
         }
 
-        if (IsClearData == false)
-        {
-            saveSystem.Save();
-        }
+        if (_isClearData == false)
+            _saveSystem.Save();
         
         
 
-        ShowLevel();
-        _levelData.Levels = menuData.levels;
+        ShowLevels();
+        _levelData.Levels = _menuData.levels;
         _starsCounter.DisplayCollectedStars();
     }
-    
-    private void DataSetUp(Level level)
+
+    private void DataSetUp(ILevel level)
     {
-        List<int> levelsList = menuData.levels.ToList();
-        bool isLevelLast = level.LevelNumber == menuLevels.Length;
-        bool canProcess = levelsList.Count < menuLevels.Length;
+        List<int> levelsList = _menuData.levels.ToList();
+        bool canProcess = levelsList.Count < _menuLevels.Length;
         
         levelsList[level.LevelNumber - 1] = level.CountOfStars;
         if (level.CountOfStars > 0 && levelsList[levelsList.Count - 1] != 0 && canProcess) // Last element != 0
         {
             levelsList.Add(0);
         }
-        menuData.levels = levelsList.ToArray();
+        _menuData.levels = levelsList.ToArray();
 
         Destroy(level.gameObject);
 
         
     }
 
-    private void ShowLevel()
+    private void ShowLevels()
     {
-        Array.Sort(menuLevels);
+        Array.Sort(_menuLevels);
 
-        int[] levelsWithStars = menuData.levels;
+        int[] levelsWithStars = _menuData.levels;
 
         for (int i = 0; i < levelsWithStars.Length; i++)
         {
-            menuLevels[i].SetStars(levelsWithStars[i]);
+            _menuLevels[i].SetStars(levelsWithStars[i]);
         }
-        for (int i = levelsWithStars.Length; i < menuLevels.Length; i++)
+        for (int i = levelsWithStars.Length; i < _menuLevels.Length; i++)
         {
-            menuLevels[i].BlockLevel();
+            _menuLevels[i].BlockLevel();
         }
         
     }

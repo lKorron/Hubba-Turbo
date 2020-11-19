@@ -4,45 +4,38 @@ using UnityEngine;
 
 public class StarsPanel : MonoBehaviour
 {
-    
-    [SerializeField] private List<Star> stars = new List<Star>();
+    [SerializeField] private List<Star> _stars = new List<Star>();
 
-    public void SetOneStar()
+    public void SetStars(int starsCount)
     {
-        SetCurrentStar(0, true);
-        SetCurrentStar(1, false);
-        SetCurrentStar(2, false);
+        if (starsCount == 1)
+            SetOneStar();
+        else if (starsCount == 2)
+            SetTwoStars();
+        else if (starsCount == 3)
+            SetThreeStars();
+        else Debug.LogError("Enter correct number of stars");
     }
 
-    public void SetTwoStars()
+    private void SetOneStar()
     {
-        SetOneStar();
-        SetCurrentStar(1, true);
-        SetCurrentStar(2, false);
+        _stars[0].SetStar();
+        _stars[1].SetEmptyStar();
+        _stars[2].SetEmptyStar();
     }
 
-    public void SetThreeStars()
+    private void SetTwoStars()
     {
-        SetTwoStars();
-        SetCurrentStar(2, true);
+        _stars[0].SetStar();
+        _stars[1].SetStar();
+        _stars[2].SetEmptyStar();
     }
 
-   
-    private void SetCurrentStar(int index, bool active)
+    private void SetThreeStars()
     {
-        Star star = stars[index];
-        foreach (var item in stars)
-        {
-            if (item.GetIndex() == index)
-            {
-                star = item;
-            }
-        }
-        if (active)
+        _stars.ForEach(star =>
         {
             star.SetStar();
-        }
-        else star.SetEmptyStar();
-        
+        });
     }
 }

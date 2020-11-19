@@ -5,27 +5,25 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(Image))]
 [RequireComponent(typeof(Button))]
 public class LevelButton : MonoBehaviour, IComparable
 {
+    [SerializeField] private int _levelNumber;
+
     private LevelButtonStars _levelButtonStars;
     private LevelChoice _levelChoice;
     private Button _button;
     private UnityAction _goToLevel;
 
-    public int levelNumber; // Id for sorting
-    private Image _levelImage;
 
     private void Awake()
     {
 
-        _levelImage = GetComponent<Image>();
         _button = GetComponent<Button>();
         _levelButtonStars = GetComponentInChildren<LevelButtonStars>();
         _levelChoice = FindObjectOfType<LevelChoice>();
 
-        _goToLevel = () => _levelChoice.LoadLevelWithLoadScreen(levelNumber);
+        _goToLevel = () => _levelChoice.LoadLevelWithLoadScreen(_levelNumber);
         _button.onClick.AddListener(_goToLevel);
     }
 
@@ -55,11 +53,11 @@ public class LevelButton : MonoBehaviour, IComparable
         }
 
         LevelButton otherLevel = obj as LevelButton;
-        if (otherLevel.levelNumber > levelNumber)
+        if (otherLevel._levelNumber > _levelNumber)
         {
             return -1;
         }
-        if (otherLevel.levelNumber < levelNumber)
+        if (otherLevel._levelNumber < _levelNumber)
         {
             return 1;
         }

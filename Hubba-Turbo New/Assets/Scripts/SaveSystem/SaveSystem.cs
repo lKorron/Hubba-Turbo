@@ -7,11 +7,14 @@ using UnityEngine;
 public class SaveSystem : MonoBehaviour
 {
 
-    private Menu menu;
+    private Menu _menu;
+
+    public static SaveSystem Instance { get; private set; }
 
     private void Awake()
     {
-        menu = FindObjectOfType<Menu>();
+        Instance = this;
+        _menu = FindObjectOfType<Menu>();
     }
     // Save menudata info into file
     public void Save()
@@ -19,7 +22,7 @@ public class SaveSystem : MonoBehaviour
         FileStream file = new FileStream(Application.persistentDataPath + "/Levels.dat", FileMode.OpenOrCreate);
 
         BinaryFormatter formatter = new BinaryFormatter();
-        formatter.Serialize(file, menu.menuData);
+        formatter.Serialize(file, _menu.MenuData);
 
         file.Close();
 
@@ -29,7 +32,7 @@ public class SaveSystem : MonoBehaviour
     {
         FileStream file = new FileStream(Application.persistentDataPath + "/Levels.dat", FileMode.Open);
         BinaryFormatter formatter = new BinaryFormatter();
-        menu.menuData =  (MenuData)formatter.Deserialize(file);
+        _menu.MenuData =  (MenuData)formatter.Deserialize(file);
 
         file.Close();
 

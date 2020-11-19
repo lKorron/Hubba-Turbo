@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4213021044528927426}
   - component: {fileID: 2694374051157066951}
   - component: {fileID: 2694374051157066948}
+  - component: {fileID: 4016822007378904922}
   m_Layer: 0
   m_Name: Wolf
   m_TagString: Computer
@@ -216,3 +217,20 @@ MonoBehaviour:
   _animationClip: {fileID: 7400000, guid: e965aea34abb744bb9e6c13f1f84d8ae, type: 2}
   _isPlaying: 1
   _isRandomFactorActive: 1
+--- !u!114 &4016822007378904922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4213021044528927429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671aaf880bf94439492c808a23609984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _selfAnimal: 8
+  _fearAnimal: 10
+  _flyingForce: 0.105
+  _isAnimalWillRotate: 1
+  _animationTime: 2

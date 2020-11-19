@@ -7,6 +7,12 @@ public class LevelChoice : MonoBehaviour
 {
     [SerializeField] private GameObject _loadScreen;
 
+    public static LevelChoice Instance { get; private set; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
     // load level menu
     public void LoadScene(string sceneName)
     {

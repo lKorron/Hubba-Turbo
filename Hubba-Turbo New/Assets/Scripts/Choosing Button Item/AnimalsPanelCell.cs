@@ -1,18 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Events;
-
+ 
 public class AnimalsPanelCell : MonoBehaviour
 {
     [SerializeField] private Image _image;
+
     private Toggle _toggle;
     private ToggleGroup _toggleGroup;
     private Animal _character;
     private ObjectInstantiate _objectInstantiate;
 
-    public Animal Character { get { return _character; } }
+    public Animal Character => _character;
 
     private void Start()
     {
@@ -34,7 +32,7 @@ public class AnimalsPanelCell : MonoBehaviour
         _toggle.onValueChanged.RemoveAllListeners();
     }
 
-    public void Render(AnimalItem animalItem)
+    public void Render(IAnimalItem animalItem)
     {
         _image.sprite = animalItem.IconSprite;
         _character = animalItem.Animal;

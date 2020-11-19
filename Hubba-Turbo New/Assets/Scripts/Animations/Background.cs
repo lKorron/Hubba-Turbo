@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Background : MonoBehaviour
 {
@@ -13,9 +11,8 @@ public class Background : MonoBehaviour
     private void ResizeSpriteToScreen()
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        if (spriteRenderer == null) return;
-
-        
+        if (spriteRenderer == null)
+            return;
 
         float width = spriteRenderer.sprite.bounds.size.x;
         float height = spriteRenderer.sprite.bounds.size.y;

@@ -9,8 +9,8 @@ using UnityEngine.Events;
 public class WeightComparing : MonoBehaviour
 {
     // Arrays for game items
-    [SerializeField] private List<Item> playerItems = new List<Item>();
-    [SerializeField] private List<Item> computerItems = new List<Item>();
+    [SerializeField] private List<IItem> playerItems = new List<IItem>();
+    [SerializeField] private List<IItem> computerItems = new List<IItem>();
     // For Comparing
     [SerializeField] private int playerItemsWeight = 0;
     [SerializeField] private int computerItemsWeight = 0;
@@ -46,7 +46,7 @@ public class WeightComparing : MonoBehaviour
     }
 
     // Add item to chosen array
-    public void AddItem(Item item, Side side)
+    public void AddItem(IItem item, Side side)
     {
         if (side == Side.Player)
         {
@@ -61,7 +61,7 @@ public class WeightComparing : MonoBehaviour
     }
 
     // Remove item from list
-    public void RemoveItem(Item item, Side side)
+    public void RemoveItem(IItem item, Side side)
     {
         if (side == Side.Player)
         {
@@ -94,7 +94,7 @@ public class WeightComparing : MonoBehaviour
         bool isFirstAnimalInList = false;
         bool isSecondAnimal = false;
 
-        List<Item> items = playerItems.Concat(computerItems).ToList();
+        List<IItem> items = playerItems.Concat(computerItems).ToList();
 
         items.ForEach(item =>
         {

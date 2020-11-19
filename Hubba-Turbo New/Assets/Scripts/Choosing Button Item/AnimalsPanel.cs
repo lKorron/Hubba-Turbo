@@ -8,24 +8,24 @@ public class AnimalsPanel : MonoBehaviour
     [SerializeField] private AnimalsPanelCell _animalsPanelCellTemplate;
     [SerializeField] private Transform _container;
 
-    private List<AnimalItem> _animalItems;
+    private IEnumerable<IAnimalItem> _animalItems;
     private InstantiateSettings _instantiateSettings;
 
     private void OnEnable()
     {
-        _instantiateSettings = FindObjectOfType<InstantiateSettings>();
+        _instantiateSettings = InstantiateSettings.Instance;
         _animalItems = _instantiateSettings.AnimalItems;
 
         Render(_animalItems);
         
     }
 
-    private void Render(List<AnimalItem> animalItems)
+    private void Render(IEnumerable<IAnimalItem> animalItems)
     {
-        animalItems.ForEach(item =>
+        foreach (var item in animalItems)
         {
             var cell = Instantiate(_animalsPanelCellTemplate, _container);
             cell.Render(item);
-        });
+        }
     }
 }
