@@ -20,34 +20,7 @@ public class ObjectInstantiate : MonoBehaviour
     private void Start()
     {
         // Setting computer prefabs and their positions
-        _instantiateSettesz era
-            ikp -]aw ikp
-            ]ikp]faew IKP}WaitForEndOfFrame p
-        ]iow ]op
-        iphp'sf
-        [ ajog[oke op[for;k'opdsj po'f;jgp'a sj[foj op[ejopr jep'[\
-
-
-
-        asd
-         f
-        sa
-         df
-        as
-        LODFadeMode as
-        LODFadeMode
-
-        as decimalf
-        as decimalf
-         sad
-        f
-        asd
-         f
-        sda f
-
-        ]]]]
-            l[
-                \fsings = FindObjectOfType<InstantiateSettings>();
+        _instantiateSettings = FindObjectOfType<InstantiateSettings>();
         SetItems();
     }
 
