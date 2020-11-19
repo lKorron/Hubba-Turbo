@@ -83,7 +83,7 @@ public class ObjectInstantiate : MonoBehaviour
         {
             foreach (var item in instantiateItems)
             {
-                _computerPrefabList.Add(item.Prefab);
+                _computerPrefabList.Add(item.Prefab.gameObject);
                 _computerPositionList.Add(item.Position);
                 _instantiateNumberList.Add(item.PrefabsNumber);
             }
