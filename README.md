@@ -1,8 +1,16 @@
 # Hubba-Turbo
-My game
+Can you strike a balance? Easy task, isn't it? However, in our game on the scales there are living plasticine characters ...
+# How to start
+To start the game, start the first scene - the intro.
 # Screenshots
 <div>
-  <img width="251" height="447" align="left" src="https://github.com/lKorron/Hubba-TurboRep/blob/master/Hubba-Turbo%20New/Assets/ScreenShots/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202020-10-26%20%D0%B2%2015.29.54.png">
-  <img width="251" height="447" align="left" src="https://github.com/NicolasPCouts/FlappyBird-Unity2017/blob/master/screenshots/Screenshot_20180710-001807.png">
-    <img width="251" height="447" align="left" src="https://github.com/NicolasPCouts/FlappyBird-Unity2017/blob/master/screenshots/Screenshot_20180710-001911.png">
+  <img width="360" height="200" align="left" src="https://github.com/lKorron/Hubba-TurboRep/blob/master/Hubba-Turbo%20New/Assets/ScreenShots/StartScreen.png">
+  <img width="360" height="200" align="left" src="https://github.com/lKorron/Hubba-TurboRep/blob/master/Hubba-Turbo%20New/Assets/ScreenShots/LevelsScreen.png">
+</div>
+<div margin-top = 100>
+  <img width="360" height="200" align="left" src="https://github.com/lKorron/Hubba-TurboRep/blob/master/Hubba-Turbo%20New/Assets/ScreenShots/EscapeScreen.png">
+  <img width="360" height="200" align="left" src="https://github.com/lKorron/Hubba-TurboRep/blob/master/Hubba-Turbo%20New/Assets/ScreenShots/OctaousScreen.png">
+</div>
+<div>
+  <img width="360" height="200" align="center" src="https://github.com/lKorron/Hubba-TurboRep/blob/master/Hubba-Turbo%20New/Assets/ScreenShots/VictoryScreen.png>
 </div>
