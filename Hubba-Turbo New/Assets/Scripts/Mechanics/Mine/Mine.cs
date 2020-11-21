@@ -8,7 +8,7 @@ public class Mine : MonoBehaviour
     [SerializeField] private Sprite _pressedMineSprite;
     [SerializeField] private Explosion _explosionTemplate;
     [SerializeField] private float _delayBeforeExplode;
-    [SerializeField] private float _explosionTime;
+    [SerializeField] private float _explosionTime = 0.1f;
 
     private SpriteRenderer _spriteRenderer;
 

@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(PointEffector2D))]
 public class Explosion : MonoBehaviour
 {
+    [SerializeField] private GameObject _explosionEffect;
     [SerializeField] private float _explosionForce;
     [SerializeField] private float _explosionForceVariation;
     [SerializeField] private float _destroyingTime;
@@ -29,6 +30,8 @@ public class Explosion : MonoBehaviour
         _pointEffector = GetComponent<PointEffector2D>();
         _pointEffector.forceMagnitude = _explosionForce;
         _pointEffector.forceVariation = _explosionForceVariation;
+
+        _explosionEffect.SetActive(true);
 
         Destroy(gameObject, _destroyingTime);
     }
