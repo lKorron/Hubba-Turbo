@@ -27,7 +27,8 @@ public class Level : MonoBehaviour, ILevel
         DontDestroyOnLoad(transform.gameObject);
 
 
-        countOfStars = _levelData.Levels[levelNumber - 1]; 
+        countOfStars = _levelData.Levels[levelNumber - 1];
+        TryLoadInterface();
         
     }
 
@@ -73,6 +74,14 @@ public class Level : MonoBehaviour, ILevel
             return 1;
         }
         else return 0;
+    }
+
+    private void TryLoadInterface()
+    {
+        if (SceneManager.sceneCount >= 2)
+            return;
+        string name = GameScene.Interface.ToString();
+        SceneManager.LoadSceneAsync(name, LoadSceneMode.Additive);
     }
 
 }
