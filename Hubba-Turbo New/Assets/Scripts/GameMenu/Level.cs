@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class Level : MonoBehaviour, ILevel
 {
     [SerializeField] private LevelData _levelData;
-    private LevelChoice _levelChoice;
     private int countOfStars;
     private int levelNumber;
 
@@ -28,11 +27,7 @@ public class Level : MonoBehaviour, ILevel
         DontDestroyOnLoad(transform.gameObject);
 
 
-        countOfStars = _levelData.Levels[levelNumber - 1];
-        _levelChoice = FindObjectOfType<LevelChoice>();
-        print(_levelChoice);
-
-        TryLoadInterface();
+        countOfStars = _levelData.Levels[levelNumber - 1]; 
         
     }
 
@@ -58,15 +53,6 @@ public class Level : MonoBehaviour, ILevel
     {
         countOfStars = count;
         _levelData.Levels[levelNumber - 1] = count;
-    }
-
-    private void TryLoadInterface()
-    {
-        if (_levelChoice.IsInterfaceLoaded() == false)
-        {
-            string name = GameScene.Interface.ToString();
-            _levelChoice.LoadScene(name);
-        }
     }
 
     // For array sort
