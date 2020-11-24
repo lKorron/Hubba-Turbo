@@ -11,7 +11,14 @@ public class LevelChoice : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        if (!Instance)
+        {
+            Instance = this;
+            DontDestroyOnLoad(target: this);
+        }
+        else
+            Destroy(gameObject);
+        
     }
     // load level menu
     public void LoadScene(string sceneName)
@@ -62,6 +69,14 @@ public class LevelChoice : MonoBehaviour
         LoadLevelElements(index + 1);
     }
 
+    public bool IsInterfaceLoaded()
+    {
+        if (SceneManager.sceneCount >= 2)
+            return true;
+
+        return false;
+    }
+
     private void LoadLevelElements(int index)
     {
         Time.timeScale = 1f;
@@ -81,6 +96,8 @@ public class LevelChoice : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene(sceneName);
     }
+
+    
 
 }
 
