@@ -814,8 +814,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startItemForInstantiate: 10
   _inventoryItems:
-  - {fileID: 11400000, guid: c770c2ffef6514a269719d07c8527443, type: 2}
-  _instantiateItems: []
+  - {fileID: 11400000, guid: 92a9703b3f8964de299c6c9f19e6e546, type: 2}
+  - {fileID: 11400000, guid: 12e0bcb3d2f954e38ba5a36b7eb256bb, type: 2}
+  - {fileID: 11400000, guid: 6a02939acf7d642598614ba2e5bf8143, type: 2}
+  _instantiateItems:
+  - _prefab: {fileID: 2239413528635541096, guid: 3c68184a1dd1c46aa97687c3ddd09d34,
+      type: 3}
+    _prefabsNumber: 4
+    _position: {x: 2, y: 3, z: 0}
 --- !u!4 &1640613804
 Transform:
   m_ObjectHideFlags: 0
