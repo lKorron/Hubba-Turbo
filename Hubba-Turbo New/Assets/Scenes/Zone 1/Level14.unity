@@ -815,7 +815,11 @@ MonoBehaviour:
   _startItemForInstantiate: 10
   _inventoryItems:
   - {fileID: 11400000, guid: c770c2ffef6514a269719d07c8527443, type: 2}
-  _instantiateItems: []
+  _instantiateItems:
+  - _prefab: {fileID: 2239413528635541096, guid: 3c68184a1dd1c46aa97687c3ddd09d34,
+      type: 3}
+    _prefabsNumber: 1
+    _position: {x: 2, y: 2, z: 0}
 --- !u!4 &1640613804
 Transform:
   m_ObjectHideFlags: 0

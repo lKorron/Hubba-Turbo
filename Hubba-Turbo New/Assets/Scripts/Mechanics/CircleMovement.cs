@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Meteor : MonoBehaviour
+public class CircleMovement : MonoBehaviour
 {
     [SerializeField] private float _radius;
     [SerializeField] private float _speed;
@@ -12,10 +12,10 @@ public class Meteor : MonoBehaviour
 
     private void Update()
     {
-        Fly();
+        Move();
     }
 
-    private void Fly()
+    private void Move()
     {
         _moveValue += Time.deltaTime * _speed;
 
