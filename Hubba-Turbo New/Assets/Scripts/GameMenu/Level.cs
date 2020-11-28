@@ -28,7 +28,6 @@ public class Level : MonoBehaviour, ILevel
 
         if (IsLevelOpenByPlayer)
         {
-            print(IsLevelOpenByPlayer);
             DontDestroyOnLoad(transform.gameObject);
             _countOfStars = _levelData.Levels[_levelNumber - 1];
         }
