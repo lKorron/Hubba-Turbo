@@ -19,9 +19,6 @@ public class Level : MonoBehaviour, ILevel
     public int LevelNumber { get { return _levelNumber; } }
     public bool IsLevelOpenByPlayer => _levelNumber - 1 < _levelData.Levels.Length;
 
-    // Property for changing sprites in menu
-    public Sprite LevelSprite { get; private set; }
-
     private void Awake()
     {
         _levelNumber = SceneManager.GetActiveScene().buildIndex;
@@ -38,8 +35,11 @@ public class Level : MonoBehaviour, ILevel
 
     public void SetStars(int count)
     {
-        _countOfStars = count;
-        _levelData.Levels[_levelNumber - 1] = count;
+        if (IsLevelOpenByPlayer)
+        {
+            _countOfStars = count;
+            _levelData.Levels[_levelNumber - 1] = count;
+        }
     }
 
     // For array sort
