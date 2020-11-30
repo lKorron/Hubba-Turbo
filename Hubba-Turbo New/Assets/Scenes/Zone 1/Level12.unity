@@ -992,12 +992,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1936653670}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83e87968c4096469a8a13f3af90cec6a, type: 3}
+  m_Script: {fileID: 11500000, guid: fcbad4aa5efe84aacac6f82b9aa4b046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 3
-  _speed: 7
-  _centerPoint: {x: -2, y: 2}
+  _speed: 5
+  _radius: 5
+  _centerPoint: {x: 0, y: 0}
+  _cyclicalMovement: {fileID: 2643561929828514420, guid: cc971d11dda774e689809d44404b914d,
+    type: 3}
 --- !u!58 &1936653672
 CircleCollider2D:
   m_ObjectHideFlags: 0
