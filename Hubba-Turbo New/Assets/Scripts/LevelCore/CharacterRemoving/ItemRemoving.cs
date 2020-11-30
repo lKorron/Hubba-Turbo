@@ -7,6 +7,13 @@ public class ItemRemoving : MonoBehaviour
     private ItemCollision _itemCollision;
     private WeightComparing _weightComparing;
 
+    public static ItemRemoving Instance { get; private set; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void Start()
     {
         _weightComparing = FindObjectOfType<WeightComparing>();
@@ -14,7 +21,11 @@ public class ItemRemoving : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Need processing once
+        Remove(collision);
+    }
+
+    public void Remove(Collider2D collision)
+    {
         Item item = collision.gameObject.GetComponent<Item>();
         if (item != null && item.IsRemoved == false && item.IsCollided == true)
         {
@@ -23,7 +34,6 @@ public class ItemRemoving : MonoBehaviour
             _weightComparing.RemoveItem(item, side);
             item.IsRemoved = true;
         }
-        
     }
 
     
