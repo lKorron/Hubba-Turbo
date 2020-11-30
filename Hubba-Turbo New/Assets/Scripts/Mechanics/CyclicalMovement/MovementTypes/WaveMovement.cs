@@ -13,4 +13,5 @@ public class WaveMovement : AbstractСyclicalMovement
 
         gameObject.transform.position = new Vector3(xPosition, yPosition, 0);
     }
+
 }
