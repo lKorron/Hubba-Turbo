@@ -10,13 +10,15 @@ public class Item : MonoBehaviour, IItem
 
     public bool IsCollided { get; set; } = false;
     public bool IsRemoved { get; set; } = false;
+    public Side Side { get; set; }
 
     public int Weight => _weight; // property for list processing
     public bool IsStartItem => _isStartItem;
+    
 
     public Item(int weight)
     {
         _weight = weight;
     }
-    
+
 }
