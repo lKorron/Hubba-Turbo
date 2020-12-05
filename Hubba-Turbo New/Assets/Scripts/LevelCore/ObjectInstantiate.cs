@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using UnityEngine.UI;
 
 public class ObjectInstantiate : MonoBehaviour
@@ -36,14 +37,17 @@ public class ObjectInstantiate : MonoBehaviour
     public void SetCharacter(Animal character)
     {
         string characterName = character.ToString();
-        _playerPrefab = (GameObject)Resources.Load("Prefabs/" + characterName, typeof(GameObject));
+        _playerPrefab = (GameObject)Resources.Load("Prefabs/Items/" + characterName, typeof(GameObject));
+
+        if (_playerPrefab == null)
+            throw new NullReferenceException("Player prefab is null");
     }
 
     // Computer smart isntantiate
     public void ComputerInstantiate()
     {
         if (_computerPrefabList.Count != _computerPositionList.Count)
-            throw new MissingComponentException("Error: Add values to both lists");
+            throw new InvalidOperationException("Error: Add values to both lists");
 
         if (_index == _computerPrefabList.Count)
         {
@@ -95,11 +99,8 @@ public class ObjectInstantiate : MonoBehaviour
         // Mouse input
         if (IsPlayerCanInstantiate && Input.GetButtonDown("Fire1") && Input.mousePosition.x < Screen.width / 2)
         {
-
             Vector3 mousePosition = Input.mousePosition;
-            mousePosition.z = 2.0f;
-            Vector3 objectPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-            GameObject clone = Instantiate(_playerPrefab, objectPosition, Quaternion.identity);
+            InstantiateItem(_playerPrefab, mousePosition);
         }
     }
 
@@ -109,8 +110,17 @@ public class ObjectInstantiate : MonoBehaviour
         {
             Touch touch = Input.GetTouch(0);
             Vector3 touchPosition = touch.position;
-            Vector3 objectPosition = Camera.main.ScreenToWorldPoint(touchPosition);
-            GameObject clone = Instantiate(_playerPrefab, objectPosition, Quaternion.identity);
+            InstantiateItem(_playerPrefab, touchPosition);
+        }
+    }
+
+    private void InstantiateItem(GameObject prefab, Vector3 screenPosiotion)
+    {
+        if (prefab != null)
+        {
+            screenPosiotion.z = 2.0f;
+            Vector3 objectPosition = Camera.main.ScreenToWorldPoint(screenPosiotion);
+            GameObject clone = Instantiate(prefab, objectPosition, Quaternion.identity);
         }
     }
 }
