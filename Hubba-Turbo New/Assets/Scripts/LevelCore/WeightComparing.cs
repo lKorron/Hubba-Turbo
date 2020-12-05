@@ -139,6 +139,6 @@ public class WeightComparing : MonoBehaviour
 public enum Side
 {
     Player,
-    Computer,
-    Unselected
+    Computer
+
 }

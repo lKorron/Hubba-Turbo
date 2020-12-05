@@ -25,26 +25,10 @@ public class ItemCollision : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<ItemCollision>())
         {
-            Item item = collision.gameObject.GetComponent<Item>();
+         
             _side = GetCollisionSide(collision);
+            SetItem(collision, _side);
 
-            if (item != null)
-            {
-
-
-
-                if (item.IsCollided == false)
-                    item.Side = _side;
-
-                if (_side == GetOppositeSide(item.Side))
-                {
-                    item.Side = GetOppositeSide(item.Side);
-                    Side oppositeSide = GetOppositeSide(_side);
-                    _weightComparing.RemoveItem(item, oppositeSide);
-                    _weightComparing.AddItem(item, item.Side);
-                }
-                SetItem(collision, _side);
-            }
             // Other actions
             OnCollision.Invoke();
         }
@@ -98,16 +82,5 @@ public class ItemCollision : MonoBehaviour
         if (isRight) return Side.Computer;
         if (isLeft) return Side.Player;
         throw new System.Exception("Method can't correctly dermine side");
-    }
-
-    private Side GetOppositeSide(Side side)
-    {
-        if (side == Side.Computer)
-            return Side.Player;
-
-        if (side == Side.Player)
-            return Side.Computer;
-
-        return Side.Unselected;
     }
 }

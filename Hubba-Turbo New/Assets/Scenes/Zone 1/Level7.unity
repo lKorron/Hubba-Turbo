@@ -233,11 +233,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Invisible Wall
       objectReference: {fileID: 0}
-    - target: {fileID: 7134470154389307808, guid: bcac51baa58c24737b5147c257035b12,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7134470154389307811, guid: bcac51baa58c24737b5147c257035b12,
         type: 3}
       propertyPath: m_RootOrder
