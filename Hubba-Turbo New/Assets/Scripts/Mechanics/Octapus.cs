@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Octapus : MonoBehaviour
 {
-
     private Platform _platform;
 
     private void Start()
