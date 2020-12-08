@@ -7,53 +7,39 @@ using UnityEngine.SceneManagement;
 public class Level : MonoBehaviour, ILevel
 {
     [SerializeField] private LevelData _levelData;
-    private int countOfStars;
-    private int levelNumber;
+    private int _countOfStars;
+    private int _levelNumber;
 
     public int CountOfStars
     {
-        get { return countOfStars; }
-        private set { countOfStars = value; }
+        get { return _countOfStars; }
+        private set { _countOfStars = value; }
     }
 
-    public int LevelNumber { get { return levelNumber; } }
-    
-    // Property for changing sprites in menu
-    public Sprite LevelSprite { get; private set; }
+    public int LevelNumber { get { return _levelNumber; } }
+    public bool IsLevelOpenByPlayer => _levelNumber - 1 < _levelData.Levels.Length;
 
     private void Awake()
     {
-        levelNumber = SceneManager.GetActiveScene().buildIndex;
-        DontDestroyOnLoad(transform.gameObject);
+        _levelNumber = SceneManager.GetActiveScene().buildIndex;
 
+        if (IsLevelOpenByPlayer)
+        {
+            DontDestroyOnLoad(transform.gameObject);
+            _countOfStars = _levelData.Levels[_levelNumber - 1];
+        }
 
-        countOfStars = _levelData.Levels[levelNumber - 1];
         TryLoadInterface();
         
     }
 
-    public void SetOneStar()
-    {
-        countOfStars = 1;
-        _levelData.Levels[levelNumber - 1] = 1;
-    }
-
-    public void SetTwoStar()
-    {
-        countOfStars = 2;
-        _levelData.Levels[levelNumber - 1] = 2;
-    }
-
-    public void SetThreeStar()
-    {
-        countOfStars = 3;
-        _levelData.Levels[levelNumber - 1] = 3;
-    }
-
     public void SetStars(int count)
     {
-        countOfStars = count;
-        _levelData.Levels[levelNumber - 1] = count;
+        if (IsLevelOpenByPlayer)
+        {
+            _countOfStars = count;
+            _levelData.Levels[_levelNumber - 1] = count;
+        }
     }
 
     // For array sort
@@ -65,11 +51,11 @@ public class Level : MonoBehaviour, ILevel
         }
 
         Level otherLevel = obj as Level;
-        if (otherLevel.levelNumber > levelNumber)
+        if (otherLevel._levelNumber > _levelNumber)
         {
             return -1;
         }
-        if (otherLevel.levelNumber < levelNumber)
+        if (otherLevel._levelNumber < _levelNumber)
         {
             return 1;
         }

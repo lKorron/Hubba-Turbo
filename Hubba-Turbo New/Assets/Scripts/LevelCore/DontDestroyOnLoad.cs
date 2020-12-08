@@ -5,9 +5,11 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(Level))]
 public class DontDestroyOnLoad : MonoBehaviour
 {
     private string _id;
+    private Level _level;
 
     public static DontDestroyOnLoad Get(string id)
     {
@@ -18,6 +20,7 @@ public class DontDestroyOnLoad : MonoBehaviour
     private void Awake()
     {
         _id = SceneManager.GetActiveScene().buildIndex.ToString();
+        _level = GetComponent<Level>();
         if (string.IsNullOrEmpty(_id))
         {
             _id = Guid.NewGuid().ToString();
@@ -29,6 +32,9 @@ public class DontDestroyOnLoad : MonoBehaviour
         {
             Destroy(instance.gameObject);
         }
-        DontDestroyOnLoad(gameObject);
+        if (_level.IsLevelOpenByPlayer)
+        {
+            DontDestroyOnLoad(gameObject);
+        }
     }
 }
