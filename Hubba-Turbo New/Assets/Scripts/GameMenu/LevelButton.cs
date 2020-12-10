@@ -11,7 +11,7 @@ public class LevelButton : MonoBehaviour, IComparable
     [SerializeField] private int _levelNumber;
 
     private LevelButtonStars _levelButtonStars;
-    private LevelChoice _levelChoice;
+    private SceneLoader _sceneLoader;
     private Button _button;
     private UnityAction _goToLevel;
 
@@ -21,9 +21,9 @@ public class LevelButton : MonoBehaviour, IComparable
 
         _button = GetComponent<Button>();
         _levelButtonStars = GetComponentInChildren<LevelButtonStars>();
-        _levelChoice = FindObjectOfType<LevelChoice>();
+        _sceneLoader = SceneLoader.Instance;
 
-        _goToLevel = () => _levelChoice.LoadLevelWithLoadScreen(_levelNumber);
+        _goToLevel = () => _sceneLoader.LoadLevelWithLoadScreen(_levelNumber);
         _button.onClick.AddListener(_goToLevel);
     }
 

@@ -229,7 +229,6 @@ GameObject:
   - component: {fileID: 170276750}
   - component: {fileID: 170276749}
   - component: {fileID: 170276748}
-  - component: {fileID: 170276751}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -303,19 +302,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &170276751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 170276747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03f94eb15229a41ea86df0c5b99cac23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _loadScreen: {fileID: 0}
 --- !u!1 &1420122203
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,8 +554,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 170276751}
-        m_TargetAssemblyTypeName: LevelChoice, Assembly-CSharp
+      - m_Target: {fileID: 889573908920977740, guid: 2239595ed4eda42fe9c77e8d00927047,
+          type: 3}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
@@ -886,6 +873,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8384893816587999803, guid: 1d76d4b5634d7449a967fbd43edd4260,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384893816587999803, guid: 1d76d4b5634d7449a967fbd43edd4260,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
       objectReference: {fileID: 0}
@@ -901,6 +893,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8384893816587999803, guid: 1d76d4b5634d7449a967fbd43edd4260,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384893816587999803, guid: 1d76d4b5634d7449a967fbd43edd4260,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.7071068
       objectReference: {fileID: 0}
@@ -913,16 +910,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8384893816587999803, guid: 1d76d4b5634d7449a967fbd43edd4260,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 8384893816587999803, guid: 1d76d4b5634d7449a967fbd43edd4260,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8384893816587999803, guid: 1d76d4b5634d7449a967fbd43edd4260,
         type: 3}

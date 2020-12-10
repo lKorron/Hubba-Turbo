@@ -1775,7 +1775,7 @@ GameObject:
   - component: {fileID: 6990826829240023743}
   - component: {fileID: 6990826829240023742}
   m_Layer: 0
-  m_Name: LevelChoice
+  m_Name: SceneLoader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1790,7 +1790,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6990826829240023712}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03f94eb15229a41ea86df0c5b99cac23, type: 3}
+  m_Script: {fileID: 11500000, guid: aee044fe4a0fc4bcc86323bd143ad108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _loadScreen: {fileID: 0}
@@ -1922,7 +1922,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d0b23812a5874a72859a4f00012f618, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: 3
 --- !u!114 &6990826829614252758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2580,7 +2579,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d0b23812a5874a72859a4f00012f618, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: 2
 --- !u!114 &6990826829937692531
 MonoBehaviour:
   m_ObjectHideFlags: 0

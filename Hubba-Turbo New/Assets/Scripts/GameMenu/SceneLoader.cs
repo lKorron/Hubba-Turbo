@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelChoice : MonoBehaviour
+public class SceneLoader : MonoBehaviour
 {
     [SerializeField] private GameObject _loadScreen;
 
-    public static LevelChoice Instance { get; private set; }
+    public static SceneLoader Instance { get; private set; }
 
     private void Awake()
     {
@@ -26,7 +26,7 @@ public class LevelChoice : MonoBehaviour
 
     public void LoadStartScreen()
     {
-        LoadMenuElements(GameScene.MainMenu);
+        LoadMenuElements(GameScene.StartScreen);
     }
 
     public void LoadZoneMenu()

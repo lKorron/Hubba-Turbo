@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Intro : MonoBehaviour
+public class SceneTransition : MonoBehaviour
 {
     [SerializeField] private float _waitingTime;
     [SerializeField] private GameScene _scene;

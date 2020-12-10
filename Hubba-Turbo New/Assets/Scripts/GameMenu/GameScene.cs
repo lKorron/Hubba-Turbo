@@ -4,5 +4,6 @@ public enum GameScene
     Menu,
     MainMenu,
     Zones,
-    Interface
+    Interface,
+    StartScreen
 }

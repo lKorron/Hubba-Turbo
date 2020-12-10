@@ -288,7 +288,6 @@ GameObject:
   - component: {fileID: 170276750}
   - component: {fileID: 170276749}
   - component: {fileID: 170276748}
-  - component: {fileID: 170276751}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -362,19 +361,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &170276751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 170276747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03f94eb15229a41ea86df0c5b99cac23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _loadScreen: {fileID: 0}
 --- !u!1 &178247963
 GameObject:
   m_ObjectHideFlags: 0
@@ -1113,7 +1099,7 @@ GameObject:
   - component: {fileID: 1238064095}
   - component: {fileID: 1238064094}
   m_Layer: 5
-  m_Name: Button
+  m_Name: VillageButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1182,8 +1168,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 170276751}
-        m_TargetAssemblyTypeName: LevelChoice, Assembly-CSharp
+      - m_Target: {fileID: 889573908920977740, guid: 2239595ed4eda42fe9c77e8d00927047,
+          type: 3}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: LoadMenu
         m_Mode: 1
         m_Arguments:
@@ -1313,8 +1300,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 170276751}
-        m_TargetAssemblyTypeName: LevelChoice, Assembly-CSharp
+      - m_Target: {fileID: 889573908920977740, guid: 2239595ed4eda42fe9c77e8d00927047,
+          type: 3}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: LoadStartScreen
         m_Mode: 1
         m_Arguments:
