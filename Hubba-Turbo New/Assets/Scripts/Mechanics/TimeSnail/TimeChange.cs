@@ -4,62 +4,69 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(ItemCollision))]
+[RequireComponent(typeof(TimeSnailPresenter))]
 public class TimeChange : MonoBehaviour
 {
-    [SerializeField] private float _acceleratedTimeScale;
-    [SerializeField] private float _slowedTimeScale;
+    [SerializeField] private AbstractSnailType _slowingSnail;
+    [SerializeField] private AbstractSnailType _acceleratingSnail;
 
     private ItemCollision _itemCollision;
+    private TimeSnailPresenter _timeSnailPresenter;
     private Side _currentSide;
-
-    public event Action SideChanged;
-
-    public Side CurrentSide => _currentSide;
-
-    #region OnValidate
-    private void OnValidate()
-    {
-        if (_acceleratedTimeScale < 1)
-            _acceleratedTimeScale = 1;
-
-        if (_slowedTimeScale > 1 || _slowedTimeScale < 0)
-            _slowedTimeScale = 0;
-    }
-    #endregion
+    private bool _isTimeFirstTimeChanged;
 
     private void Start()
     {
         _itemCollision = GetComponent<ItemCollision>();
+        _timeSnailPresenter = GetComponent<TimeSnailPresenter>();
     }
 
     private void Update()
     {
         var side = _itemCollision.Side;
 
+        FirstTimeChangeTime(side);
+
         if (side != _currentSide)
         {
             _currentSide = side;
-            SideChanged.Invoke();
+            ChangeTime(side);
         }
 
-        if (_currentSide == Side.Player)
-        {
-            SetTimeScale(_acceleratedTimeScale);
-        }
-
-        if (_currentSide == Side.Computer)
-        {
-            SetTimeScale(_slowedTimeScale);
-        }
+        
     }
 
     private void OnDestroy()
     {
-        SetTimeScale(1f);
+        SetNormalTime();
     }
 
-    private void SetTimeScale(float scale)
+    private void FirstTimeChangeTime(Side side)
     {
-        Time.timeScale = scale;
+        if (_isTimeFirstTimeChanged == false)
+        {
+            ChangeTime(side);
+            _isTimeFirstTimeChanged = true;
+        }
+    }
+
+    private void ChangeTime(Side side)
+    {
+        if (side == _slowingSnail.ActivationSide)
+        {
+            _slowingSnail.ChangeTime();
+            _timeSnailPresenter.Present(_slowingSnail);
+        }
+
+        if (side == _acceleratingSnail.ActivationSide)
+        {
+            _acceleratingSnail.ChangeTime();
+            _timeSnailPresenter.Present(_acceleratingSnail);
+        }
+    }
+
+    private void SetNormalTime()
+    {
+        Time.timeScale = 1f;
     }
 }

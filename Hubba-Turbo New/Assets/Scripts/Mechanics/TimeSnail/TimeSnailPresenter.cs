@@ -3,30 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
-[RequireComponent(typeof(TimeChange))]
 public class TimeSnailPresenter : MonoBehaviour
 {
-    [SerializeField] private Sprite _slowingNailSprite;
-    [SerializeField] private Sprite _acceleratingNailSprite;
-
-    private SpriteRenderer _currentSprite;
-    private TimeChange _timeChange;
+    private SpriteRenderer _spriteRenderer;
 
     private void Start()
     {
-        _currentSprite = GetComponent<SpriteRenderer>();
-        _timeChange = GetComponent<TimeChange>();
-
-        _timeChange.SideChanged += () => SetSprite();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void OnDisable()
+    public void Present(AbstractSnailType snail)
     {
-        _timeChange.SideChanged -= () => SetSprite();
-    }
-
-    private void SetSprite()
-    {
-        
+        _spriteRenderer.sprite = snail.Sprite;
     }
 }
