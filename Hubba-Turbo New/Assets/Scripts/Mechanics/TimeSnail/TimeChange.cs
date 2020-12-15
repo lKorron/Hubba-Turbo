@@ -13,7 +13,7 @@ public class TimeChange : MonoBehaviour
     private ItemCollision _itemCollision;
     private TimeSnailPresenter _timeSnailPresenter;
     private Side _currentSide;
-    private bool _isTimeFirstTimeChanged;
+    private bool _isMethodExecuted;
 
     private void Start()
     {
@@ -25,7 +25,7 @@ public class TimeChange : MonoBehaviour
     {
         var side = _itemCollision.Side;
 
-        FirstTimeChangeTime(side);
+        ChangeTimeOnce(side);
 
         if (side != _currentSide)
         {
@@ -41,12 +41,12 @@ public class TimeChange : MonoBehaviour
         SetNormalTime();
     }
 
-    private void FirstTimeChangeTime(Side side)
+    private void ChangeTimeOnce(Side side)
     {
-        if (_isTimeFirstTimeChanged == false)
+        if (_isMethodExecuted == false)
         {
             ChangeTime(side);
-            _isTimeFirstTimeChanged = true;
+            _isMethodExecuted = true;
         }
     }
 
