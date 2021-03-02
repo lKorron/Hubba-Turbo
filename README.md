@@ -1,7 +1,7 @@
 # Hubba-Turbo
-Can you strike a balance? Easy task, isn't it? However, in our game on the scales there are living plasticine characters ...
-# How to start
-To start the game, start the first scene - the intro.
+The mobile game, where the player needs to balance the desk, using plasticine animals. The game goes step by step - the player creating an animal on the left side of the screen and then the computer responding on the right side. After the weight is equalized, the table is automatically set to the default position, the player wins. Below some aspects of the game will be discussed in more detail.
+## How to start
+The intro is the first scene - just play it to get started. 
 # Screenshots
 <div>
   <img width="360" height="200" align="left" src="https://github.com/lKorron/Hubba-TurboRep/blob/master/Hubba-Turbo%20New/Assets/ScreenShots/StartScreen.png">
