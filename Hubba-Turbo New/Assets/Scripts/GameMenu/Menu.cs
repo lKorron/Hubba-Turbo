@@ -28,7 +28,9 @@ public class Menu : MonoBehaviour
         _saveSystem = SaveSystem.Instance;
         _starsCounter = StarsCounter.Instance;
 
-        _saveSystem.FirstTimeCreate();
+        
+        if (_saveSystem.FirstTimeCreate())
+            _saveSystem.Save();
 
         if (_isClearData)
         {

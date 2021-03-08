@@ -32,7 +32,7 @@ public class DontDestroyOnLoad : MonoBehaviour
         {
             Destroy(instance.gameObject);
         }
-        if (_level.IsLevelOpenByPlayer)
+        if (true)
         {
             DontDestroyOnLoad(gameObject);
         }
