@@ -32,6 +32,8 @@ To configure which animals the computer will summon, refer to the _InstantiateSe
 Image 6 - Setting computer summons
 
 ## Mechanics
+To keep the game from looking boring, various mechanics have been added to it, such as __fear__, __bombs__, __meteorites__, __sticky board__. Each of them will be discussed in detail below.
+### Fear
 # Screenshots
 <div>
   <img width="360" height="200" align="left" src="https://github.com/lKorron/Hubba-TurboRep/blob/master/Hubba-Turbo%20New/Assets/ScreenShots/StartScreen.png">
