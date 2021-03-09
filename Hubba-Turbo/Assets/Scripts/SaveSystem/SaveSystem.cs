@@ -33,7 +33,6 @@ public class SaveSystem : MonoBehaviour
         FileStream file = new FileStream(Application.persistentDataPath + "/Levels.dat", FileMode.Open);
         BinaryFormatter formatter = new BinaryFormatter();
         _menu.MenuData =  (MenuData)formatter.Deserialize(file);
-
         file.Close();
 
     }
@@ -43,9 +42,21 @@ public class SaveSystem : MonoBehaviour
         File.Delete(Application.persistentDataPath + "/Levels.dat");
     }
 
-    public void FirstTimeCreate()
+    public bool FirstTimeCreate()
     {
-        FileStream file = new FileStream(Application.persistentDataPath + "/Levels.dat", FileMode.OpenOrCreate);
-        file.Close();
+        try
+        {
+            FileStream file = new FileStream(Application.persistentDataPath + "/Levels.dat", FileMode.Open);
+            file.Close();
+            return false;
+        }
+        catch (System.Exception ex)
+        {
+            FileStream file = new FileStream(Application.persistentDataPath + "/Levels.dat", FileMode.OpenOrCreate);
+            file.Close();
+            return true;
+        }
+        
+        
     }
 }

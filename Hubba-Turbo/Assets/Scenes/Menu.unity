@@ -7439,7 +7439,7 @@ MonoBehaviour:
   _isClearData: 0
   _levelData: {fileID: 11400000, guid: 5a71f5be0c4f041c7a0d0863ec1fe4e3, type: 2}
   _menuData:
-    levels: 
+    levels: 00000000
 --- !u!4 &745423830
 Transform:
   m_ObjectHideFlags: 0
