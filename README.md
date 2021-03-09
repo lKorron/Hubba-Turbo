@@ -23,7 +23,7 @@ Starting from 14 levels are not filled with anything. You can create them yourse
 Find gameobject _InstantiateSettings_ at the level with the same script. In the _Inventory settings_ tab, you can insert the appropriate scriptable objects into the inventory items list. When you start a level, animals will appear in the inventory in the order you choose. To set the animal that will be selected initially, set it in enum _Start Item  For Instantiate_.
 ![Clear data](/Hubba-Turbo/Assets/ScreenShots/SetInventoryScreen.png "Clear data")
 Image 4 - Setting inventory <br>
-![Clear data](/Hubba-Turbo/Assets/ScreenShots/InventoryScreen.png "Clear data")
+![Clear data](/Hubba-Turbo/Assets/ScreenShots/InventoryScreen.png "Clear data") <br>
 Image 5 - Result of setting inventory
 ### Adding characters to board
 To set the starting items on the board, you can simply drag and drop the desired prefab onto the stage. However, if the starting character is on the player's side, you must check the _IsStartItem_ checkbox in the _Item_ script located on the character's prefab.
