@@ -44,13 +44,13 @@ Image 8 - Mouse escaping from cat
 ![Clear data](/Hubba-Turbo/Assets/ScreenShots/EscapeCheckScreen.png "Clear data")
 Image 9 - Checking fear animal
 
-###Mines
+### Mines
 Mines explode after being touched by any character. In the prefab settings, you can set the explosion time, the delay before the explosion, as well as the weight of the bomb.
 
 ![Clear data](/Hubba-Turbo/Assets/ScreenShots/MineScreen.png "Clear data")
 Image 10 - Mine on board
 
-###Meteorites
+### Meteorites
 Meteorites, unlike mines that only throw out animals, destroy them as soon as they touch. Meteorites fly along a given trajectory, which can be changed by changing the type of cyclical movement in the prefab(Assets/Resources/Prefabs/Movement). In addition, in the script, you can change the speed, radius, and center point of movement.
 
 ![Clear data](/Hubba-Turbo/Assets/ScreenShots/MeteorScreen.png "Clear data")
@@ -59,7 +59,7 @@ Image 11 - Meteor
 ![Clear data](/Hubba-Turbo/Assets/ScreenShots/MovementScreen.png "Clear data")
 Image 12 - Meteor's movement settings
 
-###Slippery board
+### Slippery board
 Once a special character (octopus) touches the board, it becomes covered with his slime, becoming slippery. The player needs to complete the level as quickly as possible until all the animals have slid down.
 ![Clear data](/Hubba-Turbo/Assets/ScreenShots/SlipperyBoardScreen.png "Clear data")
 Image 13 - Slippery board
